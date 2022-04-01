@@ -1,0 +1,19 @@
+{
+  "name": "shelter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "style": "sass --watch sass/style.scss sass/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joyscript/Shelter.git"
+  },
+  "author": "joyscript",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joyscript/Shelter/issues"
+  },
+  "homepage": "https://github.com/joyscript/Shelter#readme"
+}

@@ -1,1 +1,13 @@
+// Base
+@import 'base/abstracts';
+@import 'base/normalize';
+@import 'base/basic';
+@import 'base/fonts';
+@import 'base/fonts';
+@import 'base/common';
 
+// Layouts
+@import 'layouts/header';
+@import 'layouts/footer';
+@import 'layouts/main-page';
+@import 'layouts/pets-page';

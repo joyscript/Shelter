@@ -1,0 +1,66 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 320px;
+}
+
+main {
+  flex-grow: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+span {
+  display: inline-block;
+}
+
+// ---------------------------
+
+.wrapper {
+  max-width: $wrapper-width;
+  margin: 0 auto;
+  padding: 80px 20px 100px;
+}

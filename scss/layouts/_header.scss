@@ -1,0 +1,61 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: $color-light;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding-top: 60px;
+    padding-bottom: 0;
+  }
+}
+
+.logo {
+  white-space: nowrap;
+  transition: filter 0.3s ease;
+  &__title {
+    height: 35px;
+    margin-bottom: 10px;
+  }
+  &__subtitle {
+    @include font(1.3rem, 1.5rem, $color-light);
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+  @media (any-hover: hover) {
+    &:hover,
+    &:focus {
+      filter: brightness(85%);
+    }
+  }
+}
+
+.menu {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 35px;
+  }
+  &__link {
+    @include font(1.5rem, 1.6, $color-grey);
+    white-space: nowrap;
+    &.active {
+      border-bottom: 3px solid $color-prim;
+      color: $color-light-s;
+    }
+    @media (any-hover: hover) {
+      &:hover,
+      &:focus {
+        color: $color-light-s;
+      }
+    }
+  }
+}
+
+.burger {
+  display: none;
+}

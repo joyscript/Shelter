@@ -1,0 +1,97 @@
+$color-prim: #f1cdb3;
+$color-prim-hov: #fddcc4;
+$color-dark: #000000;
+$color-light: #ffffff;
+$color-light-s: #fafafa;
+$color-grey: #cdcdcd;
+$color-title: #545454;
+$color-text: #4c4c4c;
+$color-button: #292929;
+
+$wrapper-width: 1240px;
+$content-width: 1200px;
+
+// Placeholders -----------------------
+
+%trans {
+  transition: all 0.3s ease;
+}
+
+// Mixins -----------------------------
+
+@mixin font($size, $height: 1, $color: inherit, $weight: 400, $style: normal) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+  font-style: $style;
+  color: $color;
+}
+
+@mixin flex($width) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  > * {
+    flex-basis: calc($width / $content-width * 100%);
+  }
+}
+
+@mixin cols($cols, $gap) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: $gap;
+
+  > * {
+    flex-basis: calc((100% - ($cols - 1) * $gap) / $cols);
+  }
+}
+
+@mixin fbasis($width, $container-width: $content-width) {
+  flex-basis: calc(($width / $container-width) * 100%);
+}
+
+@mixin flex-col($pos: flex-start) {
+  display: flex;
+  flex-direction: column;
+  align-items: $pos;
+}
+
+// media -------------------------------------------------
+
+@mixin media-lap {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin media-tab {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-mob {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin media-mm {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin media-sm {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+
+@mixin media($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}

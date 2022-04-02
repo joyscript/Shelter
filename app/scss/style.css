@@ -459,8 +459,8 @@ h4 {
   font-weight: 400;
   font-style: normal;
   color: #545454;
-  text-align: center;
   letter-spacing: 0.06em;
+  text-align: center;
 }
 
 html {
@@ -520,8 +520,8 @@ h4 {
   font-weight: 400;
   font-style: normal;
   color: #545454;
-  text-align: center;
   letter-spacing: 0.06em;
+  text-align: center;
 }
 
 .button {
@@ -533,14 +533,53 @@ h4 {
   font-style: normal;
   color: #292929;
   letter-spacing: 0.06em;
+  text-align: center;
   background: #f1cdb3;
   border: 1px solid #ffffff;
   border-radius: 100px;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, border 0.3s ease;
 }
 @media (any-hover: hover) {
   .button:hover, .button:focus {
     background: #fddcc4;
+  }
+}
+.button_bordered {
+  padding: 13px 43px;
+  background: transparent;
+  border: 2px solid #f1cdb3;
+}
+@media (any-hover: hover) {
+  .button_bordered:hover, .button_bordered:focus {
+    border: 2px solid #fddcc4;
+  }
+}
+
+.btn-arrow {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  background: transparent;
+  border: 2px solid #f1cdb3;
+  border-radius: 50%;
+  transition: background 0.3s ease, border 0.3s ease;
+}
+.btn-arrow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../svg/arrow.svg") center center no-repeat;
+}
+.btn-arrow_next {
+  transform: rotate(180deg);
+}
+@media (any-hover: hover) {
+  .btn-arrow:hover, .btn-arrow:focus {
+    background: #fddcc4;
+    border: 2px solid #fddcc4;
   }
 }
 
@@ -613,7 +652,7 @@ h4 {
 .start {
   min-height: 908px;
   color: #ffffff;
-  background: url("../../assets/img/start-bg.jpg") no-repeat;
+  background: url("../img/start-bg.jpg") no-repeat;
   background-size: cover;
 }
 .start__wrapper {
@@ -635,6 +674,76 @@ h4 {
   flex-shrink: 0;
   flex-basis: 58.1666666667%;
   align-self: flex-end;
+}
+
+.about__wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+}
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 430px;
+  padding-top: 14px;
+}
+
+.pets {
+  background: #f6f6f6;
+  text-align: center;
+}
+.pets__title {
+  margin-bottom: 59px;
+}
+.pets__button {
+  margin-top: 60px;
+}
+
+.slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.slider__cards {
+  display: flex;
+  flex: 0 1 990px;
+  justify-content: space-between;
+  gap: 30px;
+}
+.slider__button {
+  flex-shrink: 0;
+}
+
+.pet-card {
+  flex-basis: 270px;
+  display: flex;
+  flex-direction: column;
+  background: #fafafa;
+}
+.pet-card__image {
+  position: relative;
+  padding-top: 100%;
+}
+.pet-card__image > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.pet-card__content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+}
+.pet-card__title {
+  flex-grow: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

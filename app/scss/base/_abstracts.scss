@@ -3,6 +3,7 @@ $color-prim-hov: #fddcc4;
 $color-dark: #000000;
 $color-light: #ffffff;
 $color-light-s: #fafafa;
+$color-light-l: #f6f6f6;
 $color-grey: #cdcdcd;
 $color-title: #545454;
 $color-text: #4c4c4c;
@@ -27,6 +28,20 @@ $content-width: 1200px;
   color: $color;
 }
 
+@mixin img($padding: 100%, $pos: center) {
+  position: relative;
+  padding-top: $padding;
+  > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: $pos;
+  }
+}
+
 @mixin flex($width) {
   display: flex;
   flex-wrap: wrap;
@@ -48,14 +63,15 @@ $content-width: 1200px;
   }
 }
 
-@mixin fbasis($width, $container-width: $content-width) {
-  flex-basis: calc(($width / $container-width) * 100%);
-}
-
 @mixin flex-col($pos: flex-start) {
   display: flex;
   flex-direction: column;
   align-items: $pos;
+}
+
+@function perc($width, $container-width: $content-width) {
+  $result: calc($width / $container-width * 100%);
+  @return $result;
 }
 
 // media -------------------------------------------------

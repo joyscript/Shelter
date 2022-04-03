@@ -7,16 +7,14 @@ $color-light-l: #f6f6f6;
 $color-grey: #cdcdcd;
 $color-title: #545454;
 $color-text: #4c4c4c;
+$color-italic: #b2b2b2;
 $color-button: #292929;
 
 $wrapper-width: 1240px;
 $content-width: 1200px;
 
 // Placeholders -----------------------
-
-%trans {
-  transition: all 0.3s ease;
-}
+// %trans {transition: all 0.3s ease}
 
 // Mixins -----------------------------
 
@@ -42,36 +40,32 @@ $content-width: 1200px;
   }
 }
 
+@function perc($width, $container-width: $content-width) {
+  $result: calc($width / $container-width * 100%);
+  @return $result;
+}
+
+// Равномерное распределение колонок на основе ширины в процентах
+// Gap не задан, он также рассчитывается в %, нужно следить и прописывать медиазапросы
 @mixin flex($width) {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
   > * {
     flex-basis: calc($width / $content-width * 100%);
   }
 }
 
+// Если нужно точное количество колонок и точный gap
+// Gap не будет уменьшаться, будет уменьшаться ширина колонок в %
 @mixin cols($cols, $gap) {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: $gap;
-
   > * {
     flex-basis: calc((100% - ($cols - 1) * $gap) / $cols);
   }
-}
-
-@mixin flex-col($pos: flex-start) {
-  display: flex;
-  flex-direction: column;
-  align-items: $pos;
-}
-
-@function perc($width, $container-width: $content-width) {
-  $result: calc($width / $container-width * 100%);
-  @return $result;
 }
 
 // media -------------------------------------------------

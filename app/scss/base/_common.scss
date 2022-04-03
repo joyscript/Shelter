@@ -1,11 +1,11 @@
 .button {
-  padding: 14px 44px;
+  padding: 13px 43px;
   font-family: Georgia, serif;
   @include font(1.7rem, 1.3, $color-button);
   letter-spacing: 0.06em;
   text-align: center;
   background: $color-prim;
-  border: 1px solid $color-light;
+  border: 2px solid transparent;
   border-radius: 100px;
   transition: background 0.3s ease, border 0.3s ease;
   @media (any-hover: hover) {
@@ -15,42 +15,26 @@
     }
   }
   &_bordered {
-    padding: 13px 43px;
     background: transparent;
     border: 2px solid $color-prim;
-    @media (any-hover: hover) {
-      &:hover,
-      &:focus {
-        border: 2px solid $color-prim-hov;
-      }
-    }
   }
 }
 
 .btn-arrow {
-  position: relative;
   width: 52px;
   height: 52px;
   background: transparent;
   border: 2px solid $color-prim;
   border-radius: 50%;
-  transition: background 0.3s ease, border 0.3s ease;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../svg/arrow.svg') center center no-repeat;
-  }
+  transition: background-color 0.3s ease, border 0.3s ease;
+  background: url('../svg/arrow.svg') center center no-repeat;
   &_next {
     transform: rotate(180deg);
   }
   @media (any-hover: hover) {
     &:hover,
     &:focus {
-      background: $color-prim-hov;
+      background-color: $color-prim-hov;
       border: 2px solid $color-prim-hov;
     }
   }

@@ -20,17 +20,103 @@
   }
 }
 
-.btn-arrow {
+// Slider ----------------------------
+
+.slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .pets-page & {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  &__cards {
+    display: flex;
+    flex-basis: 990px;
+    justify-content: space-between;
+    .pets-page & {
+      flex-basis: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px 40px;
+    }
+  }
+  &__pagination {
+    display: flex;
+    gap: 20px;
+  }
+  &__button {
+    flex-shrink: 0;
+  }
+}
+
+.pet-card {
+  flex-basis: 270px;
+  display: flex;
+  flex-direction: column;
+  background: $color-light-s;
+  border-radius: 9px;
+  transition: background 0.5s ease, box-shadow 0.5s ease;
+  overflow: hidden;
+  &__image {
+    @include img;
+  }
+  &__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+  }
+  &__title {
+    flex-grow: 1;
+  }
+  @media (any-hover: hover) {
+    &:hover,
+    &:focus {
+      background: $color-light;
+      box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+
+      .button {
+        background: $color-prim-hov;
+        border: 2px solid $color-prim-hov;
+      }
+    }
+  }
+}
+
+.slider-btn {
   width: 52px;
   height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Georgia, serif;
+  @include font(2rem, 1.15, $color-button);
+  letter-spacing: 0.06em;
   background: transparent;
   border: 2px solid $color-prim;
   border-radius: 50%;
   transition: background-color 0.3s ease, border 0.3s ease;
-  background: url('../svg/arrow.svg') center center no-repeat;
-  &_next {
-    transform: rotate(180deg);
+
+  &:disabled {
+    color: $color-grey;
+    border-color: $color-grey;
+    pointer-events: none;
   }
+  &.active{
+    background: $color-prim;
+  }
+
+  &_prev {
+    background: url('../svg/arrow-prev.svg') center center no-repeat;
+  }
+  &_next {
+    background: url('../svg/arrow-next.svg') center center no-repeat;
+  }
+
   @media (any-hover: hover) {
     &:hover,
     &:focus {

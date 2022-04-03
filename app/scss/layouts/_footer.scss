@@ -27,7 +27,9 @@
     align-items: center;
     min-height: 32px;
     padding-left: 60px;
-    @extend h4;
+    font-family: Georgia, serif;
+    @include font(2rem, 1.15, $color-title);
+    letter-spacing: 0.06em;
     color: $color-prim-hov;
     background-repeat: no-repeat;
     background-position: left center;

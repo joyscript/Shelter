@@ -1,14 +1,14 @@
 $color-prim: #f1cdb3;
 $color-prim-hov: #fddcc4;
-$color-dark: #000000;
 $color-light: #ffffff;
 $color-light-s: #fafafa;
 $color-light-l: #f6f6f6;
 $color-grey: #cdcdcd;
-$color-title: #545454;
-$color-text: #4c4c4c;
 $color-italic: #b2b2b2;
+$color-text: #4c4c4c;
+$color-title: #545454;
 $color-button: #292929;
+$color-dark: #000000;
 
 $wrapper-width: 1240px;
 $content-width: 1200px;
@@ -46,7 +46,7 @@ $content-width: 1200px;
 }
 
 // Равномерное распределение колонок на основе ширины в процентах
-// Gap не задан, он также рассчитывается в %, нужно следить и прописывать медиазапросы
+// Gap не задан, он также рассчитывается в %
 @mixin flex($width) {
   display: flex;
   flex-wrap: wrap;

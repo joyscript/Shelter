@@ -63,5 +63,11 @@ span {
 .wrapper {
   max-width: $wrapper-width;
   margin: 0 auto;
-  padding: 80px 20px 100px;
+  padding: 80px 40px 100px;
+  @include media-l {
+    padding: 80px 30px 100px;
+  }
+  @include media-s {
+    padding: 42px 10px;
+  }
 }

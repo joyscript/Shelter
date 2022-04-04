@@ -10,7 +10,7 @@ $color-title: #545454;
 $color-button: #292929;
 $color-dark: #000000;
 
-$wrapper-width: 1240px;
+$wrapper-width: 1280px;
 $content-width: 1200px;
 
 // Placeholders -----------------------
@@ -26,9 +26,8 @@ $content-width: 1200px;
   color: $color;
 }
 
-@mixin img($padding: 100%, $pos: center) {
+@mixin img($pos: center) {
   position: relative;
-  padding-top: $padding;
   > img {
     position: absolute;
     top: 0;
@@ -70,35 +69,35 @@ $content-width: 1200px;
 
 // media -------------------------------------------------
 
-@mixin media-lap {
-  @media (max-width: 1024px) {
+@mixin media-l {
+  @media (max-width: $wrapper-width) {
     @content;
   }
 }
 
-@mixin media-tab {
-  @media (max-width: 768px) {
+@mixin media-t {
+  @media (max-width: 1023.98px) {
     @content;
   }
 }
 
-@mixin media-mob {
-  @media (max-width: 600px) {
+@mixin media-m {
+  @media (max-width: 767.98px) {
     @content;
   }
 }
 
-@mixin media-mm {
-  @media (max-width: 480px) {
+@mixin media-s {
+  @media (max-width: 479.98px) {
     @content;
   }
 }
 
-@mixin media-sm {
-  @media (max-width: 375px) {
-    @content;
-  }
-}
+// @mixin media-s{
+//   @media (max-width: 374.98px) {
+//     @content;
+//   }
+// }
 
 @mixin media($width) {
   @media (max-width: $width) {

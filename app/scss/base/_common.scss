@@ -24,30 +24,55 @@
 
 .slider {
   display: flex;
+  gap: 12px;
   justify-content: space-between;
   align-items: center;
+
   .pets-page & {
     flex-direction: column;
     gap: 60px;
+  }
+
+  @include media-m {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px 80px;
+    > *:nth-child(2) {
+      flex-basis: 100%;
+      order: -1;
+    }
   }
 
   &__cards {
     display: flex;
     flex-basis: 990px;
     justify-content: space-between;
+    gap: 40px;
+
     .pets-page & {
       flex-basis: auto;
       flex-wrap: wrap;
       justify-content: center;
       gap: 30px 40px;
     }
+    
+    @include media-t {
+      flex-basis: auto;
+      justify-content: center;
+      > *:last-child {
+        display: none;
+      }
+    }
+    @include media-m {
+      > *:nth-child(2) {
+        display: none;
+      }
+    }
   }
+
   &__pagination {
     display: flex;
     gap: 20px;
-  }
-  &__button {
-    flex-shrink: 0;
   }
 }
 
@@ -60,6 +85,7 @@
   transition: background 0.5s ease, box-shadow 0.5s ease;
   overflow: hidden;
   &__image {
+    padding-top: 100%;
     @include img;
   }
   &__content {
@@ -93,6 +119,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   font-family: Georgia, serif;
   @include font(2rem, 1.15, $color-button);
   letter-spacing: 0.06em;
@@ -106,7 +133,7 @@
     border-color: $color-grey;
     pointer-events: none;
   }
-  &.active{
+  &.active {
     background: $color-prim;
   }
 

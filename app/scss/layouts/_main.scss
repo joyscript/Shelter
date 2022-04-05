@@ -1,8 +1,6 @@
 .start {
   color: $color-light;
-  background: url('../img/start-bg.jpg') no-repeat;
-  background-size: cover;
-
+  background: url('../img/noise-bg.png'), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -18,6 +16,9 @@
       flex-direction: column;
       gap: 100px;
     }
+    @include media-s {
+      gap: 105px;
+    }
   }
   &__content {
     display: flex;
@@ -30,6 +31,14 @@
     @include media-l {
       padding-top: 0px;
     }
+    @include media-t {
+      padding-bottom: 0;
+    }
+    @include media-s {
+      max-width: 300px;
+      align-items: stretch;
+      text-align: center;
+    }
   }
   &__button {
     @include media-t {
@@ -40,6 +49,9 @@
     align-self: flex-end;
     @include media-t {
       max-width: 569px;
+    }
+    @include media-m {
+      width: perc(261px, 300px);
     }
   }
 }
@@ -56,6 +68,9 @@
       flex-direction: column;
       gap: 80px;
     }
+    @include media-s {
+      gap: 42px;
+    }
   }
   &__content {
     display: flex;
@@ -65,6 +80,21 @@
     @include media-t {
       order: -1;
     }
+    @include media-s {
+      gap: 22px;
+      max-width: perc(270px, 300px);
+      text-align: justify;
+    }
+  }
+  &__title {
+    @include media-s {
+      padding-bottom: 3px;
+    }
+  }
+  &__image {
+    @include media-s {
+      max-width: 259.5px;
+    }
   }
 }
 
@@ -72,15 +102,30 @@
 
 .pets {
   background: $color-light-l;
-  text-align: center;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    @include media-s {
+      gap: 42px;
+    }
+  }
   &__title {
-    margin-bottom: 59px; //for PP
+    text-align: center;
   }
-  &__button {
-    margin-top: 60px;
+}
+
+.pets-page .pets__wrapper {
+  padding-top: 200px;
+  @include media-t {
+    gap: 30px;
+    padding-bottom: 76px;
   }
-  .pets-page & {
-    padding-top: 120px;
+  @include media-s {
+    gap: 42px;
+    padding-top: 162px;
+    padding-bottom: 42px;
   }
 }
 
@@ -90,6 +135,9 @@
   &__title {
     margin-bottom: 60px;
     text-align: center;
+    @include media-s {
+      margin-bottom: 42px;
+    }
   }
   &__list {
     display: flex;
@@ -110,6 +158,7 @@
     }
     @include media-s {
       max-width: 290px;
+      row-gap: 30px;
     }
   }
   &__item {
@@ -117,8 +166,14 @@
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    @include media-s {
+      gap: 20px;
+    }
     img {
       height: 60px;
+      @include media-s {
+        height: 50px;
+      }
     }
     @include media-l {
       flex-basis: 170px;
@@ -141,7 +196,10 @@
     @include media-t {
       flex-direction: column;
       gap: 60px;
-    };
+    }
+    @include media-s {
+      gap: 42px;
+    }
   }
   &__content {
     max-width: 380px;
@@ -151,22 +209,42 @@
     gap: 20px;
     @include media-t {
       order: -1;
-    };
+    }
+    @include media-s {
+      align-items: center;
+    }
   }
   &__subtitle {
-    margin-top: -2px; //for PP
     font-family: Georgia, serif;
     @include font(1.5rem, 1.1, $color-title);
     letter-spacing: 0.06em;
+    @include media-s {
+      letter-spacing: 0;
+      line-height: 2.4rem;
+    }
   }
   &__text {
     font-style: italic;
     @include font(1.2rem, 1.5, $color-italic, 400, italic);
+    @include media-s {
+      max-width: 280px;
+      font-size: 12px;
+      line-height: 18px;
+      text-align: justify;
+      letter-spacing: 0;
+    }
+  }
+  &__image {
+    @include media-s {
+      max-width: 261.5px;
+    }
   }
 }
 
 .credit-card {
   position: relative;
+  min-height: 43px;
+  max-width: 100%;
   padding: 10px 15px 10px 60px;
   font-family: Georgia, serif;
   @include font(2rem, 1.15, $color-title);
@@ -183,6 +261,6 @@
   }
   @include media-s {
     font-size: 1.5rem;
-    line-height: 1.1;
+    line-height: 2.3rem;
   }
 }

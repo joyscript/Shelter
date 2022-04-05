@@ -1,7 +1,9 @@
 .button {
+  min-width: 187px;
+  max-width: 100%;
   padding: 13px 43px;
   font-family: Georgia, serif;
-  @include font(1.7rem, 1.3, $color-button);
+  @include font(1.7rem, 2.2rem, $color-button);
   letter-spacing: 0.06em;
   text-align: center;
   background: $color-prim;
@@ -22,62 +24,95 @@
 
 // Slider ----------------------------
 
-.slider {
+.main-slider {
   display: flex;
   gap: 12px;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 
-  .pets-page & {
-    flex-direction: column;
-    gap: 60px;
-  }
-
-  @include media-m {
+  @include media-t {
     justify-content: center;
+  }
+  @include media-m {
     flex-wrap: wrap;
     gap: 20px 80px;
-    > *:nth-child(2) {
-      flex-basis: 100%;
-      order: -1;
-    }
   }
+}
 
-  &__cards {
-    display: flex;
-    flex-basis: 990px;
-    justify-content: space-between;
+.main-pets-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-basis: 990px;
+  @include media-m {
+    flex-basis: 100%;
+    order: -1;
+  }
+  @include media-t {
+    flex-basis: 580px;
+    justify-content: center;
     gap: 40px;
-
-    .pets-page & {
-      flex-basis: auto;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px 40px;
-    }
-    
-    @include media-t {
-      flex-basis: auto;
-      justify-content: center;
-      > *:last-child {
-        display: none;
-      }
-    }
-    @include media-m {
-      > *:nth-child(2) {
-        display: none;
-      }
+    > *:last-child {
+      display: none;
     }
   }
-
-  &__pagination {
-    display: flex;
-    gap: 20px;
+  @include media-m {
+    > *:nth-child(2) {
+      display: none;
+    }
   }
+}
+
+.page-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  @include media-t {
+    gap: 40px;
+  };
+  @include media-s {
+    gap: 42px;
+  };
+}
+
+.page-pets-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px 40px;
+  @include media-l {
+    max-width: 890px;
+  }
+  @include media-l {
+    > *:nth-child(n + 7) {
+      display: none;
+    }
+  }
+  @include media-m {
+    > *:nth-child(n + 5) {
+      display: none;
+    }
+  }
+  @include media-s {
+    > *:nth-child(n + 4) {
+      display: none;
+    }
+  }
+}
+
+.slider-pagination {
+  display: flex;
+  gap: 20px;
+  @include media-s {
+    gap: 10px;
+  };
 }
 
 .pet-card {
   flex-basis: 270px;
+  max-width: 270px;
   display: flex;
   flex-direction: column;
   background: $color-light-s;

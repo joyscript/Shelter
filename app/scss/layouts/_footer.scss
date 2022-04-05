@@ -1,6 +1,6 @@
 .footer {
-  background: url('../img/footer-bg.jpg') no-repeat;
-  background-size: cover;
+  background: url('../img/noise-bg.png'), radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
+
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -19,24 +19,40 @@
       gap: 40px;
     }
   }
+
   &__column {
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 32px;
+    gap: 33px;
     max-width: 300px;
     padding: 16px 0 60px;
+    &:first-child {
+      max-width: 278.5px;
+    }
     @include media-t {
       padding: 0;
     }
+    @include media-s {
+      gap: 40px;
+      &:first-child {
+        align-items: center;
+      }
+    }
   }
+
   &__title {
     color: $color-light;
     @include media-m {
       text-align: center;
     }
+    @include media-s {
+      max-width: 270px;
+      align-self: center;
+    }
   }
+
   &__link {
     display: flex;
     align-items: center;
@@ -66,10 +82,14 @@
       }
     }
   }
+  
   &__image {
     align-self: flex-end;
     @include media-t {
       align-self: center;
+    }
+    @include media-s {
+      max-width: 260px;
     }
   }
 }

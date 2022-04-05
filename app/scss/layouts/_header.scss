@@ -14,7 +14,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
+    gap: 30px;
     padding-top: 60px;
     padding-bottom: 0;
     .pets-page & {
@@ -23,7 +23,10 @@
     }
     @include media-l {
       padding-top: 30px;
-    };
+    }
+    @include media-m {
+      padding-right: 43px;
+    }
   }
 }
 
@@ -62,7 +65,13 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px 35px;
+    @include media-m {
+      flex-direction: column;
+      gap: 40px;
+      align-items: center;
+    }
   }
+
   &__link {
     @include font(1.5rem, 1.6, $color-grey);
     white-space: nowrap;
@@ -78,6 +87,7 @@
         color: $color-button;
       }
     }
+
     @media (any-hover: hover) {
       &:hover,
       &:focus {
@@ -87,9 +97,59 @@
         }
       }
     }
+
+    @include media-m {
+      font-size: 3.2rem;
+    }
   }
 }
 
 .burger {
   display: none;
+
+  @include media-m {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 50px;
+    height: 42px;
+    padding: 10px;
+    background: transparent;
+    span,
+    &:before,
+    &:after {
+      width: 30px;
+      height: 2px;
+      background: $color-prim;
+      transition: background 0.3s ease;
+      .pets-page & {
+        background: $color-dark;
+      }
+    }
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+    &:after {
+      top: 30px;
+    }
+
+    &.active {
+      transform: rotate(90deg);
+    }
+
+    @media (any-hover: hover) {
+      &:hover,
+      &:focus {
+        &:before,
+        &:after,
+        span {
+          background: $color-prim-hov;
+        }
+      }
+    }
+  }
 }

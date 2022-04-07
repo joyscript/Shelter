@@ -371,6 +371,36 @@ span {
   }
 }
 
+.logo {
+  white-space: nowrap;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+  outline-offset: 5px;
+}
+.logo__title {
+  height: 35px;
+  margin-bottom: 10px;
+}
+.pets-page .logo__title {
+  color: #545454;
+}
+.logo__subtitle {
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+.pets-page .logo__subtitle {
+  color: #292929;
+}
+@media (any-hover: hover) {
+  .logo:hover, .logo:focus {
+    filter: brightness(85%);
+  }
+}
+
 .button {
   min-width: 187px;
   max-width: 100%;
@@ -588,11 +618,12 @@ span {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 1;
   width: 100%;
   color: #ffffff;
 }
 .pets-page .header {
+  position: fixed;
   background: #ffffff;
 }
 .header__wrapper {
@@ -618,41 +649,34 @@ span {
   }
 }
 
-.logo {
-  white-space: nowrap;
-  transition: filter 0.3s ease;
-  outline-offset: 5px;
-}
-.logo__title {
-  height: 35px;
-  margin-bottom: 10px;
-}
-.pets-page .logo__title {
-  color: #545454;
-}
-.logo__subtitle {
-  font-size: 1.3rem;
-  line-height: 1.5rem;
-  font-weight: 400;
-  font-style: normal;
-  color: #ffffff;
-  letter-spacing: 0.1em;
-  text-align: center;
-}
-.pets-page .logo__subtitle {
-  color: #292929;
-}
-@media (any-hover: hover) {
-  .logo:hover, .logo:focus {
-    filter: brightness(85%);
-  }
-}
-
 @media (max-width: 767.98px) {
   .menu {
-    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 320px;
+    padding-top: 110px;
+    transition: right 0.3s ease;
+    background: #292929;
+  }
+  .pets-page .menu {
+    background: #ffffff;
+  }
+  .menu__logo {
+    position: absolute;
+    top: 30px;
+    left: 10px;
   }
 }
+.menu__logo {
+  display: none;
+}
+
 .menu__list {
   display: flex;
   flex-wrap: wrap;
@@ -661,10 +685,21 @@ span {
 @media (max-width: 767.98px) {
   .menu__list {
     flex-direction: column;
-    gap: 40px;
+    flex-wrap: nowrap;
     align-items: center;
+    gap: 0 0;
+    padding: 30px 20px;
+    overflow: auto;
+  }
+  .menu__list:after {
+    content: "";
+    flex-basis: 110px;
+  }
+  .menu__list .menu__item:not(:last-child) {
+    margin-bottom: 40px;
   }
 }
+
 .menu__link {
   font-size: 1.5rem;
   line-height: 1.6;
@@ -704,12 +739,16 @@ span {
 @media (max-width: 767.98px) {
   .burger {
     position: relative;
+    z-index: 10;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     width: 50px;
     height: 42px;
     padding: 10px;
     background: transparent;
+    transition: transform 0.3s ease;
   }
   .burger span, .burger:before, .burger:after {
     width: 30px;
@@ -718,19 +757,10 @@ span {
     transition: background 0.3s ease;
   }
   .pets-page .burger span, .pets-page .burger:before, .pets-page .burger:after {
-    background: #000000;
+    background: #292929;
   }
   .burger:before, .burger:after {
     content: "";
-    position: absolute;
-    top: 10px;
-    left: 10px;
-  }
-  .burger:after {
-    top: 30px;
-  }
-  .burger.active {
-    transform: rotate(90deg);
   }
 }
 @media (max-width: 767.98px) and (any-hover: hover) {
@@ -739,6 +769,37 @@ span {
 .burger:focus span {
     background: #fddcc4;
   }
+}
+
+.header::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.menu-open {
+  overflow: hidden;
+}
+.menu-open .menu {
+  right: 0;
+}
+.menu-open .burger {
+  transform: rotate(90deg);
+}
+.menu-open .header__logo {
+  opacity: 0;
+}
+.menu-open .menu__logo {
+  display: block;
+}
+.menu-open .header::before {
+  width: 100%;
+  background: rgba(41, 41, 41, 0.6);
 }
 
 .start {

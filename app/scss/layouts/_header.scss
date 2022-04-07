@@ -2,11 +2,12 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 1;
   width: 100%;
   color: $color-light;
+
   .pets-page & {
-    // position: sticky;
+    position: fixed;
     background: $color-light;
   }
 
@@ -30,91 +31,113 @@
   }
 }
 
-.logo {
-  white-space: nowrap;
-  transition: filter 0.3s ease;
-  outline-offset: 5px;
-  &__title {
-    height: 35px;
-    margin-bottom: 10px;
+// ---------------------------------
+
+$menuPaddingTop: 110px;
+
+.menu {
+  @include media-m {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 320px;
+    padding-top: $menuPaddingTop;
+    transition: right 0.3s ease;
+    background: $color-button;
+
     .pets-page & {
-      color: $color-title;
+      background: $color-light;
+    }
+
+    &__logo {
+      position: absolute;
+      top: 30px;
+      left: 10px;
     }
   }
-  &__subtitle {
-    @include font(1.3rem, 1.5rem, $color-light);
-    letter-spacing: 0.1em;
-    text-align: center;
-    .pets-page & {
-      color: $color-button;
-    }
+
+  &__logo {
+    display: none;
   }
-  @media (any-hover: hover) {
-    &:hover,
-    &:focus {
-      filter: brightness(85%);
+}
+
+.menu__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 35px;
+
+  @include media-m {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0 0;
+    padding: 30px 20px;
+    overflow: auto;
+
+    &:after {
+      content: '';
+      flex-basis: $menuPaddingTop;
+    }
+
+    .menu__item:not(:last-child) {
+      margin-bottom: 40px;
     }
   }
 }
 
-.menu {
-  @include media-m {
-    display: none;
-  };
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 35px;
-    @include media-m {
-      flex-direction: column;
-      gap: 40px;
-      align-items: center;
+.menu__link {
+  @include font(1.5rem, 1.6, $color-grey);
+  white-space: nowrap;
+  outline-offset: 3px;
+
+  .pets-page & {
+    color: $color-title;
+  }
+  &.active {
+    border-bottom: 3px solid $color-prim;
+    color: $color-light-s;
+    .pets-page & {
+      color: $color-button;
     }
   }
 
-  &__link {
-    @include font(1.5rem, 1.6, $color-grey);
-    white-space: nowrap;
-    outline-offset: 3px;
-
-    .pets-page & {
-      color: $color-title;
-    }
-    &.active {
-      border-bottom: 3px solid $color-prim;
+  @media (any-hover: hover) {
+    &:hover,
+    &:focus {
       color: $color-light-s;
       .pets-page & {
         color: $color-button;
       }
     }
+  }
 
-    @media (any-hover: hover) {
-      &:hover,
-      &:focus {
-        color: $color-light-s;
-        .pets-page & {
-          color: $color-button;
-        }
-      }
-    }
-
-    @include media-m {
-      font-size: 3.2rem;
-    }
+  @include media-m {
+    font-size: 3.2rem;
   }
 }
+
+// ---------------------------------
 
 .burger {
   display: none;
 
   @include media-m {
     position: relative;
+    z-index: 10;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     width: 50px;
     height: 42px;
     padding: 10px;
     background: transparent;
+    transition: transform 0.3s ease;
     span,
     &:before,
     &:after {
@@ -123,22 +146,12 @@
       background: $color-prim;
       transition: background 0.3s ease;
       .pets-page & {
-        background: $color-dark;
+        background: $color-button;
       }
     }
     &:before,
     &:after {
       content: '';
-      position: absolute;
-      top: 10px;
-      left: 10px;
-    }
-    &:after {
-      top: 30px;
-    }
-
-    &.active {
-      transform: rotate(90deg);
     }
 
     @media (any-hover: hover) {
@@ -151,5 +164,43 @@
         }
       }
     }
+  }
+}
+
+// ---------------------------------
+
+.header::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.menu-open {
+  overflow: hidden;
+
+  .menu {
+    right: 0;
+  }
+
+  .burger {
+    transform: rotate(90deg);
+  }
+
+  .header__logo {
+    opacity: 0;
+  }
+
+  .menu__logo {
+    display: block;
+  }
+
+  .header::before {
+    width: 100%;
+    background: rgba(41, 41, 41, 0.6);
   }
 }

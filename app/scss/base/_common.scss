@@ -1,3 +1,32 @@
+.logo {
+  white-space: nowrap;
+  transition: filter 0.3s ease, opacity 0.3s ease,;
+  outline-offset: 5px;
+  &__title {
+    height: 35px;
+    margin-bottom: 10px;
+    .pets-page & {
+      color: $color-title;
+    }
+  }
+  &__subtitle {
+    @include font(1.3rem, 1.5rem, $color-light);
+    letter-spacing: 0.1em;
+    text-align: center;
+    .pets-page & {
+      color: $color-button;
+    }
+  }
+  @media (any-hover: hover) {
+    &:hover,
+    &:focus {
+      filter: brightness(85%);
+    }
+  }
+}
+
+// button ---------------------
+
 .button {
   min-width: 187px;
   max-width: 100%;

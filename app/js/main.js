@@ -1,7 +1,5 @@
-const header = document.querySelector('.pets-page .header');
-
 const closeMenu = (e) => {
-  if (e.target.classList.contains('menu__link') || (!e.target.closest('.menu') && !e.target.classList.contains('burger'))) {
+  if ((e.target.classList.contains('menu__link') && e.target.getAttribute('href').startsWith('#')) || !e.target.closest('.header__menu')) {
     document.body.classList.remove('menu-open');
   }
 };
@@ -24,7 +22,7 @@ const changeHeader = () => {
   const header = document.querySelector('.header');
 
   const changeHeaderOnScroll = () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 20) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
@@ -41,7 +39,7 @@ changeHeader();
 
 const smoothScroll = () => {
   const menuLinks = document.querySelectorAll('.menu__link[href^="#"]');
-  const headerHeight = 70;
+  const headerHeight = 45;
 
   menuLinks.forEach((link) => {
     link.addEventListener('click', (e) => {

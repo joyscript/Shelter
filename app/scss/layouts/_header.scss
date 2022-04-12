@@ -7,23 +7,33 @@
   color: $color-light;
   padding-top: 60px;
   padding-bottom: 30px;
-  transition: padding 0.5s ease;
+  transition: all 0.5s;
   @include media-l {
     padding-top: 30px;
-  }
-
-  &.scrolled {
-    padding-top: 3px;
-    padding-bottom: 7px;
-    background: url('../img/noise-bg.png'), linear-gradient(to right, #493b33 0%, #272424 100%), #211f20;
-    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
   }
 
   .pets-page & {
     background: $color-light;
     padding-top: 30px;
-    &.scrolled {
-      padding-top: 3px;
+  }
+
+  &.scrolled {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: linear-gradient(to right, #493b33 0%, #272424 100%);
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+
+    .pets-page & {
+      background: $color-light;
+      box-shadow: 0px 0px 3px 1px rgba(220, 220, 220, 0.2);
+    }
+
+    .logo {
+      height: 35px;
+    }
+
+    .logo__subtitle {
+      opacity: 0;
     }
   }
 
@@ -42,7 +52,8 @@
 
 // ---------------------------------
 
-$menuPaddingTop: 110px;
+$menuPaddingTop: 120px;
+$menuPaddingTopScrolled: 46px;
 
 .menu {
   &__logo {
@@ -60,12 +71,16 @@ $menuPaddingTop: 110px;
     height: 100vh;
     width: 320px;
     padding-top: $menuPaddingTop;
-    transition: right 0.3s ease;
+    transition: right 0.5s;
     background: $color-button;
     overflow: hidden;
 
     .pets-page & {
       background: $color-light;
+    }
+
+    .scrolled & {
+      padding-top: $menuPaddingTopScrolled;
     }
 
     &__logo {
@@ -97,6 +112,9 @@ $menuPaddingTop: 110px;
     &:after {
       content: '';
       flex-basis: $menuPaddingTop;
+      .scrolled & {
+        flex-basis: $menuPaddingTopScrolled;
+      }
     }
 
     .menu__item:not(:last-child) {
@@ -111,10 +129,11 @@ $menuPaddingTop: 110px;
   outline-offset: 3px;
 
   .pets-page & {
-    color: $color-title;
+    color: #777777;
   }
+
   &.active {
-    border-bottom: 3px solid $color-prim;
+    border-bottom: 2px solid $color-prim;
     color: $color-light-s;
     .pets-page & {
       color: $color-button;
@@ -148,18 +167,19 @@ $menuPaddingTop: 110px;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 50px;
-    height: 42px;
-    padding: 10px;
+    width: 40px;
+    height: 32px;
+    padding: 5px;
+    border-radius: 2px;
     background: transparent;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
     span,
     &:before,
     &:after {
       width: 30px;
       height: 2px;
       background: $color-prim;
-      transition: background 0.3s ease;
+      transition: background 0.3s;
       .pets-page & {
         background: $color-button;
       }
@@ -167,17 +187,6 @@ $menuPaddingTop: 110px;
     &:before,
     &:after {
       content: '';
-    }
-
-    @media (any-hover: hover) {
-      &:hover,
-      &:focus {
-        &:before,
-        &:after,
-        span {
-          background: $color-prim-hov;
-        }
-      }
     }
   }
 }
@@ -192,7 +201,7 @@ $menuPaddingTop: 110px;
   bottom: 0;
   width: 0;
   background: transparent;
-  transition: background 0.3s ease;
+  transition: background 0.3s;
 }
 
 .menu-open {

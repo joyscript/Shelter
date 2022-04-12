@@ -41,6 +41,10 @@ img {
   max-width: 100%;
 }
 
+span {
+  display: inline-block;
+}
+
 button {
   display: block;
   cursor: pointer;
@@ -51,11 +55,23 @@ a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
-  transition: color 0.3s ease;
+  border-radius: 2px;
+  transition: color 0.3s;
 }
 
-span {
-  display: inline-block;
+a:focus,
+button:focus {
+  outline: 1px dotted #aaa;
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1px dotted #aaa;
 }
 
 // ---------------------------

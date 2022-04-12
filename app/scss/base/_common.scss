@@ -1,26 +1,40 @@
 .logo {
+  position: relative;
+  height: 60px;
+  opacity: 1;
+  overflow: hidden;
   white-space: nowrap;
-  transition: filter 0.3s ease, opacity 0.3s ease,;
-  outline-offset: 5px;
+  transition: filter 0.3s, opacity 0.3s, height 0.5s;
+  outline-offset: 2px;
+
   &__title {
     height: 35px;
-    margin-bottom: 10px;
     .pets-page & {
       color: $color-title;
     }
   }
   &__subtitle {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
     @include font(1.3rem, 1.5rem, $color-light);
     letter-spacing: 0.1em;
     text-align: center;
+    opacity: 1;
+    pointer-events: none;
+    transition: all 0.5s;
     .pets-page & {
-      color: $color-button;
+      color: #777777;
     }
   }
+
   @media (any-hover: hover) {
-    &:hover,
-    &:focus {
+    &:hover {
       filter: brightness(85%);
+    }
+    .pets-page &:hover {
+      filter: brightness(60%);
     }
   }
 }
@@ -38,7 +52,7 @@
   background: $color-prim;
   border: 2px solid transparent;
   border-radius: 100px;
-  transition: background 0.3s ease, border 0.3s ease;
+  transition: background 0.3s, border 0.3s;
   @media (any-hover: hover) {
     &:hover,
     &:focus {
@@ -100,10 +114,10 @@
   gap: 60px;
   @include media-t {
     gap: 40px;
-  };
+  }
   @include media-s {
     gap: 42px;
-  };
+  }
 }
 
 .page-pets-cards {
@@ -136,7 +150,7 @@
   gap: 20px;
   @include media-s {
     gap: 10px;
-  };
+  }
 }
 
 .pet-card {
@@ -146,7 +160,7 @@
   flex-direction: column;
   background: $color-light-s;
   border-radius: 9px;
-  transition: background 0.5s ease, box-shadow 0.5s ease;
+  transition: background 0.5s, box-shadow 0.5s;
   overflow: hidden;
   &__image {
     padding-top: 100%;
@@ -190,7 +204,7 @@
   background: transparent;
   border: 2px solid $color-prim;
   border-radius: 50%;
-  transition: background-color 0.3s ease, border 0.3s ease;
+  transition: background-color 0.3s, border 0.3s;
 
   &:disabled {
     color: $color-grey;

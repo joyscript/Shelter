@@ -338,6 +338,10 @@ img {
   max-width: 100%;
 }
 
+span {
+  display: inline-block;
+}
+
 button {
   display: block;
   cursor: pointer;
@@ -348,11 +352,23 @@ a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
-  transition: color 0.3s ease;
+  border-radius: 2px;
+  transition: color 0.3s;
 }
 
-span {
-  display: inline-block;
+a:focus,
+button:focus {
+  outline: 1px dotted #aaa;
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1px dotted #aaa;
 }
 
 .wrapper {
@@ -372,18 +388,25 @@ span {
 }
 
 .logo {
+  position: relative;
+  height: 60px;
+  opacity: 1;
+  overflow: hidden;
   white-space: nowrap;
-  transition: filter 0.3s ease, opacity 0.3s ease;
-  outline-offset: 5px;
+  transition: filter 0.3s, opacity 0.3s, height 0.5s;
+  outline-offset: 2px;
 }
 .logo__title {
   height: 35px;
-  margin-bottom: 10px;
 }
 .pets-page .logo__title {
   color: #545454;
 }
 .logo__subtitle {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100%;
   font-size: 1.3rem;
   line-height: 1.5rem;
   font-weight: 400;
@@ -391,13 +414,19 @@ span {
   color: #ffffff;
   letter-spacing: 0.1em;
   text-align: center;
+  opacity: 1;
+  pointer-events: none;
+  transition: all 0.5s;
 }
 .pets-page .logo__subtitle {
-  color: #292929;
+  color: #777777;
 }
 @media (any-hover: hover) {
-  .logo:hover, .logo:focus {
+  .logo:hover {
     filter: brightness(85%);
+  }
+  .pets-page .logo:hover {
+    filter: brightness(60%);
   }
 }
 
@@ -416,7 +445,7 @@ span {
   background: #f1cdb3;
   border: 2px solid transparent;
   border-radius: 100px;
-  transition: background 0.3s ease, border 0.3s ease;
+  transition: background 0.3s, border 0.3s;
 }
 @media (any-hover: hover) {
   .button:hover, .button:focus {
@@ -536,7 +565,7 @@ span {
   flex-direction: column;
   background: #fafafa;
   border-radius: 9px;
-  transition: background 0.5s ease, box-shadow 0.5s ease;
+  transition: background 0.5s, box-shadow 0.5s;
   overflow: hidden;
 }
 .pet-card__image {
@@ -591,7 +620,7 @@ span {
   background: transparent;
   border: 2px solid #f1cdb3;
   border-radius: 50%;
-  transition: background-color 0.3s ease, border 0.3s ease;
+  transition: background-color 0.3s, border 0.3s;
 }
 .slider-btn:disabled {
   color: #cdcdcd;
@@ -623,25 +652,32 @@ span {
   color: #ffffff;
   padding-top: 60px;
   padding-bottom: 30px;
-  transition: padding 0.5s ease;
+  transition: all 0.5s;
 }
 @media (max-width: 1280px) {
   .header {
     padding-top: 30px;
   }
 }
-.header.scrolled {
-  padding-top: 3px;
-  padding-bottom: 7px;
-  background: url("../img/noise-bg.png"), linear-gradient(to right, #493b33 0%, #272424 100%), #211f20;
-  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-}
 .pets-page .header {
   background: #ffffff;
   padding-top: 30px;
 }
+.header.scrolled {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: linear-gradient(to right, #493b33 0%, #272424 100%);
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+}
 .pets-page .header.scrolled {
-  padding-top: 3px;
+  background: #ffffff;
+  box-shadow: 0px 0px 3px 1px rgba(220, 220, 220, 0.2);
+}
+.header.scrolled .logo {
+  height: 35px;
+}
+.header.scrolled .logo__subtitle {
+  opacity: 0;
 }
 .header__wrapper {
   display: flex;
@@ -671,13 +707,16 @@ span {
     align-items: center;
     height: 100vh;
     width: 320px;
-    padding-top: 110px;
-    transition: right 0.3s ease;
+    padding-top: 120px;
+    transition: right 0.5s;
     background: #292929;
     overflow: hidden;
   }
   .pets-page .menu {
     background: #ffffff;
+  }
+  .scrolled .menu {
+    padding-top: 46px;
   }
   .menu__logo {
     position: absolute;
@@ -706,7 +745,10 @@ span {
   }
   .menu__list:after {
     content: "";
-    flex-basis: 110px;
+    flex-basis: 120px;
+  }
+  .scrolled .menu__list:after {
+    flex-basis: 46px;
   }
   .menu__list .menu__item:not(:last-child) {
     margin-bottom: 40px;
@@ -723,10 +765,10 @@ span {
   outline-offset: 3px;
 }
 .pets-page .menu__link {
-  color: #545454;
+  color: #777777;
 }
 .menu__link.active {
-  border-bottom: 3px solid #f1cdb3;
+  border-bottom: 2px solid #f1cdb3;
   color: #fafafa;
 }
 .pets-page .menu__link.active {
@@ -757,30 +799,24 @@ span {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 50px;
-    height: 42px;
-    padding: 10px;
+    width: 40px;
+    height: 32px;
+    padding: 5px;
+    border-radius: 2px;
     background: transparent;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
   }
   .burger span, .burger:before, .burger:after {
     width: 30px;
     height: 2px;
     background: #f1cdb3;
-    transition: background 0.3s ease;
+    transition: background 0.3s;
   }
   .pets-page .burger span, .pets-page .burger:before, .pets-page .burger:after {
     background: #292929;
   }
   .burger:before, .burger:after {
     content: "";
-  }
-}
-@media (max-width: 767.98px) and (any-hover: hover) {
-  .burger:hover:before, .burger:hover:after,
-.burger:hover span, .burger:focus:before, .burger:focus:after,
-.burger:focus span {
-    background: #fddcc4;
   }
 }
 
@@ -792,7 +828,7 @@ span {
   bottom: 0;
   width: 0;
   background: transparent;
-  transition: background 0.3s ease;
+  transition: background 0.3s;
 }
 
 .menu-open {
@@ -1126,7 +1162,7 @@ span {
   white-space: nowrap;
   background: #f1cdb3 url("../svg/credit-card.svg") 15px center no-repeat;
   border-radius: 9px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 @media (any-hover: hover) {
   .credit-card:hover, .credit-card:focus {
@@ -1220,6 +1256,7 @@ span {
   background-repeat: no-repeat;
   background-position: left center;
   transition: filter 0.3s ease;
+  outline-offset: 3px;
 }
 .footer__link_email {
   background-image: url("../svg/email.svg");

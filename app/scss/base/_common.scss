@@ -1,10 +1,8 @@
 .logo {
-  position: relative;
-  height: 60px;
   opacity: 1;
   overflow: hidden;
   white-space: nowrap;
-  transition: filter 0.3s, opacity 0.3s, height 0.5s;
+  transition: filter 0.3s, opacity 0.3s;
   outline-offset: 2px;
 
   &__title {
@@ -14,16 +12,11 @@
     }
   }
   &__subtitle {
-    position: absolute;
-    top: 45px;
-    left: 0;
-    width: 100%;
+    padding-top: 10px;
     @include font(1.3rem, 1.5rem, $color-light);
     letter-spacing: 0.1em;
     text-align: center;
-    opacity: 1;
-    pointer-events: none;
-    transition: all 0.5s;
+    transition: all 0.1s;
     .pets-page & {
       color: #777777;
     }
@@ -83,7 +76,7 @@
   }
 }
 
-.main-pets-cards {
+.main-slider__pets-cards {
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -120,7 +113,7 @@
   }
 }
 
-.page-pets-cards {
+.page-slider__pets-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

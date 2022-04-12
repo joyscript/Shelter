@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cozy House</title>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-<link rel="manifest" href="favicons/site.webmanifest">
-<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="favicons/favicon.ico">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="msapplication-config" content="favicons/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png" />
+    <link rel="manifest" href="favicons/site.webmanifest" />
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="shortcut icon" href="favicons/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-config" content="favicons/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
 
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/main.js" defer></script>
@@ -99,7 +99,7 @@
 
           <div class="main-slider">
             <button class="slider-btn slider-btn_prev"></button>
-            <div class="main-pets-cards">
+            <div class="pets-cards main-slider__pets-cards">
               <a class="pet-card" href="#!">
                 <div class="pet-card__image">
                   <img src="img/pets/katrine.jpg" alt="Pet Katrine" />
@@ -218,5 +218,31 @@
         </div>
       </div>
     </footer>
+
+    <div class="popup">
+      <div class="popup__wrapper">
+        <div class="popup__image">
+          <img src="img/pets/jennifer.jpg" alt="Pet Jennifer" />
+        </div>
+
+        <div class="popup__content">
+          <h3 class="popup__title">Jennifer</h3>
+          <h4 class="popup__subtitle">Dog - Labrador</h4>
+          <p class="popup__text">
+            Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go
+            outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.
+          </p>
+          <ul class="popup__list">
+            <li class="popup__item"><b class="popup__data-title">Age: </b><span class="popup__data">2 months</span></li>
+            <li class="popup__item"><b class="popup__data-title">Inoculations: </b><span class="popup__data">none</span></li>
+            <li class="popup__item"><b class="popup__data-title">Diseases: </b><span class="popup__data">none</span></li>
+            <li class="popup__item"><b class="popup__data-title">Parasites: </b><span class="popup__data">none</span></li>
+          </ul>
+        </div>
+      </div>
+      <button class="popup__close-btn"></button>
+    </div>
+
+    <div class="overlay"></div>
   </body>
 </html>

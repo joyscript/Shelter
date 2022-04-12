@@ -65,3 +65,36 @@ const smoothScroll = () => {
 };
 
 smoothScroll();
+
+// ----------------------------------------
+
+const handlePopup = () => {
+  const petsCards = document.querySelector('.pets-cards');
+  const closeBtn = document.querySelector('.popup__close-btn');
+  const overlay = document.querySelector('.overlay');
+  const popup = document.querySelector('.popup__wrapper');
+
+  const closePopup = (e) => {
+    if (e.target == closeBtn || e.target == overlay) {
+      document.body.classList.remove('popup-open');
+      document.body.removeEventListener('click', closePopup);
+    }
+  };
+
+  petsCards.addEventListener('click', (e) => {
+    if (e.target.closest('.pet-card')) {
+      document.body.classList.add('popup-open');
+      document.body.addEventListener('click', closePopup);
+
+      overlay.addEventListener('mouseover', (e) => {
+        closeBtn.classList.add('active');
+      });
+
+      popup.addEventListener('mouseover', (e) => {
+        closeBtn.classList.remove('active');
+      });
+    }
+  });
+};
+
+handlePopup();

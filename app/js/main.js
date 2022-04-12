@@ -38,12 +38,15 @@ changeHeader();
 // ----------------------------------------
 
 const smoothScroll = () => {
-  const menuLinks = document.querySelectorAll('.menu__link[href^="#"]');
+  const links = document.querySelectorAll('.menu__link[href^="#"]');
   const headerHeight = 45;
 
-  menuLinks.forEach((link) => {
+  links.forEach((link) => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
+
+      document.querySelector('.menu__link.active').classList.remove('active');
+      link.classList.add('active');
 
       const id = link.getAttribute('href').slice(1);
       const target = document.getElementById(id);

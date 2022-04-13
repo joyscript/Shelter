@@ -17,7 +17,7 @@
     <meta name="theme-color" content="#ffffff" />
 
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/main.js" defer></script>
+    <script type="module" src="js/index.js"></script>
   </head>
 
   <body id="home">
@@ -55,8 +55,8 @@
               need a house
             </h2>
             <p class="start__desc">
-              We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody
-              else in the world, you will see!
+              We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will
+              love you more than anybody else in the world, you will see!
             </p>
             <a class="start__button button" href="#pets">Make a friend</a>
           </div>
@@ -78,13 +78,15 @@
               “Cozy House”
             </h3>
             <p class="about__text">
-              Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find a family. The others will
-              continue to live with us and will be waiting for a lucky chance to become dearly loved.
+              Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find a
+              family. The others will continue to live with us and will be waiting for a lucky chance to become dearly
+              loved.
             </p>
             <p class="about__text">
-              We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including psychologically) and well. We
-              are supported by 87 volunteers and 28 employees of various skill levels. About 12% of the animals are taken by the shelter staff. Taking
-              care of the animals, they become attached to the pets and would hardly ever leave them alone.
+              We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including
+              psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill levels.
+              About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become attached
+              to the pets and would hardly ever leave them alone.
             </p>
           </div>
         </div>
@@ -100,7 +102,7 @@
           <div class="main-slider">
             <button class="slider-btn slider-btn_prev"></button>
             <div class="pets-cards main-slider__pets-cards">
-              <a class="pet-card" href="#!">
+              <div class="pet-card" data-pet="Katrine">
                 <div class="pet-card__image">
                   <img src="img/pets/katrine.jpg" alt="Pet Katrine" />
                 </div>
@@ -108,8 +110,8 @@
                   <h4 class="pet-card__title">Katrine</h4>
                   <div class="button button_bordered">Learn more</div>
                 </div>
-              </a>
-              <a class="pet-card" href="#!">
+              </div>
+              <div class="pet-card" data-pet="Jennifer">
                 <div class="pet-card__image">
                   <img src="img/pets/jennifer.jpg" alt="Pet Jennifer" />
                 </div>
@@ -117,8 +119,8 @@
                   <h4 class="pet-card__title">Jennifer</h4>
                   <div class="button button_bordered">Learn more</div>
                 </div>
-              </a>
-              <a class="pet-card" href="#!">
+              </div>
+              <div class="pet-card" data-pet="Woody">
                 <div class="pet-card__image">
                   <img src="img/pets/woody.jpg" alt="Pet Woody" />
                 </div>
@@ -126,7 +128,7 @@
                   <h4 class="pet-card__title">Woody</h4>
                   <div class="button button_bordered">Learn more</div>
                 </div>
-              </a>
+              </div>
             </div>
             <button class="slider-btn slider-btn_next"></button>
           </div>
@@ -191,8 +193,9 @@
             <p class="donation__subtitle">Name of the bank / Type of bank account</p>
             <a class="credit-card" href="#!">8380 2880 8028 8791 7435</a>
             <p class="donation__text">
-              Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac
-              diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+              Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero
+              sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames
+              ac ante ipsum primis in faucibus.
             </p>
           </div>
         </div>
@@ -203,7 +206,9 @@
       <div class="footer__wrapper wrapper">
         <div class="footer__column">
           <h3 class="footer__title">For questions and suggestions</h3>
-          <a class="footer__link footer__link_email" href="mailto:darlivia@yandex.ru" target="_top">email@shelter.com</a>
+          <a class="footer__link footer__link_email" href="mailto:darlivia@yandex.ru" target="_top"
+            >email@shelter.com</a
+          >
           <a class="footer__link footer__link_phone" href="tel:+136745677554">+13 674 567 75 54</a>
         </div>
         <div class="footer__column">
@@ -211,38 +216,14 @@
           <a class="footer__link footer__link_loc" href="https://goo.gl/maps/HUi7qW5fPTyrTKpi9" target="_blank">
             1 Central Street, Boston (entrance from the store)
           </a>
-          <a class="footer__link footer__link_loc" href="https://goo.gl/maps/CRfnJiotpiAfCAxf8" target="_blank"> 18 South Park, London </a>
+          <a class="footer__link footer__link_loc" href="https://goo.gl/maps/CRfnJiotpiAfCAxf8" target="_blank">
+            18 South Park, London
+          </a>
         </div>
         <div class="footer__image">
           <img src="img/footer-puppy.png" alt="Puppy" />
         </div>
       </div>
     </footer>
-
-    <div class="popup">
-      <div class="popup__wrapper">
-        <div class="popup__image">
-          <img src="img/pets/jennifer.jpg" alt="Pet Jennifer" />
-        </div>
-
-        <div class="popup__content">
-          <h3 class="popup__title">Jennifer</h3>
-          <h4 class="popup__subtitle">Dog - Labrador</h4>
-          <p class="popup__text">
-            Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go
-            outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.
-          </p>
-          <ul class="popup__list">
-            <li class="popup__item"><b class="popup__data-title">Age: </b><span class="popup__data">2 months</span></li>
-            <li class="popup__item"><b class="popup__data-title">Inoculations: </b><span class="popup__data">none</span></li>
-            <li class="popup__item"><b class="popup__data-title">Diseases: </b><span class="popup__data">none</span></li>
-            <li class="popup__item"><b class="popup__data-title">Parasites: </b><span class="popup__data">none</span></li>
-          </ul>
-        </div>
-      </div>
-      <button class="popup__close-btn"></button>
-    </div>
-
-    <div class="overlay"></div>
   </body>
 </html>

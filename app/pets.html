@@ -17,7 +17,7 @@
     <meta name="theme-color" content="#ffffff" />
 
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/main.js" defer></script>
+    <script type="module" src="js/index.js"></script>
   </head>
 
   <body class="pets-page" id="pets-page">
@@ -56,7 +56,7 @@
 
           <div class="page-slider">
             <div class="pets-cards page-slider__pets-cards">
-              <a class="pet-card" href="#!">
+              <div class="pet-card" data-pet="Katrine">
                 <div class="pet-card__image">
                   <img src="img/pets/katrine.jpg" alt="Pet Katrine" />
                 </div>
@@ -64,8 +64,8 @@
                   <h4 class="pet-card__title">Katrine</h4>
                   <div class="button button_bordered">Learn more</div>
                 </div>
-              </a>
-              <a class="pet-card" href="#!">
+              </div>
+              <div class="pet-card" data-pet="Jennifer">
                 <div class="pet-card__image">
                   <img src="img/pets/jennifer.jpg" alt="Pet Jennifer" />
                 </div>
@@ -73,8 +73,8 @@
                   <h4 class="pet-card__title">Jennifer</h4>
                   <div class="button button_bordered">Learn more</div>
                 </div>
-              </a>
-              <a class="pet-card" href="#!">
+              </div>
+              <div class="pet-card" data-pet="Woody">
                 <div class="pet-card__image">
                   <img src="img/pets/woody.jpg" alt="Pet Woody" />
                 </div>
@@ -82,8 +82,8 @@
                   <h4 class="pet-card__title">Woody</h4>
                   <div class="button button_bordered">Learn more</div>
                 </div>
-              </a>
-              <a class="pet-card" href="#!">
+              </div>
+              <div class="pet-card" data-pet="Sophia">
                 <div class="pet-card__image">
                   <img src="img/pets/sophia.jpg" alt="Pet Sophia" />
                 </div>
@@ -91,8 +91,8 @@
                   <h4 class="pet-card__title">Sophia</h4>
                   <div class="button button_bordered">Learn more</div>
                 </div>
-              </a>
-              <a class="pet-card" href="#!">
+              </div>
+              <div class="pet-card" data-pet="Timmy">
                 <div class="pet-card__image">
                   <img src="img/pets/timmy.jpg" alt="Pet Timmy" />
                 </div>
@@ -100,8 +100,8 @@
                   <h4 class="pet-card__title">Timmy</h4>
                   <div class="button button_bordered">Learn more</div>
                 </div>
-              </a>
-              <a class="pet-card" href="#!">
+              </div>
+              <div class="pet-card" data-pet="Charly">
                 <div class="pet-card__image">
                   <img src="img/pets/charly.jpg" alt="Pet Charly" />
                 </div>
@@ -109,8 +109,8 @@
                   <h4 class="pet-card__title">Charly</h4>
                   <div class="button button_bordered">Learn more</div>
                 </div>
-              </a>
-              <a class="pet-card" href="#!">
+              </div>
+              <div class="pet-card" data-pet="Scarlett">
                 <div class="pet-card__image">
                   <img src="img/pets/scarlett.jpg" alt="Pet Scarlett" />
                 </div>
@@ -118,8 +118,8 @@
                   <h4 class="pet-card__title">Scarlett</h4>
                   <div class="button button_bordered">Learn more</div>
                 </div>
-              </a>
-              <a class="pet-card" href="#!">
+              </div>
+              <div class="pet-card" data-pet="Freddie">
                 <div class="pet-card__image">
                   <img src="img/pets/freddie.jpg" alt="Pet Freddie" />
                 </div>
@@ -127,7 +127,7 @@
                   <h4 class="pet-card__title">Freddie</h4>
                   <div class="button button_bordered">Learn more</div>
                 </div>
-              </a>
+              </div>
             </div>
             <div class="slider-pagination">
               <button class="slider-btn" disabled>&lt;&lt;</button>
@@ -145,7 +145,9 @@
       <div class="footer__wrapper wrapper">
         <div class="footer__column">
           <h3 class="footer__title">For questions and suggestions</h3>
-          <a class="footer__link footer__link_email" href="mailto:darlivia@yandex.ru" target="_top">email@shelter.com</a>
+          <a class="footer__link footer__link_email" href="mailto:darlivia@yandex.ru" target="_top"
+            >email@shelter.com</a
+          >
           <a class="footer__link footer__link_phone" href="tel:+136745677554">+13 674 567 75 54</a>
         </div>
         <div class="footer__column">
@@ -153,38 +155,14 @@
           <a class="footer__link footer__link_loc" href="https://goo.gl/maps/HUi7qW5fPTyrTKpi9" target="_blank">
             1 Central Street, Boston (entrance from the store)
           </a>
-          <a class="footer__link footer__link_loc" href="https://goo.gl/maps/CRfnJiotpiAfCAxf8" target="_blank"> 18 South Park, London </a>
+          <a class="footer__link footer__link_loc" href="https://goo.gl/maps/CRfnJiotpiAfCAxf8" target="_blank">
+            18 South Park, London
+          </a>
         </div>
         <div class="footer__image">
           <img src="img/footer-puppy.png" alt="Puppy" />
         </div>
       </div>
     </footer>
-
-    <div class="popup">
-      <div class="popup__wrapper">
-        <div class="popup__image">
-          <img src="img/pets/jennifer.jpg" alt="Pet Jennifer" />
-        </div>
-
-        <div class="popup__content">
-          <h3 class="popup__title">Jennifer</h3>
-          <h4 class="popup__subtitle">Dog - Labrador</h4>
-          <p class="popup__text">
-            Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go
-            outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.
-          </p>
-          <ul class="popup__list">
-            <li class="popup__item"><b class="popup__data-title">Age: </b><span class="popup__data">2 months</span></li>
-            <li class="popup__item"><b class="popup__data-title">Inoculations: </b><span class="popup__data">none</span></li>
-            <li class="popup__item"><b class="popup__data-title">Diseases: </b><span class="popup__data">none</span></li>
-            <li class="popup__item"><b class="popup__data-title">Parasites: </b><span class="popup__data">none</span></li>
-          </ul>
-        </div>
-      </div>
-      <button class="popup__close-btn"></button>
-    </div>
-
-    <div class="overlay"></div>
   </body>
 </html>

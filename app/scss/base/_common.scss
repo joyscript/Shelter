@@ -155,6 +155,7 @@
   border-radius: 9px;
   transition: background 0.5s, box-shadow 0.5s;
   overflow: hidden;
+  cursor: pointer;
   &__image {
     padding-top: 100%;
     @include img;

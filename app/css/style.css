@@ -560,6 +560,7 @@ button:focus-visible {
   border-radius: 9px;
   transition: background 0.5s, box-shadow 0.5s;
   overflow: hidden;
+  cursor: pointer;
 }
 .pet-card__image {
   padding-top: 100%;
@@ -1286,18 +1287,34 @@ button:focus-visible {
   }
 }
 
-.popup {
+.overlay {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 20;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  width: 100%;
+  height: 100vh;
+  padding-top: 60px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  background: transparent;
+  transition: all 0.5s;
+}
+.overlay.popup-open {
+  opacity: 1;
+  background: rgba(41, 41, 41, 0.6);
+}
+
+.popup {
+  position: relative;
   width: 900px;
   border-radius: 9px;
   background: #fafafa;
   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-  transform: translate(-50%, -50%) scale(0);
-  transform-origin: center center;
-  transition: transform 0.5s;
+  transition: top 0.5s;
 }
 @media (max-width: 1023.98px) {
   .popup {
@@ -1315,24 +1332,29 @@ button:focus-visible {
   }
 }
 .popup__wrapper {
-  max-height: 100vh;
+  max-height: calc(100vh - 70px);
   overflow: auto;
   display: flex;
   border-radius: 9px;
-  opacity: 0;
-  transition: opacity 0.5s;
 }
 .popup__image {
   flex-basis: 500px;
+  padding-top: 500px;
+  position: relative;
 }
-.popup__image img {
+.popup__image > img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 @media (max-width: 1023.98px) {
   .popup__image {
     flex-basis: 350px;
+    padding-top: 350px;
   }
 }
 @media (max-width: 767.98px) {
@@ -1430,14 +1452,14 @@ button:focus-visible {
   background: #f1cdb3;
   border-radius: 50%;
 }
+
 .popup__close-btn {
   position: absolute;
   top: -52px;
   right: -42px;
-  z-index: 21;
   width: 52px;
   height: 52px;
-  background: transparent url("../svg/close.svg") no-repeat center center;
+  background: rgba(150, 150, 150, 0.3) url("../svg/close.svg") no-repeat center center;
   border: 2px solid #f1cdb3;
   border-radius: 50%;
   transition: background-color 0.3s, border 0.3s;
@@ -1450,29 +1472,6 @@ button:focus-visible {
   .popup__close-btn {
     right: -31px;
   }
-}
-
-.overlay {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  z-index: 15;
-  background: transparent;
-  transition: background 0.5s;
-}
-
-.popup-open .overlay {
-  width: 100%;
-  background: rgba(41, 41, 41, 0.6);
-}
-.popup-open .popup {
-  transform: translate(-50%, -50%) scale(1);
-}
-.popup-open .popup__wrapper {
-  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,15 +1,32 @@
-.popup {
+.overlay {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 20;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  width: 100%;
+  height: 100vh;
+  padding-top: 60px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  background: transparent;
+  transition: all 0.5s;
+
+  &.popup-open {
+    opacity: 1;
+    background: rgba(41, 41, 41, 0.6);
+  }
+}
+
+.popup {
+  position: relative;
   width: 900px;
   border-radius: 9px;
   background: $color-light-s;
   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-  transform: translate(-50%, -50%) scale(0);
-  transform-origin: center center;
-  transition: transform 0.5s;
+  transition: top 0.5s;
 
   @include media-t {
     width: 630px;
@@ -22,23 +39,19 @@
   }
 
   &__wrapper {
-    max-height: 100vh;
+    max-height: calc(100vh - 70px);
     overflow: auto;
     display: flex;
     border-radius: 9px;
-    opacity: 0;
-    transition: opacity 0.5s;
   }
 
   &__image {
     flex-basis: 500px;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    padding-top: 500px;
+    @include img;
     @include media-t {
       flex-basis: 350px;
+      padding-top: 350px;
     }
     @include media-m {
       display: none;
@@ -124,55 +137,25 @@
       border-radius: 50%;
     }
   }
-
-  &__close-btn {
-    position: absolute;
-    top: -52px;
-    right: -42px;
-    z-index: 21;
-    width: 52px;
-    height: 52px;
-    background: transparent url('../svg/close.svg') no-repeat center center;
-    border: 2px solid $color-prim;
-    border-radius: 50%;
-    transition: background-color 0.3s, border 0.3s;
-
-    &.active {
-      background-color: $color-prim-hov;
-      border: 2px solid $color-prim-hov;
-    }
-
-    @include media-m {
-      right: -31px;
-    }
-  }
 }
 
-// -------------------------------
+.popup__close-btn {
+  position: absolute;
+  top: -52px;
+  right: -42px;
+  width: 52px;
+  height: 52px;
+  background: rgba(150, 150, 150, 0.3) url('../svg/close.svg') no-repeat center center;
+  border: 2px solid $color-prim;
+  border-radius: 50%;
+  transition: background-color 0.3s, border 0.3s;
 
-.overlay {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  z-index: 15;
-  background: transparent;
-  transition: background 0.5s;
-}
-
-.popup-open {
-  .overlay {
-    width: 100%;
-    background: rgba(41, 41, 41, 0.6);
+  &.active {
+    background-color: $color-prim-hov;
+    border: 2px solid $color-prim-hov;
   }
 
-  .popup {
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-  .popup__wrapper {
-    opacity: 1;
+  @include media-m {
+    right: -31px;
   }
 }

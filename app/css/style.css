@@ -1315,8 +1315,9 @@ button:focus-visible {
   }
 }
 .popup__wrapper {
+  max-height: 100vh;
+  overflow: auto;
   display: flex;
-  overflow: hidden;
   border-radius: 9px;
   opacity: 0;
   transition: opacity 0.5s;
@@ -1390,19 +1391,28 @@ button:focus-visible {
 }
 .popup__text {
   margin-bottom: 35px;
-  line-height: 1.1;
+  font-family: Georgia, serif;
+  line-height: 1.7rem;
   letter-spacing: 0.06em;
 }
 @media (max-width: 1023.98px) {
   .popup__text {
     font-size: 1.3rem;
-    margin-bottom: 20px;
+    line-height: 14.3px;
+    margin-bottom: 17px;
+  }
+}
+@media (max-width: 479.98px) {
+  .popup__text {
+    text-align: justify;
   }
 }
 .popup__item {
   position: relative;
   padding: 5px 5px 5px 14px;
-  line-height: 1.7rem;
+  font-family: Georgia, serif;
+  line-height: 1.8rem;
+  letter-spacing: 1.8px;
 }
 @media (max-width: 1023.98px) {
   .popup__item {
@@ -1423,11 +1433,11 @@ button:focus-visible {
 .popup__close-btn {
   position: absolute;
   top: -52px;
-  right: -52px;
+  right: -42px;
   z-index: 21;
   width: 52px;
   height: 52px;
-  background: url("../svg/close.svg") no-repeat center center;
+  background: transparent url("../svg/close.svg") no-repeat center center;
   border: 2px solid #f1cdb3;
   border-radius: 50%;
   transition: background-color 0.3s, border 0.3s;
@@ -1454,9 +1464,6 @@ button:focus-visible {
   transition: background 0.5s;
 }
 
-.popup-open {
-  overflow: hidden;
-}
 .popup-open .overlay {
   width: 100%;
   background: rgba(41, 41, 41, 0.6);

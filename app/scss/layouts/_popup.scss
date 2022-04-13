@@ -22,8 +22,9 @@
   }
 
   &__wrapper {
+    max-height: 100vh;
+    overflow: auto;
     display: flex;
-    overflow: hidden;
     border-radius: 9px;
     opacity: 0;
     transition: opacity 0.5s;
@@ -88,18 +89,25 @@
 
   &__text {
     margin-bottom: 35px;
-    line-height: 1.1;
+    font-family: Georgia, serif;
+    line-height: 1.7rem;
     letter-spacing: 0.06em;
     @include media-t {
       font-size: 1.3rem;
-      margin-bottom: 20px;
+      line-height: 14.3px;
+      margin-bottom: 17px;
+    }
+    @include media-s {
+      text-align: justify;
     }
   }
 
   &__item {
     position: relative;
     padding: 5px 5px 5px 14px;
-    line-height: 1.7rem;
+    font-family: Georgia, serif;
+    line-height: 1.8rem;
+    letter-spacing: 1.8px;
     @include media-t {
       padding: 2.5px 5px 2.5px 14px;
     }
@@ -120,11 +128,11 @@
   &__close-btn {
     position: absolute;
     top: -52px;
-    right: -52px;
+    right: -42px;
     z-index: 21;
     width: 52px;
     height: 52px;
-    background: url('../svg/close.svg') no-repeat center center;
+    background: transparent url('../svg/close.svg') no-repeat center center;
     border: 2px solid $color-prim;
     border-radius: 50%;
     transition: background-color 0.3s, border 0.3s;
@@ -155,8 +163,6 @@
 }
 
 .popup-open {
-  overflow: hidden;
-
   .overlay {
     width: 100%;
     background: rgba(41, 41, 41, 0.6);

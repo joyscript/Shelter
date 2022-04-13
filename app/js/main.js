@@ -72,7 +72,14 @@ const handlePopup = () => {
   const petsCards = document.querySelector('.pets-cards');
   const closeBtn = document.querySelector('.popup__close-btn');
   const overlay = document.querySelector('.overlay');
-  const popup = document.querySelector('.popup__wrapper');
+
+  const handleMousemove = (e) => {
+    if (e.target == closeBtn || e.target == overlay) {
+      closeBtn.classList.add('active');
+    } else {
+      closeBtn.classList.remove('active');
+    }
+  };
 
   const closePopup = (e) => {
     if (e.target == closeBtn || e.target == overlay) {
@@ -83,16 +90,10 @@ const handlePopup = () => {
 
   petsCards.addEventListener('click', (e) => {
     if (e.target.closest('.pet-card')) {
+      e.preventDefault();
       document.body.classList.add('popup-open');
       document.body.addEventListener('click', closePopup);
-
-      overlay.addEventListener('mouseover', (e) => {
-        closeBtn.classList.add('active');
-      });
-
-      popup.addEventListener('mouseover', (e) => {
-        closeBtn.classList.remove('active');
-      });
+      document.body.addEventListener('mousemove', handleMousemove);
     }
   });
 };

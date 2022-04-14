@@ -1,5 +1,6 @@
 .footer {
-  background: url('../img/noise-bg.png'), radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
+  background: url('../img/noise-bg.png'), radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%),
+    #211f20;
 
   &__wrapper {
     display: flex;
@@ -76,11 +77,11 @@
       padding-left: 42px;
       background-image: url('../svg/marker.svg');
     }
-    @media (any-hover: hover) {
-      &:hover,
-      &:focus {
-        filter: brightness(85%);
-      }
+
+    &:hover,
+    &:focus,
+    &:active {
+      filter: brightness(85%);
     }
   }
 

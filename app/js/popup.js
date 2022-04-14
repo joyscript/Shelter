@@ -85,10 +85,10 @@ class PetPopup extends Popup {
         <h4 class="popup__subtitle">${this.pet.type} - ${this.pet.breed}</h4>
         <p class="popup__text">${this.pet.description}</p>
         <ul class="popup__list">
-          <li class="popup__item"><b class="popup__data-title">Age: </b><span class="popup__data">${this.pet.age}</span></li>
-          <li class="popup__item"><b class="popup__data-title">Inoculations: </b><span class="popup__data">${this.pet.inoculations}</span></li>
-          <li class="popup__item"><b class="popup__data-title">Diseases: </b><span class="popup__data">${this.pet.diseases}</span></li>
-          <li class="popup__item"><b class="popup__data-title">Parasites: </b><span class="popup__data">${this.pet.parasites}</span></li>
+          <li class="popup__item"><b">Age: </b><span>${this.pet.age}</span></li>
+          <li class="popup__item"><b">Inoculations: </b><span>${this.pet.inoculations}</span></li>
+          <li class="popup__item"><b">Diseases: </b><span>${this.pet.diseases}</span></li>
+          <li class="popup__item"><b">Parasites: </b><span>${this.pet.parasites}</span></li>
         </ul>
       </div>
     </div>`;

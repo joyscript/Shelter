@@ -252,13 +252,14 @@
   white-space: nowrap;
   background: $color-prim url('../svg/credit-card.svg') 15px center no-repeat;
   border-radius: 9px;
-  transition: background-color 0.3s ;
-  @media (any-hover: hover) {
-    &:hover,
-    &:focus {
-      background-color: $color-prim-hov;
-    }
+  transition: background-color 0.3s;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $color-prim-hov;
   }
+
   @include media-s {
     font-size: 1.5rem;
     line-height: 2.3rem;

@@ -146,13 +146,12 @@ $menuPaddingTopScrolled: 46px;
     }
   }
 
-  @media (any-hover: hover) {
-    &:hover,
-    &:focus {
-      color: $color-light-s;
-      .pets-page & {
-        color: $color-button;
-      }
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-light-s;
+    .pets-page & {
+      color: $color-button;
     }
   }
 

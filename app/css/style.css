@@ -314,6 +314,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   min-width: 320px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 main {
@@ -414,13 +415,11 @@ button:focus-visible {
 .pets-page .logo__subtitle {
   color: #777777;
 }
-@media (any-hover: hover) {
-  .logo:hover {
-    filter: brightness(85%);
-  }
-  .pets-page .logo:hover {
-    filter: brightness(60%);
-  }
+.logo:hover, .logo:focus, .logo:active {
+  filter: brightness(85%);
+}
+.pets-page .logo:hover, .pets-page .logo:focus, .pets-page .logo:active {
+  filter: brightness(60%);
 }
 
 .button {
@@ -440,10 +439,8 @@ button:focus-visible {
   border-radius: 100px;
   transition: background 0.3s, border 0.3s;
 }
-@media (any-hover: hover) {
-  .button:hover, .button:focus {
-    background: #fddcc4;
-  }
+.button:hover, .button:focus, .button:active {
+  background: #fddcc4;
 }
 .button_bordered {
   background: transparent;
@@ -586,15 +583,13 @@ button:focus-visible {
 .pet-card__title {
   flex-grow: 1;
 }
-@media (any-hover: hover) {
-  .pet-card:hover, .pet-card:focus {
-    background: #ffffff;
-    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-  }
-  .pet-card:hover .button, .pet-card:focus .button {
-    background: #fddcc4;
-    border: 2px solid #fddcc4;
-  }
+.pet-card:hover, .pet-card:focus, .pet-card:active {
+  background: #ffffff;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+.pet-card:hover .button, .pet-card:focus .button, .pet-card:active .button {
+  background: #fddcc4;
+  border: 2px solid #fddcc4;
 }
 
 .slider-btn {
@@ -616,11 +611,6 @@ button:focus-visible {
   border-radius: 50%;
   transition: background-color 0.3s, border 0.3s;
 }
-.slider-btn:disabled {
-  color: #cdcdcd;
-  border-color: #cdcdcd;
-  pointer-events: none;
-}
 .slider-btn.active {
   background: #f1cdb3;
 }
@@ -630,10 +620,199 @@ button:focus-visible {
 .slider-btn_next {
   background: url("../svg/arrow-next.svg") center center no-repeat;
 }
-@media (any-hover: hover) {
-  .slider-btn:hover, .slider-btn:focus {
-    background-color: #fddcc4;
-    border: 2px solid #fddcc4;
+.slider-btn:disabled {
+  color: #cdcdcd;
+  border-color: #cdcdcd;
+  pointer-events: none;
+}
+.slider-btn:hover, .slider-btn:focus, .slider-btn:active {
+  background-color: #fddcc4;
+  border: 2px solid #fddcc4;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(41, 41, 41, 0.6);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.overlay.popup-open {
+  opacity: 1;
+}
+
+.popup {
+  position: relative;
+  width: 900px;
+  border-radius: 9px;
+  background: #fafafa;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  transition: top 0.5s;
+}
+@media (max-width: 1023.98px) {
+  .popup {
+    width: 630px;
+  }
+}
+@media (max-width: 767.98px) {
+  .popup {
+    width: 400px;
+  }
+}
+@media (max-width: 479.98px) {
+  .popup {
+    width: 75%;
+  }
+}
+.popup__wrapper {
+  max-height: calc(100vh - 10px);
+  overflow: auto;
+  display: flex;
+  border-radius: 9px;
+}
+.popup__image {
+  flex-basis: 500px;
+  padding-top: 500px;
+  position: relative;
+}
+.popup__image > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+@media (max-width: 1023.98px) {
+  .popup__image {
+    flex-basis: 350px;
+    padding-top: 350px;
+  }
+}
+@media (max-width: 767.98px) {
+  .popup__image {
+    display: none;
+  }
+}
+.popup__content {
+  flex-basis: 400px;
+  padding: 50px 20px 50px 30px;
+}
+.popup__content > * {
+  color: #000000;
+}
+@media (max-width: 1023.98px) {
+  .popup__content {
+    flex-basis: 280px;
+    padding: 10px;
+  }
+}
+@media (max-width: 767.98px) {
+  .popup__content {
+    flex-basis: 100%;
+    padding: 30px;
+  }
+}
+@media (max-width: 479.98px) {
+  .popup__content {
+    padding: 10px;
+  }
+}
+.popup__title {
+  margin-bottom: 10px;
+}
+@media (max-width: 767.98px) {
+  .popup__title {
+    font-size: 3.5rem;
+    line-height: 4.5rem;
+    text-align: center;
+  }
+}
+.popup__subtitle {
+  margin-bottom: 40px;
+}
+@media (max-width: 1023.98px) {
+  .popup__subtitle {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 767.98px) {
+  .popup__subtitle {
+    font-size: 2rem;
+    line-height: 2.3rem;
+    text-align: center;
+  }
+}
+.popup__text {
+  margin-bottom: 35px;
+  font-family: Georgia, serif;
+  line-height: 1.7rem;
+  letter-spacing: 0.06em;
+}
+@media (max-width: 1023.98px) {
+  .popup__text {
+    font-size: 1.3rem;
+    line-height: 14.3px;
+    margin-bottom: 17px;
+  }
+}
+@media (max-width: 479.98px) {
+  .popup__text {
+    text-align: justify;
+  }
+}
+.popup__item {
+  position: relative;
+  padding: 5px 5px 5px 14px;
+  font-family: Georgia, serif;
+  line-height: 1.8rem;
+  letter-spacing: 1.8px;
+}
+@media (max-width: 1023.98px) {
+  .popup__item {
+    padding: 2.5px 5px 2.5px 14px;
+  }
+}
+.popup__item span {
+  display: inline;
+}
+.popup__item::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  background: #f1cdb3;
+  border-radius: 50%;
+}
+
+.popup__close-btn {
+  position: absolute;
+  top: -52px;
+  right: -42px;
+  width: 52px;
+  height: 52px;
+  background: rgba(150, 150, 150, 0.3) url("../svg/close.svg") no-repeat center center;
+  border: 2px solid #f1cdb3;
+  border-radius: 50%;
+  transition: background-color 0.3s, border 0.3s;
+}
+.popup__close-btn.active {
+  background-color: #fddcc4;
+  border: 2px solid #fddcc4;
+}
+@media (max-width: 767.98px) {
+  .popup__close-btn {
+    right: -31px;
   }
 }
 
@@ -774,13 +953,11 @@ button:focus-visible {
 .pets-page .menu__link.active {
   color: #292929;
 }
-@media (any-hover: hover) {
-  .menu__link:hover, .menu__link:focus {
-    color: #fafafa;
-  }
-  .pets-page .menu__link:hover, .pets-page .menu__link:focus {
-    color: #292929;
-  }
+.menu__link:hover, .menu__link:focus, .menu__link:active {
+  color: #fafafa;
+}
+.pets-page .menu__link:hover, .pets-page .menu__link:focus, .pets-page .menu__link:active {
+  color: #292929;
 }
 @media (max-width: 767.98px) {
   .menu__link {
@@ -1164,10 +1341,8 @@ button:focus-visible {
   border-radius: 9px;
   transition: background-color 0.3s;
 }
-@media (any-hover: hover) {
-  .credit-card:hover, .credit-card:focus {
-    background-color: #fddcc4;
-  }
+.credit-card:hover, .credit-card:focus, .credit-card:active {
+  background-color: #fddcc4;
 }
 @media (max-width: 479.98px) {
   .credit-card {
@@ -1268,10 +1443,8 @@ button:focus-visible {
   padding-left: 42px;
   background-image: url("../svg/marker.svg");
 }
-@media (any-hover: hover) {
-  .footer__link:hover, .footer__link:focus {
-    filter: brightness(85%);
-  }
+.footer__link:hover, .footer__link:focus, .footer__link:active {
+  filter: brightness(85%);
 }
 .footer__image {
   align-self: flex-end;
@@ -1284,193 +1457,6 @@ button:focus-visible {
 @media (max-width: 479.98px) {
   .footer__image {
     max-width: 260px;
-  }
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 15;
-  width: 100%;
-  height: 100vh;
-  padding-top: 60px;
-  padding-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  background: transparent;
-  transition: all 0.5s;
-}
-.overlay.popup-open {
-  opacity: 1;
-  background: rgba(41, 41, 41, 0.6);
-}
-
-.popup {
-  position: relative;
-  width: 900px;
-  border-radius: 9px;
-  background: #fafafa;
-  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-  transition: top 0.5s;
-}
-@media (max-width: 1023.98px) {
-  .popup {
-    width: 630px;
-  }
-}
-@media (max-width: 767.98px) {
-  .popup {
-    width: 400px;
-  }
-}
-@media (max-width: 479.98px) {
-  .popup {
-    width: 75%;
-  }
-}
-.popup__wrapper {
-  max-height: calc(100vh - 70px);
-  overflow: auto;
-  display: flex;
-  border-radius: 9px;
-}
-.popup__image {
-  flex-basis: 500px;
-  padding-top: 500px;
-  position: relative;
-}
-.popup__image > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-@media (max-width: 1023.98px) {
-  .popup__image {
-    flex-basis: 350px;
-    padding-top: 350px;
-  }
-}
-@media (max-width: 767.98px) {
-  .popup__image {
-    display: none;
-  }
-}
-.popup__content {
-  flex-basis: 400px;
-  padding: 50px 20px 50px 30px;
-}
-.popup__content > * {
-  color: #000000;
-}
-@media (max-width: 1023.98px) {
-  .popup__content {
-    flex-basis: 280px;
-    padding: 10px;
-  }
-}
-@media (max-width: 767.98px) {
-  .popup__content {
-    flex-basis: 100%;
-    padding: 30px;
-  }
-}
-@media (max-width: 479.98px) {
-  .popup__content {
-    padding: 10px;
-  }
-}
-.popup__title {
-  margin-bottom: 10px;
-}
-@media (max-width: 767.98px) {
-  .popup__title {
-    font-size: 3.5rem;
-    line-height: 4.5rem;
-    text-align: center;
-  }
-}
-.popup__subtitle {
-  margin-bottom: 40px;
-}
-@media (max-width: 1023.98px) {
-  .popup__subtitle {
-    margin-bottom: 20px;
-  }
-}
-@media (max-width: 767.98px) {
-  .popup__subtitle {
-    font-size: 2rem;
-    line-height: 2.3rem;
-    text-align: center;
-  }
-}
-.popup__text {
-  margin-bottom: 35px;
-  font-family: Georgia, serif;
-  line-height: 1.7rem;
-  letter-spacing: 0.06em;
-}
-@media (max-width: 1023.98px) {
-  .popup__text {
-    font-size: 1.3rem;
-    line-height: 14.3px;
-    margin-bottom: 17px;
-  }
-}
-@media (max-width: 479.98px) {
-  .popup__text {
-    text-align: justify;
-  }
-}
-.popup__item {
-  position: relative;
-  padding: 5px 5px 5px 14px;
-  font-family: Georgia, serif;
-  line-height: 1.8rem;
-  letter-spacing: 1.8px;
-}
-@media (max-width: 1023.98px) {
-  .popup__item {
-    padding: 2.5px 5px 2.5px 14px;
-  }
-}
-.popup__item::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 4px;
-  height: 4px;
-  margin-top: -2px;
-  background: #f1cdb3;
-  border-radius: 50%;
-}
-
-.popup__close-btn {
-  position: absolute;
-  top: -52px;
-  right: -42px;
-  width: 52px;
-  height: 52px;
-  background: rgba(150, 150, 150, 0.3) url("../svg/close.svg") no-repeat center center;
-  border: 2px solid #f1cdb3;
-  border-radius: 50%;
-  transition: background-color 0.3s, border 0.3s;
-}
-.popup__close-btn.active {
-  background-color: #fddcc4;
-  border: 2px solid #fddcc4;
-}
-@media (max-width: 767.98px) {
-  .popup__close-btn {
-    right: -31px;
   }
 }
 

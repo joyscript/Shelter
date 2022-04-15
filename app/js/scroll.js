@@ -8,7 +8,6 @@ export const windowScrollHandler = () => {
       header.classList.remove('scrolled');
     }
   };
-
+  changeHeaderOnScroll();
   window.addEventListener('scroll', changeHeaderOnScroll);
-  window.addEventListener('load', changeHeaderOnScroll);
 };

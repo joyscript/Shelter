@@ -101,7 +101,7 @@ class PetPopup extends Popup {
   }
 }
 
-// -----------------------------------------------------------
+// ------------------------------------
 
 export const petsCardsClickHandler = () => {
   document.querySelector('.pets-cards').addEventListener('click', (e) => {

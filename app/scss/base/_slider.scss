@@ -1,5 +1,4 @@
 .slider-wrapper {
-  // background: rgb(197, 246, 240);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,6 +21,7 @@
   position: relative;
   flex-basis: 990px;
   overflow: hidden;
+  cursor: grab;
   @include media-l {
     flex-basis: 630px;
   }
@@ -35,10 +35,12 @@
 }
 
 .main-slider__slide {
-  // background: rgb(134, 55, 177);
   position: relative; //not absolute!
   display: none;
   animation: 0.5s ease-in-out;
+  @include media-m {
+    animation-duration: 0.3s;
+  }
 
   &.active,
   &.next {
@@ -54,24 +56,24 @@
     top: 0;
     width: 100%;
   }
-}
 
-.to-left {
-  animation-name: left;
-}
+  &.to-left {
+    animation-name: left;
+  }
 
-.to-right {
-  animation-name: right;
-  animation-direction: reverse;
-}
+  &.to-right {
+    animation-name: right;
+    animation-direction: reverse;
+  }
 
-.from-left {
-  animation-name: left;
-  animation-direction: reverse;
-}
+  &.from-left {
+    animation-name: left;
+    animation-direction: reverse;
+  }
 
-.from-right {
-  animation-name: right;
+  &.from-right {
+    animation-name: right;
+  }
 }
 
 @keyframes left {
@@ -98,7 +100,6 @@
   position: relative;
 
   &__slide {
-    background: pink;
     position: absolute;
     top: 0;
     left: 0;
@@ -135,6 +136,8 @@
     gap: 10px;
   }
 }
+
+// =============================
 
 .pet-card {
   flex: 0 0 270px;

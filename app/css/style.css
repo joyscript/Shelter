@@ -476,6 +476,7 @@ button:focus-visible {
   position: relative;
   flex-basis: 990px;
   overflow: hidden;
+  cursor: grab;
 }
 @media (max-width: 1279.98px) {
   .main-slider {
@@ -499,6 +500,11 @@ button:focus-visible {
   display: none;
   animation: 0.5s ease-in-out;
 }
+@media (max-width: 767.98px) {
+  .main-slider__slide {
+    animation-duration: 0.3s;
+  }
+}
 .main-slider__slide.active, .main-slider__slide.next {
   display: flex;
   gap: 90px;
@@ -513,22 +519,18 @@ button:focus-visible {
   top: 0;
   width: 100%;
 }
-
-.to-left {
+.main-slider__slide.to-left {
   animation-name: left;
 }
-
-.to-right {
+.main-slider__slide.to-right {
   animation-name: right;
   animation-direction: reverse;
 }
-
-.from-left {
+.main-slider__slide.from-left {
   animation-name: left;
   animation-direction: reverse;
 }
-
-.from-right {
+.main-slider__slide.from-right {
   animation-name: right;
 }
 
@@ -552,7 +554,6 @@ button:focus-visible {
   position: relative;
 }
 .page-slider__slide {
-  background: pink;
   position: absolute;
   top: 0;
   left: 0;

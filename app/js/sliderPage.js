@@ -60,6 +60,8 @@ export const pageSliderPagination = () => {
 
       const slideIndex = Array.from(slider.children).findIndex((elem) => elem == newActiveSlide);
       numBtn.textContent = slideIndex + 1;
+
+      window.scrollTo({ top: 100, behavior: 'smooth' });
     }
   });
 };

@@ -47,7 +47,13 @@ export const menuLinksClickHandler = () => {
 
     if (target) {
       const targetPosition = target.getBoundingClientRect().top;
-      const offsetPosition = targetPosition + window.scrollY - headerHeight;
+      let offsetPosition;
+
+      if (window.innerWidth >= 768) {
+        offsetPosition = targetPosition + window.scrollY - headerHeight;
+      } else {
+        offsetPosition = targetPosition + window.scrollY;
+      }
 
       window.scrollTo({
         top: offsetPosition,

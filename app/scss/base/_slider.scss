@@ -20,6 +20,7 @@
 .main-slider {
   position: relative;
   flex-basis: 990px;
+  min-height: 435px;
   overflow: hidden;
   cursor: grab;
   @include media-l {
@@ -207,16 +208,17 @@
     background: url('../svg/arrow-next.svg') center center no-repeat;
   }
 
-  &:disabled {
-    color: $color-grey;
-    border-color: $color-grey;
-    pointer-events: none;
-  }
-
   &:hover,
   &:focus,
   &:active {
     background-color: $color-prim-hov;
     border: 2px solid $color-prim-hov;
+  }
+
+  &:disabled {
+    color: $color-grey;
+    background-color: transparent;
+    border-color: $color-grey;
+    pointer-events: none;
   }
 }

@@ -37,7 +37,8 @@
 
   &__wrapper {
     max-height: calc(100vh - 10px);
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     display: flex;
     border-radius: 9px;
   }

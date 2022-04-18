@@ -475,6 +475,7 @@ button:focus-visible {
 .main-slider {
   position: relative;
   flex-basis: 990px;
+  min-height: 435px;
   overflow: hidden;
   cursor: grab;
 }
@@ -666,14 +667,15 @@ button:focus-visible {
 .slider-btn_next {
   background: url("../svg/arrow-next.svg") center center no-repeat;
 }
-.slider-btn:disabled {
-  color: #cdcdcd;
-  border-color: #cdcdcd;
-  pointer-events: none;
-}
 .slider-btn:hover, .slider-btn:focus, .slider-btn:active {
   background-color: #fddcc4;
   border: 2px solid #fddcc4;
+}
+.slider-btn:disabled {
+  color: #cdcdcd;
+  background-color: transparent;
+  border-color: #cdcdcd;
+  pointer-events: none;
 }
 
 .overlay {
@@ -719,7 +721,8 @@ button:focus-visible {
 }
 .popup__wrapper {
   max-height: calc(100vh - 10px);
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   border-radius: 9px;
 }
@@ -867,14 +870,14 @@ button:focus-visible {
   top: 0;
   left: 0;
   z-index: 5;
-  width: 100%;
   display: none;
-  transition: all 0.5s;
+  width: 100%;
 }
 .header.general {
   display: block;
   height: 120px;
   padding-top: 60px;
+  transition: all 0.5s;
 }
 @media (max-width: 1279.98px) {
   .header.general {
@@ -889,22 +892,20 @@ button:focus-visible {
   background: #ffffff;
 }
 .header.scrolled {
-  display: block;
-  top: -50px;
   height: 45px;
+  display: block;
   padding-top: 5px;
   padding-bottom: 5px;
   background: linear-gradient(to right, #493b33 0%, #272424 100%);
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
-  opacity: 0;
+  transition: all 0.5s;
 }
 .pets-page .header.scrolled {
   background: #ffffff;
   box-shadow: 0px 0px 3px 1px rgba(220, 220, 220, 0.3);
 }
-.header.scrolled.visible {
-  top: 0;
-  opacity: 1;
+.header.scrolled.hidden {
+  top: -50px;
 }
 .header__wrapper {
   display: flex;

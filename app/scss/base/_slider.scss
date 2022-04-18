@@ -1,77 +1,129 @@
-.main-slider {
+.slider-wrapper {
+  // background: rgb(197, 246, 240);
   display: flex;
-  gap: 12px;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
   width: 100%;
-
+  @include media-l {
+    justify-content: space-evenly;
+  }
   @include media-t {
     justify-content: center;
   }
   @include media-m {
+    width: 270px;
     flex-wrap: wrap;
     gap: 20px 80px;
   }
 }
 
-.main-slider__pets-cards {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
+.main-slider {
+  position: relative;
   flex-basis: 990px;
-  @include media-m {
-    flex-basis: 100%;
-    order: -1;
+  overflow: hidden;
+  @include media-l {
+    flex-basis: 630px;
   }
   @include media-t {
     flex-basis: 580px;
-    justify-content: center;
-    gap: 40px;
-    > *:last-child {
-      display: none;
-    }
   }
   @include media-m {
-    > *:nth-child(2) {
-      display: none;
-    }
+    flex: 100%;
+    order: -1;
   }
 }
+
+.main-slider__slide {
+  // background: rgb(134, 55, 177);
+  position: relative; //not absolute!
+  display: none;
+  animation: 0.5s ease-in-out;
+
+  &.active,
+  &.next {
+    display: flex;
+    gap: 90px;
+    @include media-t {
+      gap: 40px;
+    }
+  }
+
+  &.next {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+// =============================
 
 .page-slider {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 60px;
-  @include media-t {
-    gap: 40px;
-  }
-  @include media-s {
-    gap: 42px;
-  }
-}
+  position: relative;
 
-.page-slider__pets-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px 40px;
-  @include media-l {
-    max-width: 890px;
-  }
-  @include media-l {
-    > *:nth-child(n + 7) {
-      display: none;
+  &__slide {
+    background: pink;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 40px;
+    justify-content: center;
+    margin: 0 auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+    @include media-l {
+      max-width: 890px;
     }
-  }
-  @include media-m {
-    > *:nth-child(n + 5) {
-      display: none;
+
+    &:first-child {
+      position: static;
     }
-  }
-  @include media-s {
-    > *:nth-child(n + 4) {
-      display: none;
+
+    &.active {
+      z-index: 2;
+      opacity: 1;
+      visibility: visible;
     }
   }
 }
@@ -85,7 +137,7 @@
 }
 
 .pet-card {
-  flex-basis: 270px;
+  flex: 0 0 270px;
   max-width: 270px;
   display: flex;
   flex-direction: column;
@@ -94,8 +146,10 @@
   transition: background 0.5s, box-shadow 0.5s;
   overflow: hidden;
   cursor: pointer;
+
   &__image {
     padding-top: 100%;
+    background: $color-light-s;
     @include img;
   }
   &__content {
@@ -130,8 +184,8 @@
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  font-family: Georgia, serif;
-  @include font(2rem, 1.15, $color-button);
+  font-family: Georgia, serif, serif;
+  @include font(2rem, 1, $color-button);
   letter-spacing: 0.06em;
   background: transparent;
   border: 2px solid $color-prim;
@@ -139,6 +193,7 @@
   transition: background-color 0.3s, border 0.3s;
 
   &.active {
+    font-family: 'Times New Roman', Times, serif, serif;
     background: $color-prim;
   }
 

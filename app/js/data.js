@@ -1,7 +1,7 @@
 export const data = [
   {
     name: 'Jennifer',
-    img: './img/pets/jennifer.jpg',
+    img: './img/pets/jennifer.png',
     type: 'Dog',
     breed: 'Labrador',
     description:
@@ -13,7 +13,7 @@ export const data = [
   },
   {
     name: 'Sophia',
-    img: './img/pets/sophia.jpg',
+    img: './img/pets/sophia.png',
     type: 'Dog',
     breed: 'Shih tzu',
     description:
@@ -25,7 +25,7 @@ export const data = [
   },
   {
     name: 'Woody',
-    img: './img/pets/woody.jpg',
+    img: './img/pets/woody.png',
     type: 'Dog',
     breed: 'Golden Retriever',
     description:
@@ -37,7 +37,7 @@ export const data = [
   },
   {
     name: 'Scarlett',
-    img: './img/pets/scarlett.jpg',
+    img: './img/pets/scarlett.png',
     type: 'Dog',
     breed: 'Jack Russell Terrier',
     description:
@@ -49,7 +49,7 @@ export const data = [
   },
   {
     name: 'Katrine',
-    img: './img/pets/katrine.jpg',
+    img: './img/pets/katrine.png',
     type: 'Cat',
     breed: 'British Shorthair',
     description:
@@ -61,7 +61,7 @@ export const data = [
   },
   {
     name: 'Timmy',
-    img: './img/pets/timmy.jpg',
+    img: './img/pets/timmy.png',
     type: 'Cat',
     breed: 'British Shorthair',
     description:
@@ -73,7 +73,7 @@ export const data = [
   },
   {
     name: 'Freddie',
-    img: './img/pets/freddie.jpg',
+    img: './img/pets/freddie.png',
     type: 'Cat',
     breed: 'British Shorthair',
     description:
@@ -85,7 +85,7 @@ export const data = [
   },
   {
     name: 'Charly',
-    img: './img/pets/charly.jpg',
+    img: './img/pets/charly.png',
     type: 'Dog',
     breed: 'Jack Russell Terrier',
     description:
@@ -94,5 +94,198 @@ export const data = [
     inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
     diseases: ['deafness', 'blindness'],
     parasites: ['lice', 'fleas'],
+  },
+  // =================================================
+  {
+    name: 'Teddy',
+    img: './img/pets/teddy.png',
+    type: 'Dog',
+    breed: 'Golden Retriever',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis numquam dignissimos! Minus sequi dolorem voluptatibus aut in officiis, culpa ex quod dicta a doloremque',
+    age: '2 years 7 months',
+    inoculations: ['none'],
+    diseases: ['none'],
+    parasites: ['none'],
+  },
+  {
+    name: 'Monty',
+    img: './img/pets/monty.png',
+    type: 'Dog',
+    breed: 'Dachshund',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+    age: '1 month',
+    inoculations: ['parvovirus'],
+    diseases: ['none'],
+    parasites: ['none'],
+  },
+  {
+    name: 'Alfie',
+    img: './img/pets/alfie.png',
+    type: 'Dog',
+    breed: 'Berner Sennenhund',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+    age: '3 months',
+    inoculations: ['adenovirus', 'distemper'],
+    diseases: ['right back leg mobility reduced'],
+    parasites: ['none'],
+  },
+  {
+    name: 'Bella',
+    img: './img/pets/bella.png',
+    type: 'Dog',
+    breed: 'Collie',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+    age: '1 year 3 months',
+    inoculations: ['parainfluenza'],
+    diseases: ['none'],
+    parasites: ['none'],
+  },
+  {
+    name: 'Rosie',
+    img: './img/pets/rosie.png',
+    type: 'Cat',
+    breed: 'American wire-haired',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+    age: '2 years 5 months',
+    inoculations: ['panleukopenia'],
+    diseases: ['none'],
+    parasites: ['none'],
+  },
+  {
+    name: 'Molly',
+    img: './img/pets/molly.png',
+    type: 'Cat',
+    breed: 'British Longhair',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+    age: '1 year 3 months',
+    inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
+    diseases: ['kidney stones'],
+    parasites: ['none'],
+  },
+  {
+    name: 'Loki',
+    img: './img/pets/loki.png',
+    type: 'Cat',
+    breed: 'Maine Coon',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+    age: '9 months',
+    inoculations: ['rabies'],
+    diseases: ['none'],
+    parasites: ['none'],
+  },
+  {
+    name: 'Merlin',
+    img: './img/pets/merlin.png',
+    type: 'Dog',
+    breed: 'Border collie',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+    age: '2 years 5 months',
+    inoculations: ['bordetella bronchiseptica'],
+    diseases: ['none'],
+    parasites: ['fleas'],
+  },
+  {
+    name: 'Murphy',
+    img: './img/pets/murphy.png',
+    type: 'Dog',
+    breed: 'Long-haired dachshund',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+    age: '6 months',
+    inoculations: ['none'],
+    diseases: ['none'],
+    parasites: ['none'],
+  },
+  {
+    name: 'Ralph',
+    img: './img/pets/ralph.png',
+    type: 'Dog',
+    breed: 'English cocker spaniel',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+    age: '1 year 1 month',
+    inoculations: ['parvovirus'],
+    diseases: ['none'],
+    parasites: ['none'],
+  },
+  {
+    name: 'Bonnie',
+    img: './img/pets/bonnie.png',
+    type: 'Dog',
+    breed: 'Staffordshire Terrier',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+    age: '2 year 3 months',
+    inoculations: ['adenovirus', 'distemper'],
+    diseases: ['right back leg mobility reduced'],
+    parasites: ['none'],
+  },
+  {
+    name: 'Honey',
+    img: './img/pets/honey.png',
+    type: 'Cat',
+    breed: 'Maine Coon',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+    age: '1 year 3 months',
+    inoculations: ['parainfluenza'],
+    diseases: ['none'],
+    parasites: ['none'],
+  },
+  {
+    name: 'Simba',
+    img: './img/pets/simba.png',
+    type: 'Cat',
+    breed: 'American Shorthair',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+    age: '2 months',
+    inoculations: ['panleukopenia'],
+    diseases: ['none'],
+    parasites: ['none'],
+  },
+  {
+    name: 'Percy',
+    img: './img/pets/percy.png',
+    type: 'Cat',
+    breed: 'British Shorthair',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+    age: '1 years 2 months',
+    inoculations: ['calicivirus'],
+    diseases: ['kidney stones'],
+    parasites: ['none'],
+  },
+  {
+    name: 'Rufus',
+    img: './img/pets/rufus.png',
+    type: 'Cat',
+    breed: 'Scottish Shorthair',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+    age: '3 months',
+    inoculations: ['rabies'],
+    diseases: ['none'],
+    parasites: ['none'],
+  },
+  {
+    name: 'Maggie',
+    img: './img/pets/maggie.png',
+    type: 'Cat',
+    breed: 'Abyssinian cat',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+    age: '2 years',
+    inoculations: ['leptospirosis'],
+    diseases: ['deafness'],
+    parasites: ['lice'],
   },
 ];

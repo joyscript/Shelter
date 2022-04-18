@@ -70,7 +70,7 @@ $content-width: 1200px;
 // media -------------------------------------------------
 
 @mixin media-l {
-  @media (max-width: $wrapper-width) {
+  @media (max-width: ($wrapper-width - 0.02px)) {
     @content;
   }
 }
@@ -92,12 +92,6 @@ $content-width: 1200px;
     @content;
   }
 }
-
-// @mixin media-s{
-//   @media (max-width: 374.98px) {
-//     @content;
-//   }
-// }
 
 @mixin media($width) {
   @media (max-width: $width) {

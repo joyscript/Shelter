@@ -104,7 +104,7 @@ class PetPopup extends Popup {
 // ------------------------------------
 
 export const petsCardsClickHandler = () => {
-  document.querySelector('.pets-cards').addEventListener('click', (e) => {
+  document.querySelector('.pets').addEventListener('click', (e) => {
     if (e.target.closest('.pet-card')) {
       const curPetName = e.target.closest('.pet-card').dataset.pet;
       const curPetIndex = data.findIndex((pet) => pet.name == curPetName);

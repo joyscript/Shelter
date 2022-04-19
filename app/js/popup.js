@@ -41,6 +41,10 @@ class Popup {
   addEventsHandlers() {
     this.overlay.addEventListener('click', this.closePopup);
     this.overlay.addEventListener('pointerover', this.addHover);
+    this.overlay.addEventListener('wheel', this.lockScroll);
+    this.overlay.addEventListener('touchmove', this.lockScroll);
+    this.popup.addEventListener('wheel', this.lockScroll);
+    this.popup.addEventListener('touchmove', this.lockScroll);
   }
 
   openPopup() {
@@ -51,7 +55,10 @@ class Popup {
   closePopup(e) {
     if (e.target.classList.contains('overlay') || e.target.classList.contains('popup__close-btn')) {
       document.querySelector('.overlay').classList.remove('popup-open');
-      setTimeout(() => document.querySelector('.overlay').remove(), 550);
+      document.querySelector('.overlay').addEventListener('transitionend', function () {
+        this.remove();
+      });
+      document.body.classList.remove('lock');
     }
   }
 
@@ -61,6 +68,24 @@ class Popup {
       closeBtn.classList.add('active');
     } else {
       closeBtn.classList.remove('active');
+    }
+  }
+
+  lockScroll(e) {
+    if (e.target.classList.contains('overlay')) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    if (e.target.closest('.popup')) {
+      const content = document.querySelector('.popup__content');
+      if (content.scrollHeight <= content.offsetHeight) {
+        e.preventDefault();
+      } else {
+        if (window.innerWidth == document.documentElement.offsetWidth) {
+          document.body.classList.add('lock');
+        }
+      }
     }
   }
 }

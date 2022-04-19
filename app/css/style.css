@@ -314,7 +314,11 @@ body {
   flex-direction: column;
   min-height: 100vh;
   min-width: 320px;
+  overflow-y: auto;
   -webkit-tap-highlight-color: transparent;
+}
+body.lock {
+  overflow: hidden;
 }
 
 main {
@@ -783,6 +787,7 @@ button:focus-visible {
 @media (max-width: 479.98px) {
   .popup__content {
     padding: 10px;
+    padding-bottom: 0;
   }
 }
 .popup__title {
@@ -839,6 +844,9 @@ button:focus-visible {
   .popup__item {
     padding: 2.5px 5px 2.5px 14px;
   }
+}
+.popup__item:last-child {
+  padding-bottom: 15px;
 }
 .popup__item span {
   display: inline;

@@ -33,9 +33,6 @@ const shuffle = (array) => {
 const allCards = [];
 data.forEach((pet) => allCards.push(generatePetCard(pet)));
 
-const mainCards = allCards.slice(0, 8);
-const otherCards = allCards.slice(8);
-
 const getCardsOnMainPage = () => {
   let cardsOnPage;
 
@@ -62,17 +59,12 @@ const getCardsOnPage = () => {
   return cardsOnPage;
 };
 
-const getShuffledCards = () => {
-  shuffle(mainCards);
-  shuffle(otherCards);
-  let shufAllCards = [...mainCards, ...otherCards];
-  return shufAllCards;
-};
-
 const generateSlides = (cardsOnPage, slider) => {
   let slidesCount = Math.floor(data.length / cardsOnPage);
-  let shufAllCards = getShuffledCards();
+  let shufAllCards = [...allCards];
   let slides = [];
+
+  shuffle(shufAllCards);
 
   for (let i = 0; i < slidesCount; i++) {
     let slide = document.createElement('div');

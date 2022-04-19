@@ -14,11 +14,11 @@ export const data = [
   {
     name: 'Sophia',
     img: './img/pets/sophia.png',
-    type: 'Dog',
-    breed: 'Shih tzu',
+    type: 'Cat',
+    breed: 'British Longhair',
     description:
-      "Sophia here and I'm looking for my forever home to live out the best years of my life. I am full of energy. Everyday I'm learning new things, like how to walk on a leash, go potty outside, bark and play with toys and I still need some practice.",
-    age: '1 month',
+      'Sophia is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.',
+    age: '1 year 7 months',
     inoculations: ['parvovirus'],
     diseases: ['none'],
     parasites: ['none'],
@@ -87,13 +87,13 @@ export const data = [
     name: 'Charly',
     img: './img/pets/charly.png',
     type: 'Dog',
-    breed: 'Jack Russell Terrier',
+    breed: 'English Springer Spaniel',
     description:
       'This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.',
-    age: '8 years',
+    age: '3 years',
     inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
-    diseases: ['deafness', 'blindness'],
-    parasites: ['lice', 'fleas'],
+    diseases: ['deafness'],
+    parasites: ['lice'],
   },
   // =================================================
   {
@@ -102,7 +102,7 @@ export const data = [
     type: 'Dog',
     breed: 'Golden Retriever',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis numquam dignissimos! Minus sequi dolorem voluptatibus aut in officiis, culpa ex quod dicta a doloremque',
+      'Teddy is a handsome boy. He does know basic commands and is a smart pup. Since he is on the stronger side, he will learn a lot from your training. Teddy will be happier when he finds a new family that can spend a lot of time with him.',
     age: '2 years 7 months',
     inoculations: ['none'],
     diseases: ['none'],
@@ -114,7 +114,7 @@ export const data = [
     type: 'Dog',
     breed: 'Dachshund',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+      "Monty is a sweet Dachshund that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.",
     age: '1 month',
     inoculations: ['parvovirus'],
     diseases: ['none'],
@@ -126,10 +126,10 @@ export const data = [
     type: 'Dog',
     breed: 'Berner Sennenhund',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+      'This cute boy, Alfie, likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Alfie has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.',
     age: '3 months',
     inoculations: ['adenovirus', 'distemper'],
-    diseases: ['right back leg mobility reduced'],
+    diseases: ['none'],
     parasites: ['none'],
   },
   {
@@ -138,7 +138,7 @@ export const data = [
     type: 'Dog',
     breed: 'Collie',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+      'Bella is a happy, playful girl who will make you laugh and smile. She forms a bond quickly and will make a loyal companion and a wonderful family dog or a good companion for a single individual too since she likes to hang out and be with her human.',
     age: '1 year 3 months',
     inoculations: ['parainfluenza'],
     diseases: ['none'],
@@ -148,9 +148,9 @@ export const data = [
     name: 'Rosie',
     img: './img/pets/rosie.png',
     type: 'Cat',
-    breed: 'American wire-haired',
+    breed: 'European Shorthair',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+      'Rosie is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.',
     age: '2 years 5 months',
     inoculations: ['panleukopenia'],
     diseases: ['none'],
@@ -162,7 +162,7 @@ export const data = [
     type: 'Cat',
     breed: 'British Longhair',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+      'Molly is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.',
     age: '1 year 3 months',
     inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
     diseases: ['kidney stones'],
@@ -174,7 +174,7 @@ export const data = [
     type: 'Cat',
     breed: 'Maine Coon',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+      'Loki is an adorable Maine Coon. He loves to play and snuggle. He is neutered and up to date on age appropriate vaccinations. He can be chatty and enjoys being held. Loki has a lot to say and wants a person to share his thoughts with.',
     age: '9 months',
     inoculations: ['rabies'],
     diseases: ['none'],
@@ -186,7 +186,7 @@ export const data = [
     type: 'Dog',
     breed: 'Border collie',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+      'Merlin is a handsome 2 years old boy. He does know basic commands and is a smart pup. Since he is on the stronger side, he will learn a lot from your training. Merlin will be happier when he finds a new family that can spend a lot of time with him.',
     age: '2 years 5 months',
     inoculations: ['bordetella bronchiseptica'],
     diseases: ['none'],
@@ -198,7 +198,7 @@ export const data = [
     type: 'Dog',
     breed: 'Long-haired dachshund',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+      'Murphy is a handsome 6 months old boy. He does know basic commands and is a smart pup. Since he is on the stronger side, he will learn a lot from your training. Murphy will be happier when he finds a new family that can spend a lot of time with him.',
     age: '6 months',
     inoculations: ['none'],
     diseases: ['none'],
@@ -210,7 +210,7 @@ export const data = [
     type: 'Dog',
     breed: 'English cocker spaniel',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+      'This cute boy, Ralph, likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Ralph has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.',
     age: '1 year 1 month',
     inoculations: ['parvovirus'],
     diseases: ['none'],
@@ -222,7 +222,7 @@ export const data = [
     type: 'Dog',
     breed: 'Staffordshire Terrier',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+      'Bonnie is a little shy at first, but very sweet when he warms up. He likes playing with shoe strings and bottle caps. He is quick to learn the rhythms of his human’s daily life. Bonnie has bounced around a lot in his life, and is looking to find his forever home.',
     age: '2 year 3 months',
     inoculations: ['adenovirus', 'distemper'],
     diseases: ['right back leg mobility reduced'],
@@ -232,9 +232,9 @@ export const data = [
     name: 'Honey',
     img: './img/pets/honey.png',
     type: 'Cat',
-    breed: 'Maine Coon',
+    breed: 'British Longhair',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+      'Honey is an adorable boy. He loves to play and snuggle. He is neutered and up to date on age appropriate vaccinations. He can be chatty and enjoys being held. Honey has a lot to say and wants a person to share his thoughts with.',
     age: '1 year 3 months',
     inoculations: ['parainfluenza'],
     diseases: ['none'],
@@ -246,7 +246,7 @@ export const data = [
     type: 'Cat',
     breed: 'American Shorthair',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+      'Simba is an adorable american shorthair male. He loves to play and snuggle. He is neutered and up to date on age appropriate vaccinations. He can be chatty and enjoys being held. Simba has a lot to say and wants a person to share his thoughts with.',
     age: '2 months',
     inoculations: ['panleukopenia'],
     diseases: ['none'],
@@ -258,7 +258,7 @@ export const data = [
     type: 'Cat',
     breed: 'British Shorthair',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+      'Percy is an adorable british shorthair male. He loves to play and snuggle. He is neutered and up to date on age appropriate vaccinations. He can be chatty and enjoys being held. Percy has a lot to say and wants a person to share his thoughts with.',
     age: '1 years 2 months',
     inoculations: ['calicivirus'],
     diseases: ['kidney stones'],
@@ -270,7 +270,7 @@ export const data = [
     type: 'Cat',
     breed: 'Scottish Shorthair',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+      'Rufus is an adorable scottish shorthair male. He loves to play and snuggle. He is neutered and up to date on age appropriate vaccinations. He can be chatty and enjoys being held. Rufus has a lot to say and wants a person to share his thoughts with.',
     age: '3 months',
     inoculations: ['rabies'],
     diseases: ['none'],
@@ -282,10 +282,10 @@ export const data = [
     type: 'Cat',
     breed: 'Abyssinian cat',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo impedit dolore animi quas consequuntur sed, quasi praesentium, quos, amet eveniet! Inventore dicta fugit tempore perferendis quo explicabo, assumenda possimus! Eos nihil perferendis incidunt omnis',
+      'Maggie is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.',
     age: '2 years',
     inoculations: ['leptospirosis'],
-    diseases: ['deafness'],
-    parasites: ['lice'],
+    diseases: ['none'],
+    parasites: ['none'],
   },
 ];

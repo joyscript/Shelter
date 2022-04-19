@@ -17,12 +17,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   min-width: 320px;
-  overflow-y: auto;
   -webkit-tap-highlight-color: transparent;
-
-  &.lock {
-    overflow: hidden;
-  }
 }
 
 main {

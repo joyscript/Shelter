@@ -11,15 +11,8 @@ export const windowScrollHandler = () => {
 
   const changeHeaderOnLoad = () => {
     header.classList.add('fixed');
-    document.body.classList.add('lock');
     if (window.scrollY > 20) header.classList.add('scrolled');
-
-    const unlockBody = () => {
-      document.body.classList.remove('lock');
-      header.classList.add('trans');
-    };
-
-    setTimeout(() => unlockBody(), 500);
+    setTimeout(() => header.classList.add('trans'), 0);
   };
 
   changeHeaderOnLoad();

@@ -1,7 +1,7 @@
 import { petsCardsClickHandler } from './popup.js';
 
 export const mainSliderControls = () => {
-  const slider = document.querySelector('.slider-wrapper');
+  const slider = document.querySelector('.main-slider');
   const slides = slider.querySelectorAll('.slide');
   const prevBtn = document.querySelector('.slider-btn_prev');
   const nextBtn = document.querySelector('.slider-btn_next');

@@ -10,7 +10,7 @@
     justify-content: center;
   }
   @include media-m {
-    max-width: 400px;
+    max-width: 300px;
     flex-wrap: wrap;
     gap: 5px 80px;
     margin-bottom: 15px;

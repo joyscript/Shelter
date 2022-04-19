@@ -31,6 +31,22 @@ export const pageSliderPagination = () => {
     firstBtn.removeAttribute('disabled');
   };
 
+  const scrollToTop = () => {
+    if (window.innerWidth < 1024) {
+      let top;
+      let isPageOne = numBtn.textContent == 1;
+
+      if (window.innerWidth >= 768) {
+        top = isPageOne ? 120 : 260;
+      } else if (window.innerWidth < 768 && window.innerWidth >= 480) {
+        top = isPageOne ? 80 : 220;
+      } else {
+        top = isPageOne ? 80 : 200;
+      }
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+  };
+
   pagination.addEventListener('click', (e) => {
     if (e.target.classList.contains('slider-btn')) {
       const activeSlide = slider.querySelector('.slide.active');
@@ -59,11 +75,10 @@ export const pageSliderPagination = () => {
         enableNextBtns();
       }
 
-      const slideIndex = Array.from(slider.children).findIndex((elem) => elem == newActiveSlide);
-      numBtn.textContent = slideIndex + 1;
+      const newActiveSlideIndex = Array.from(slider.children).findIndex((elem) => elem == newActiveSlide);
+      numBtn.textContent = newActiveSlideIndex + 1;
 
-      let top = e.target == numBtn || numBtn.textContent == 1 ? 100 : 200;
-      if (window.innerWidth < 1024) window.scrollTo({ top: top, behavior: 'smooth' });
+      scrollToTop();
     }
   });
 

@@ -1,4 +1,5 @@
 import { renderPageSlides } from './slides.js';
+import { petsCardsClickHandler } from './popup.js';
 
 export const pageSliderPagination = () => {
   const slider = document.querySelector('.page-slider');
@@ -61,7 +62,9 @@ export const pageSliderPagination = () => {
       const slideIndex = Array.from(slider.children).findIndex((elem) => elem == newActiveSlide);
       numBtn.textContent = slideIndex + 1;
 
-      window.scrollTo({ top: 100, behavior: 'smooth' });
+      if (window.innerWidth < 1024) window.scrollTo({ top: 100, behavior: 'smooth' });
     }
   });
+
+  petsCardsClickHandler(slider);
 };

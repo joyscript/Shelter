@@ -1,3 +1,5 @@
+import { petsCardsClickHandler } from './popup.js';
+
 export const mainSliderControls = () => {
   const slider = document.querySelector('.main-slider');
   const slides = slider.querySelectorAll('.slide');
@@ -100,7 +102,7 @@ export const mainSliderControls = () => {
     });
 
     surface.addEventListener('touchmove', function (e) {
-      // e.preventDefault();
+      e.preventDefault();
     });
 
     surface.addEventListener('touchend', function (e) {
@@ -127,4 +129,5 @@ export const mainSliderControls = () => {
   };
 
   swipeSlides(slider);
+  petsCardsClickHandler(slider);
 };

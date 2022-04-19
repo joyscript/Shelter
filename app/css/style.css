@@ -314,7 +314,11 @@ body {
   flex-direction: column;
   min-height: 100vh;
   min-width: 320px;
+  overflow-y: auto;
   -webkit-tap-highlight-color: transparent;
+}
+body.lock {
+  overflow: hidden;
 }
 
 main {
@@ -451,7 +455,6 @@ button:focus-visible {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
   width: 100%;
 }
 @media (max-width: 1279.98px) {
@@ -466,32 +469,33 @@ button:focus-visible {
 }
 @media (max-width: 767.98px) {
   .slider-wrapper {
-    width: 270px;
+    max-width: 400px;
     flex-wrap: wrap;
-    gap: 20px 80px;
+    gap: 5px 80px;
+    margin-bottom: 15px;
   }
 }
 
 .main-slider {
   position: relative;
-  flex-basis: 990px;
-  min-height: 435px;
+  flex-basis: 1020px;
+  min-height: 465px;
   overflow: hidden;
   cursor: grab;
 }
 @media (max-width: 1279.98px) {
   .main-slider {
-    flex-basis: 630px;
+    flex-basis: 660px;
   }
 }
 @media (max-width: 1023.98px) {
   .main-slider {
-    flex-basis: 580px;
+    flex-basis: 604px;
   }
 }
 @media (max-width: 767.98px) {
   .main-slider {
-    flex: 100%;
+    flex-basis: 300px;
     order: -1;
   }
 }
@@ -499,10 +503,17 @@ button:focus-visible {
 .main-slider__slide {
   position: relative;
   display: none;
+  padding: 15px;
   animation: 0.5s ease-in-out;
+}
+@media (max-width: 1023.98px) {
+  .main-slider__slide {
+    padding: 15px 12px;
+  }
 }
 @media (max-width: 767.98px) {
   .main-slider__slide {
+    padding: 15px;
     animation-duration: 0.3s;
   }
 }
@@ -553,6 +564,7 @@ button:focus-visible {
 }
 .page-slider {
   position: relative;
+  min-height: 900px;
 }
 .page-slider__slide {
   position: absolute;
@@ -600,8 +612,10 @@ button:focus-visible {
   flex-direction: column;
   background: #fafafa;
   border-radius: 9px;
+  box-shadow: 0px 0px 15px 2px rgba(70, 70, 70, 0.05);
   transition: background 0.5s, box-shadow 0.5s;
   overflow: hidden;
+  user-select: none;
   cursor: pointer;
 }
 .pet-card__image {
@@ -631,7 +645,7 @@ button:focus-visible {
 }
 .pet-card:hover, .pet-card:focus, .pet-card:active {
   background: #ffffff;
-  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  box-shadow: 0px 0px 15px 5px rgba(70, 70, 70, 0.15);
 }
 .pet-card:hover .button, .pet-card:focus .button, .pet-card:active .button {
   background: #fddcc4;
@@ -866,46 +880,42 @@ button:focus-visible {
 }
 
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 5;
-  display: none;
   width: 100%;
-}
-.header.general {
-  display: block;
   height: 120px;
   padding-top: 60px;
-  transition: all 0.5s;
 }
 @media (max-width: 1279.98px) {
-  .header.general {
+  .header {
     height: 90px;
     padding-top: 30px;
   }
 }
-.pets-page .header.general {
+.pets-page .header {
   height: 120px;
   padding-top: 30px;
   padding-bottom: 30px;
   background: #ffffff;
 }
+.header.fixed {
+  position: fixed;
+}
+.header.trans {
+  transition: all 0.5s;
+}
 .header.scrolled {
   height: 45px;
-  display: block;
   padding-top: 5px;
   padding-bottom: 5px;
   background: linear-gradient(to right, #493b33 0%, #272424 100%);
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
-  transition: all 0.5s;
 }
 .pets-page .header.scrolled {
   background: #ffffff;
   box-shadow: 0px 0px 3px 1px rgba(220, 220, 220, 0.3);
-}
-.header.scrolled.hidden {
-  top: -50px;
 }
 .header__wrapper {
   display: flex;
@@ -1210,11 +1220,11 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
+  gap: 45px;
 }
 @media (max-width: 479.98px) {
   .pets__wrapper {
-    gap: 42px;
+    gap: 27px;
   }
 }
 .pets__title {

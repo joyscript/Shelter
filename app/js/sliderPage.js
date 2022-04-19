@@ -62,7 +62,8 @@ export const pageSliderPagination = () => {
       const slideIndex = Array.from(slider.children).findIndex((elem) => elem == newActiveSlide);
       numBtn.textContent = slideIndex + 1;
 
-      if (window.innerWidth < 1024) window.scrollTo({ top: 100, behavior: 'smooth' });
+      let top = e.target == numBtn || numBtn.textContent == 1 ? 100 : 200;
+      if (window.innerWidth < 1024) window.scrollTo({ top: top, behavior: 'smooth' });
     }
   });
 

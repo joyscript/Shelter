@@ -1,0 +1,60 @@
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+body {
+  min-width: 320px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  display: block;
+  color: inherit;
+  cursor: pointer;
+}
+
+span {
+  display: inline-block;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 2px;
+  transition: color 0.3s;
+}
+
+// ---------------------------
+
+.wrapper {
+  max-width: $wrapper-width;
+  margin: auto;
+  padding: 80px 40px 100px;
+}

@@ -37,6 +37,7 @@ button {
   display: block;
   color: inherit;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 span {
@@ -53,7 +54,7 @@ a {
 
 // ---------------------------
 
-.wrapper {
+[class*='__wrapper'] {
   max-width: $wrapper-width;
   margin: auto;
   padding: 80px 40px 100px;

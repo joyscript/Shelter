@@ -1,0 +1,23 @@
+.menu {
+  display: flex;
+  gap: 35.5px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.menu__link {
+  line-height: 23px;
+  color: $color-grey;
+  border-bottom: 3px solid transparent;
+
+  &.active {
+    color: $color-light-s;
+    border-color: $color-prim;
+  }
+
+  &:hover {
+    color: $color-light-s;
+  }
+}

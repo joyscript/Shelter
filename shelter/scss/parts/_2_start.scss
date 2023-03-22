@@ -1,0 +1,30 @@
+.start {
+  padding-top: 100px;
+  color: $color-grey;
+  background: url('../assets/img/noise.png'), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
+}
+
+.start__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 42px;
+  padding-bottom: 0;
+}
+
+.start__content {
+  padding-bottom: 80px;
+}
+
+.start__title {
+  max-width: 310px;
+  margin-bottom: 42px;
+}
+
+.start__desc {
+  margin-bottom: 42px;
+}
+
+.start__pic {
+  flex: 0 0 perc(698px);
+}

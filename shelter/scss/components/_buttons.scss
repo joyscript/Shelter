@@ -1,0 +1,12 @@
+.button {
+  padding: 15px 45px;
+  font-family: 'Georgia';
+  @include font(17px, 1.3, $color-button);
+  letter-spacing: 0.06em;
+  background: $color-prim;
+  border-radius: 100px;
+
+  &:hover {
+    background: $color-prim-l;
+  }
+}

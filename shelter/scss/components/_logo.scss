@@ -1,0 +1,14 @@
+.logo__title {
+  margin-bottom: 10px;
+  transition: 0.3s;
+
+  .logo:hover & {
+    color: $color-prim-l;
+  }
+}
+
+.logo__subtitle {
+  padding-left: 4px;
+  @include font(13px, 15px, $color-light);
+  letter-spacing: 0.1em;
+}

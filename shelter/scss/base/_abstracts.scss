@@ -12,6 +12,14 @@ $color-prim: #f1cdb3;
 $color-prim-l: #fddcc4;
 
 $wrapper-width: 1280px;
+$content-width: 1200px;
+
+// Functions -----------------------------
+
+@function perc($width, $container-width: $content-width) {
+  $result: calc($width / $container-width * 100%);
+  @return $result;
+}
 
 // Mixins -----------------------------
 

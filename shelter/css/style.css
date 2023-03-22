@@ -259,4 +259,25 @@ a {
 
 .start__pic {
   flex: 0 0 58.1666666667%;
+}
+
+.about__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+}
+
+.about__content {
+  flex-basis: 50%;
+  max-width: 430px;
+}
+
+.about__title {
+  max-width: 370px;
+  margin-bottom: 25px;
+}
+
+.about__desc:not(:last-child) {
+  margin-bottom: 25px;
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,20 @@
+.about__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: perc(120px);
+}
+
+.about__content {
+  flex-basis: 50%;
+  max-width: 430px;
+}
+
+.about__title {
+  max-width: 370px;
+  margin-bottom: 25px;
+}
+
+.about__desc:not(:last-child) {
+  margin-bottom: 25px;
+}

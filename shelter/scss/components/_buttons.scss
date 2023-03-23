@@ -1,12 +1,44 @@
 .button {
-  padding: 15px 45px;
-  font-family: 'Georgia';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 52px;
+  padding: 10px 43px;
+  font-family: 'Georgia', serif;
   @include font(17px, 1.3, $color-button);
   letter-spacing: 0.06em;
-  background: $color-prim;
+  background-color: $color-prim;
+  border: 2px solid $color-prim;
   border-radius: 100px;
 
-  &:hover {
-    background: $color-prim-l;
+  &_bordered {
+    background-color: transparent;
+  }
+
+  &_slider {
+    width: 52px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: transparent;
+  }
+
+  &_slide-prev,
+  &_slide-next {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 14px 6px;
+  }
+
+  &_slide-prev {
+    background-image: url('../assets/svg/arrows.svg#arrow-prev');
+  }
+  &_slide-next {
+    background-image: url('../assets/svg/arrows.svg#arrow-next');
+  }
+
+  &:hover,
+  .card:hover & {
+    background-color: $color-prim-l;
+    border-color: $color-prim-l;
   }
 }

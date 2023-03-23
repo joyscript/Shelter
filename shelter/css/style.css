@@ -225,6 +225,7 @@ a {
   background-color: transparent;
 }
 .button_slider {
+  flex-shrink: 0;
   width: 52px;
   padding: 0;
   border-radius: 50%;
@@ -254,6 +255,7 @@ a {
 
 .slider__cards {
   display: flex;
+  flex-wrap: wrap;
   gap: 90px;
 }
 
@@ -404,4 +406,56 @@ a {
 }
 .help__item img {
   width: 60px;
+}
+
+.donat__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.donat__pic {
+  padding-left: 1px;
+}
+
+.donat__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 380px;
+}
+
+.donat__subtitle {
+  line-height: 17px;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.donat__card {
+  width: 349px;
+  height: 43px;
+  padding: 10px 10px 10px 60px;
+  font-family: "Georgia", serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.15;
+  color: #545454;
+  letter-spacing: 0.06em;
+  background: #f1cdb3 url("../assets/svg/credit-card.svg") no-repeat 15px center;
+  border-radius: 9px;
+  transition: 0.3s;
+}
+.donat__card:hover {
+  background-color: #fddcc4;
+}
+
+.donat__info {
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  color: #b2b2b2;
+  font-style: italic;
 }/*# sourceMappingURL=style.css.map */

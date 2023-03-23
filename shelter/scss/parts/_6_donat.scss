@@ -1,0 +1,44 @@
+.donat__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.donat__pic {
+  padding-left: 1px; // PP
+}
+
+.donat__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 380px;
+}
+
+.donat__subtitle {
+  line-height: 17px;
+  letter-spacing: 0.06em;
+  color: $color-title;
+}
+
+.donat__card {
+  width: 349px;
+  height: 43px;
+  padding: 10px 10px 10px 60px;
+  font-family: 'Georgia', serif;
+  @include font(20px, 1.15, $color-title);
+  letter-spacing: 0.06em;
+  background: $color-prim url('../assets/svg/credit-card.svg') no-repeat 15px center;
+  border-radius: 9px;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $color-prim-l;
+  }
+}
+
+.donat__info {
+  @include font(12px, 1.5, $color-grey-m);
+  font-style: italic;
+}

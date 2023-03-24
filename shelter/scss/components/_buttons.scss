@@ -40,11 +40,17 @@
 
   &.active {
     background-color: $color-prim;
+    pointer-events: none;
   }
 
   &:hover,
   .card:hover & {
     background-color: $color-prim-l;
     border-color: $color-prim-l;
+  }
+
+  &_slider:active {
+    background-color: $color-prim;
+    border-color: $color-prim;
   }
 }

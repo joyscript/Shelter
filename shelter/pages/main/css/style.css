@@ -351,10 +351,15 @@ a {
 }
 .button.active {
   background-color: #f1cdb3;
+  pointer-events: none;
 }
 .button:hover, .card:hover .button {
   background-color: #fddcc4;
   border-color: #fddcc4;
+}
+.button_slider:active {
+  background-color: #f1cdb3;
+  border-color: #f1cdb3;
 }
 
 .about__wrapper {

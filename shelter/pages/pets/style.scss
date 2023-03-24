@@ -2,11 +2,11 @@
 @import '../../scss/base/fonts';
 @import '../../scss/base/basic';
 
-@import '../../scss/components/logo';
-@import '../../scss/components/menu';
-@import '../../scss/components/buttons';
-@import '../../scss/components/card';
-
 @import '../../scss/layouts/header';
+@import '../../scss/components/menu';
+
 @import '../../scss/pages/pets/main';
+@import '../../scss/components/card';
+@import '../../scss/components/buttons';
+
 @import '../../scss/layouts/footer';

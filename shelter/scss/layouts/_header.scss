@@ -3,16 +3,53 @@
   top: 0;
   left: 0;
   width: 100%;
-}
 
-.page-pets .header{
-  position: static;
+  .page-pets & {
+    position: static;
+  }
 }
 
 .header__wrapper {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  min-height: 120px;
   padding: 30px 40px;
+}
+
+.header__title {
+  align-self: flex-end;
+  padding-left: 4px;
+  @include font(13px, 1, $color-light);
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  pointer-events: none;
+
+  .page-pets & {
+    color: $color-button;
+  }
+}
+
+.header__logo {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  height: 60px;
+  font-family: 'Georgia', serif;
+  @include font(32px, 1.1, $color-prim);
+  letter-spacing: 0.06em;
+
+  &:hover {
+    color: $color-prim-l;
+  }
+
+  .page-pets & {
+    color: $color-title;
+
+    &:hover {
+      color: $color-button;
+    }
+  }
 }

@@ -5,13 +5,14 @@
 }
 
 .slider__cards {
-  display: grid;
-  grid-template-columns: repeat(4, 270px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px 40px;
   margin-bottom: 60px;
 }
 
-.slider__nav {
+.slider__buttons {
   display: flex;
   gap: 20px;
   max-width: 340px;

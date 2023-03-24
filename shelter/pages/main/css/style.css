@@ -1,41 +1,41 @@
 @font-face {
   font-family: "Arial";
-  src: url("../assets/fonts/ArialMT.woff2") format("woff2"), url("../assets/fonts/ArialMT.woff") format("woff");
+  src: url("/assets/fonts/ArialMT.woff2") format("woff2"), url("/assets/fonts/ArialMT.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Arial";
-  src: url("../assets/fonts/Arial-ItalicMT.woff2") format("woff2"), url("../assets/fonts/Arial-ItalicMT.woff") format("woff");
+  src: url("/assets/fonts/Arial-ItalicMT.woff2") format("woff2"), url("/assets/fonts/Arial-ItalicMT.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Georgia";
-  src: url("../assets/fonts/Georgia.woff2") format("woff2"), url("../assets/fonts/Georgia.woff") format("woff");
+  src: url("/assets/fonts/Georgia.woff2") format("woff2"), url("/assets/fonts/Georgia.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Georgia bold";
-  src: url("../assets/fonts/Georgia-Bold.woff2") format("woff2"), url("../assets/fonts/Georgia-Bold.woff") format("woff");
+  src: url("/assets/fonts/Georgia-Bold.woff2") format("woff2"), url("/assets/fonts/Georgia-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Georgia";
-  src: url("../assets/fonts/Georgia-Italic.woff2") format("woff2"), url("../assets/fonts/Georgia-Italic.woff") format("woff");
+  src: url("/assets/fonts/Georgia-Italic.woff2") format("woff2"), url("/assets/fonts/Georgia-Italic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "icomoon";
-  src: url("../assets/fonts/icomoon.woff?izzy4t") format("woff"), url("../assets/fonts/icomoon.ttf?izzy4t") format("truetype");
+  src: url("/assets/fonts/icomoon.woff?izzy4t") format("woff"), url("/assets/fonts/icomoon.ttf?izzy4t") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -208,6 +208,16 @@ a {
   background-color: #f6f6f6;
 }
 
+.page-pets {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.page-pets .main {
+  flex-grow: 1;
+  background-color: #f6f6f6;
+}
+
 .logo__title {
   margin-bottom: 10px;
   transition: 0.3s;
@@ -224,6 +234,16 @@ a {
   line-height: 15px;
   color: #ffffff;
   letter-spacing: 0.1em;
+}
+
+.page-pets .logo__title {
+  color: #545454;
+}
+.page-pets .logo:hover .logo__title {
+  color: #292929;
+}
+.page-pets .logo__subtitle {
+  color: #292929;
 }
 
 .menu {
@@ -244,9 +264,20 @@ a {
 .menu__link.active {
   color: #fafafa;
   border-color: #f1cdb3;
+  cursor: default;
 }
 .menu__link:hover {
   color: #fafafa;
+}
+
+.page-pets .menu__link {
+  color: #545454;
+}
+.page-pets .menu__link.active {
+  color: #545454;
+}
+.page-pets .menu__link:hover {
+  color: #292929;
 }
 
 .button {
@@ -283,18 +314,6 @@ a {
 .button:hover, .card:hover .button {
   background-color: #fddcc4;
   border-color: #fddcc4;
-}
-
-.slider {
-  display: flex;
-  align-items: center;
-  gap: 53px;
-}
-
-.slider__cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 90px;
 }
 
 .card {
@@ -351,18 +370,22 @@ a {
   width: 100%;
 }
 
+.page-pets .header {
+  position: static;
+}
+
 .header__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 30px 40px 0;
+  padding: 30px 40px;
 }
 
 .start {
   padding-top: 100px;
   color: #cdcdcd;
-  background: url("../assets/img/noise.png"), radial-gradient(75% 150% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
+  background: url("/assets/img/noise.png"), radial-gradient(75% 150% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
 }
 
 .start__wrapper {
@@ -421,6 +444,18 @@ a {
 .pets__title {
   max-width: 400px;
   text-align: center;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  gap: 53px;
+}
+
+.slider__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 90px;
 }
 
 .help__title {
@@ -507,7 +542,7 @@ a {
 }
 
 .footer {
-  background: url("../assets/img/noise.png"), radial-gradient(70% 540% at 5% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
+  background: url("/assets/img/noise.png"), radial-gradient(70% 540% at 5% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
 }
 
 .footer__wrapper {

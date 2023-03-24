@@ -12,3 +12,17 @@
   @include font(13px, 15px, $color-light);
   letter-spacing: 0.1em;
 }
+
+.page-pets {
+  .logo__title {
+    color: $color-title;
+  }
+
+  .logo:hover .logo__title {
+    color: $color-button;
+  }
+
+  .logo__subtitle {
+    color: $color-button;
+  }
+}

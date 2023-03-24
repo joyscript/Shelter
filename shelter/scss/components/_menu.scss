@@ -15,9 +15,22 @@
   &.active {
     color: $color-light-s;
     border-color: $color-prim;
+    cursor: default;
   }
 
   &:hover {
     color: $color-light-s;
+  }
+}
+
+.page-pets .menu__link {
+  color: $color-title;
+
+  &.active {
+    color: $color-title;
+  }
+
+  &:hover {
+    color: $color-button;
   }
 }

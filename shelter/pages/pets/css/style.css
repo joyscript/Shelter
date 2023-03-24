@@ -194,7 +194,7 @@ a {
   text-decoration: none;
   color: inherit;
   border-radius: 2px;
-  transition: color 0.3s;
+  transition: 0.3s;
 }
 
 [class*=__wrapper] {

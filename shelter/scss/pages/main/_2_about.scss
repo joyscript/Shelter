@@ -7,14 +7,8 @@
 
 .about__content {
   flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
   max-width: 430px;
-}
-
-.about__title {
-  max-width: 370px;
-  margin-bottom: 25px;
-}
-
-.about__desc:not(:last-child) {
-  margin-bottom: 25px;
 }

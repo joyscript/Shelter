@@ -91,8 +91,8 @@ h5 {
 
 // --------------------------------------------
 
-[class^='icon-']:before,
-[class*=' icon-']:before {
+[class^='icon_']:before,
+[class*=' icon_']:before {
   font-family: 'icomoon';
   font-style: normal;
   font-weight: normal;
@@ -101,24 +101,24 @@ h5 {
   line-height: 1;
 }
 
-.icon-arrow-next:before {
+.icon_arrow-next:before {
   content: '\e900';
 }
-.icon-arrow-prev:before {
+.icon_arrow-prev:before {
   content: '\e901';
 }
-.icon-close:before {
+.icon_close:before {
   content: '\e902';
 }
-.icon-credit-card:before {
+.icon_credit-card:before {
   content: '\e903';
 }
-.icon-mail:before {
+.icon_mail:before {
   content: '\e904';
 }
-.icon-phone:before {
+.icon_phone:before {
   content: '\e905';
 }
-.icon-pin:before {
+.icon_pin:before {
   content: '\e906';
 }

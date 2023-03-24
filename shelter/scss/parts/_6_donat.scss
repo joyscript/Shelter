@@ -23,15 +23,24 @@
 }
 
 .donat__card {
+  display: flex;
+  align-items: center;
   width: 349px;
   height: 43px;
-  padding: 10px 10px 10px 60px;
+  padding: 10px;
   font-family: 'Georgia', serif;
   @include font(20px, 1.15, $color-title);
   letter-spacing: 0.06em;
-  background: $color-prim url('../assets/svg/credit-card.svg') no-repeat 15px center;
+  background: $color-prim;
   border-radius: 9px;
   transition: 0.3s;
+
+  &:before {
+    font-size: 23px;
+    margin-right: 15px;
+    margin-left: 5px;
+    color: $color-button;
+  }
 
   &:hover {
     background-color: $color-prim-l;

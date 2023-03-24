@@ -105,8 +105,8 @@ h5 {
   color: inherit;
 }
 
-[class^=icon-]:before,
-[class*=" icon-"]:before {
+[class^=icon_]:before,
+[class*=" icon_"]:before {
   font-family: "icomoon";
   font-style: normal;
   font-weight: normal;
@@ -115,31 +115,31 @@ h5 {
   line-height: 1;
 }
 
-.icon-arrow-next:before {
+.icon_arrow-next:before {
   content: "\e900";
 }
 
-.icon-arrow-prev:before {
+.icon_arrow-prev:before {
   content: "\e901";
 }
 
-.icon-close:before {
+.icon_close:before {
   content: "\e902";
 }
 
-.icon-credit-card:before {
+.icon_credit-card:before {
   content: "\e903";
 }
 
-.icon-mail:before {
+.icon_mail:before {
   content: "\e904";
 }
 
-.icon-phone:before {
+.icon_phone:before {
   content: "\e905";
 }
 
-.icon-pin:before {
+.icon_pin:before {
   content: "\e906";
 }
 
@@ -276,16 +276,9 @@ a {
   border-radius: 50%;
   background-color: transparent;
 }
-.button_slide-prev, .button_slide-next {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 14px 6px;
-}
-.button_slide-prev {
-  background-image: url("../assets/svg/arrow-sprite.svg#arrow-prev");
-}
-.button_slide-next {
-  background-image: url("../assets/svg/arrow-sprite.svg#arrow-next");
+.button.icon_arrow-prev:before, .button.icon_arrow-next:before {
+  padding-left: 2px;
+  font-size: 6px;
 }
 .button:hover, .card:hover .button {
   background-color: #fddcc4;
@@ -369,7 +362,7 @@ a {
 .start {
   padding-top: 100px;
   color: #cdcdcd;
-  background: url("../assets/img/noise.png"), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
+  background: url("../assets/img/noise.png"), radial-gradient(75% 150% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
 }
 
 .start__wrapper {
@@ -478,9 +471,11 @@ a {
 }
 
 .donat__card {
+  display: flex;
+  align-items: center;
   width: 349px;
   height: 43px;
-  padding: 10px 10px 10px 60px;
+  padding: 10px;
   font-family: "Georgia", serif;
   font-size: 20px;
   font-weight: 400;
@@ -488,9 +483,15 @@ a {
   line-height: 1.15;
   color: #545454;
   letter-spacing: 0.06em;
-  background: #f1cdb3 url("../assets/svg/credit-card.svg") no-repeat 15px center;
+  background: #f1cdb3;
   border-radius: 9px;
   transition: 0.3s;
+}
+.donat__card:before {
+  font-size: 23px;
+  margin-right: 15px;
+  margin-left: 5px;
+  color: #292929;
 }
 .donat__card:hover {
   background-color: #fddcc4;
@@ -506,7 +507,7 @@ a {
 }
 
 .footer {
-  background: url("../assets/img/noise.png"), radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
+  background: url("../assets/img/noise.png"), radial-gradient(70% 540% at 5% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
 }
 
 .footer__wrapper {
@@ -543,7 +544,7 @@ a {
   font-size: 32px;
   margin-right: 20px;
 }
-.footer__link.icon-mail:before {
+.footer__link.icon_mail:before {
   font-size: 26px;
 }
 .footer__link:hover {

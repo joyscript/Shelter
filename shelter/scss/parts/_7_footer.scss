@@ -1,0 +1,48 @@
+.footer {
+  background: url('../assets/img/noise.png'), radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
+}
+
+.footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px 40px 0;
+  color: $color-light;
+}
+
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 302px;
+  min-height: 310px;
+  padding-top: 16px;
+  padding-bottom: 60px;
+}
+
+.footer__link {
+  display: flex;
+  align-items: center;
+  font-family: 'Georgia', serif;
+  @include font(20px, 1.15, $color-prim);
+  letter-spacing: 0.06em;
+
+  &:before {
+    font-size: 32px;
+    margin-right: 20px;
+  }
+
+  &.icon-mail:before {
+    font-size: 26px;
+  }
+
+  &:hover {
+    color: $color-prim-l;
+  }
+}
+
+.footer__pic {
+  flex: 0 0 perc(300px);
+  align-self: flex-end;
+}

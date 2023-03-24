@@ -264,7 +264,7 @@ a {
 .menu__link.active {
   color: #fafafa;
   border-color: #f1cdb3;
-  cursor: default;
+  pointer-events: none;
 }
 .menu__link:hover {
   color: #fafafa;
@@ -304,12 +304,23 @@ a {
   flex-shrink: 0;
   width: 52px;
   padding: 0;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
   border-radius: 50%;
   background-color: transparent;
 }
 .button.icon_arrow-prev:before, .button.icon_arrow-next:before {
   padding-left: 2px;
   font-size: 6px;
+}
+.button:disabled {
+  color: #cdcdcd;
+  border-color: #cdcdcd;
+  pointer-events: none;
+}
+.button.active {
+  background-color: #f1cdb3;
 }
 .button:hover, .card:hover .button {
   background-color: #fddcc4;
@@ -382,28 +393,24 @@ a {
   padding: 30px 40px;
 }
 
-.pets__wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 60px;
-}
-
-.pets__title {
+.main__title {
   max-width: 400px;
+  margin: 0 auto 60px;
   text-align: center;
 }
 
-.slider {
-  display: flex;
-  align-items: center;
-  gap: 53px;
+.slider__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 270px);
+  gap: 30px 40px;
+  margin-bottom: 60px;
 }
 
-.slider__cards {
+.slider__nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 90px;
+  gap: 20px;
+  max-width: 340px;
+  margin: 0 auto;
 }
 
 .footer {

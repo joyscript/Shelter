@@ -1,0 +1,19 @@
+.main__title {
+  max-width: 400px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.slider__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 270px);
+  gap: 30px 40px;
+  margin-bottom: 60px;
+}
+
+.slider__nav {
+  display: flex;
+  gap: 20px;
+  max-width: 340px;
+  margin: 0 auto;
+}

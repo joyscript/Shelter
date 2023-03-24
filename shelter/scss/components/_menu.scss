@@ -15,7 +15,7 @@
   &.active {
     color: $color-light-s;
     border-color: $color-prim;
-    cursor: default;
+    pointer-events: none;
   }
 
   &:hover {

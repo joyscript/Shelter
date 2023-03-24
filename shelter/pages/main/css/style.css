@@ -264,7 +264,7 @@ a {
 .menu__link.active {
   color: #fafafa;
   border-color: #f1cdb3;
-  cursor: default;
+  pointer-events: none;
 }
 .menu__link:hover {
   color: #fafafa;
@@ -304,12 +304,23 @@ a {
   flex-shrink: 0;
   width: 52px;
   padding: 0;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
   border-radius: 50%;
   background-color: transparent;
 }
 .button.icon_arrow-prev:before, .button.icon_arrow-next:before {
   padding-left: 2px;
   font-size: 6px;
+}
+.button:disabled {
+  color: #cdcdcd;
+  border-color: #cdcdcd;
+  pointer-events: none;
+}
+.button.active {
+  background-color: #f1cdb3;
 }
 .button:hover, .card:hover .button {
   background-color: #fddcc4;

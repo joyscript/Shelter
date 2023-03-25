@@ -1,0 +1,36 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo__title {
+  font-family: 'Georgia', serif;
+  @include font(32px, 35px, $color-prim);
+  letter-spacing: 0.06em;
+  transition: 0.3s;
+
+  .logo:hover & {
+    color: $color-prim-l;
+  }
+}
+
+.logo__subtitle {
+  @include font(13px, 15px, $color-light);
+  letter-spacing: 0.1em;
+}
+
+.page-pets {
+  .logo__title {
+    color: $color-title;
+  }
+
+  .logo:hover .logo__title {
+    color: $color-button;
+  }
+
+  .logo__subtitle {
+    color: $color-button;
+  }
+}

@@ -1,34 +1,34 @@
 @font-face {
   font-family: "Arial";
-  src: url("../../../assets/fonts/ArialMT.woff2") format("woff2"), url("../../../assets/fonts/ArialMT.woff") format("woff");
+  src: url("../../assets/fonts/ArialMT.woff2") format("woff2"), url("../../assets/fonts/ArialMT.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Arial";
-  src: url("../../../assets/fonts/Arial-ItalicMT.woff2") format("woff2"), url("../../../assets/fonts/Arial-ItalicMT.woff") format("woff");
+  src: url("../../assets/fonts/Arial-ItalicMT.woff2") format("woff2"), url("../../assets/fonts/Arial-ItalicMT.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Georgia";
-  src: url("../../../assets/fonts/Georgia.woff2") format("woff2"), url("../../../assets/fonts/Georgia.woff") format("woff");
+  src: url("../../assets/fonts/Georgia.woff2") format("woff2"), url("../../assets/fonts/Georgia.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Georgia";
-  src: url("../../../assets/fonts/Georgia-Bold.woff2") format("woff2"), url("../../../assets/fonts/Georgia-Bold.woff") format("woff");
+  src: url("../../assets/fonts/Georgia-Bold.woff2") format("woff2"), url("../../assets/fonts/Georgia-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "icomoon";
-  src: url("../../../assets/fonts/icomoon.woff?izzy4t") format("woff"), url("../../../assets/fonts/icomoon.ttf?izzy4t") format("truetype");
+  src: url("../../assets/fonts/icomoon.woff?izzy4t") format("woff"), url("../../assets/fonts/icomoon.ttf?izzy4t") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -155,7 +155,7 @@ button {
   display: block;
   color: inherit;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
 span {
@@ -166,7 +166,7 @@ a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
 [class*=__wrapper] {
@@ -220,10 +220,13 @@ a {
   line-height: 35px;
   color: #f1cdb3;
   letter-spacing: 0.06em;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 .logo:hover .logo__title {
   color: #fddcc4;
+}
+.logo:active .logo__title {
+  color: #f1cdb3;
 }
 
 .logo__subtitle {
@@ -236,16 +239,17 @@ a {
 .page-pets .logo__title {
   color: #545454;
 }
+.page-pets .logo__subtitle,
 .page-pets .logo:hover .logo__title {
   color: #292929;
 }
-.page-pets .logo__subtitle {
-  color: #292929;
+.page-pets .logo:active .logo__title {
+  color: #000000;
 }
 
 .menu {
   display: flex;
-  gap: 35.5px;
+  gap: 36px;
 }
 
 .menu__link {
@@ -253,9 +257,11 @@ a {
   color: #cdcdcd;
   border-bottom: 3px solid transparent;
 }
-.menu__link.active {
+.menu__link.active, .menu__link:active {
   color: #fafafa;
   border-color: #f1cdb3;
+}
+.menu__link.active {
   pointer-events: none;
 }
 .menu__link:hover {
@@ -265,34 +271,124 @@ a {
 .page-pets .menu__link {
   color: #545454;
 }
-.page-pets .menu__link.active {
-  color: #545454;
-}
-.page-pets .menu__link:hover {
+.page-pets .menu__link.active, .page-pets .menu__link:hover {
   color: #292929;
 }
 
-.main__title {
+.start {
+  padding-top: 100px;
+  color: #cdcdcd;
+  background: url("../../assets/img/noise.png"), radial-gradient(75% 150% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
+}
+
+.start__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 42px;
+  padding: 0 40px;
+}
+
+.start__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 42px;
+}
+
+.start__title {
+  max-width: 320px;
+}
+
+.start__pic {
+  flex: 0 0 58.1666666667%;
+  padding-top: 80px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 52px;
+  padding: 10px 43px;
+  font-family: "Georgia", serif;
+  font-size: 17px;
+  line-height: 1.3;
+  color: #292929;
+  letter-spacing: 0.06em;
+  background-color: transparent;
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+}
+.button_colored {
+  background-color: #f1cdb3;
+}
+.button_slider {
+  flex-shrink: 0;
+  width: 52px;
+  padding: 0;
+  font-size: 20px;
+  line-height: 23px;
+  border-radius: 50%;
+}
+.button.icon_arrow-prev:before, .button.icon_arrow-next:before {
+  padding-left: 1px;
+  font-size: 6px;
+}
+.button:disabled {
+  color: #cdcdcd;
+  border-color: #cdcdcd;
+  pointer-events: none;
+}
+.button:hover, .card:hover .button {
+  background-color: #fddcc4;
+  border-color: #fddcc4;
+}
+.button.active, .button:active, .card:active .button {
+  background-color: #f1cdb3;
+  border-color: #f1cdb3;
+}
+.button.active {
+  pointer-events: none;
+}
+
+.about__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+}
+
+.about__content {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 430px;
+}
+
+.pets__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.pets__title {
   max-width: 400px;
-  margin: 0 auto 60px;
   text-align: center;
-  font-size: 35px;
-  line-height: 45px;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  gap: 53px;
 }
 
 .slider__cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px 40px;
-  margin-bottom: 60px;
-}
-
-.slider__buttons {
-  display: flex;
-  gap: 20px;
-  max-width: 340px;
-  margin: 0 auto;
+  gap: 90px;
 }
 
 .card {
@@ -304,7 +400,7 @@ a {
   border-radius: 9px;
   overflow: hidden;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 .card:hover {
   background: #ffffff;
@@ -342,57 +438,78 @@ a {
   text-align: center;
 }
 
-.button {
+.help__title {
+  max-width: 310px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.help__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 55px 120px;
+}
+
+.help__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.help__item img {
+  width: 60px;
+}
+
+.donat__wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 52px;
-  padding: 10px 43px;
-  font-family: "Georgia", serif;
-  font-size: 17px;
-  line-height: 1.3;
-  color: #292929;
+  gap: 30px;
+}
+
+.donat__pic {
+  padding-left: 1px;
+}
+
+.donat__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 380px;
+}
+
+.donat__subtitle {
+  line-height: 17px;
   letter-spacing: 0.06em;
-  background-color: transparent;
-  border: 2px solid #f1cdb3;
-  border-radius: 100px;
+  color: #545454;
 }
-.button_colored {
-  background-color: #f1cdb3;
-}
-.button_slider {
-  flex-shrink: 0;
-  width: 52px;
-  padding: 0;
+
+.donat__card {
+  width: 349px;
+  height: 43px;
+  padding: 5px;
+  gap: 13px;
   font-size: 20px;
-  line-height: 23px;
-  text-align: center;
-  border-radius: 50%;
+  line-height: 1.15;
+  color: #545454;
+  background: #f1cdb3;
+  border-radius: 9px;
 }
-.button.icon_arrow-prev:before, .button.icon_arrow-next:before {
-  padding-left: 2px;
-  font-size: 6px;
+.donat__card:before {
+  font-size: 23px;
+  color: #292929;
 }
-.button:disabled {
-  color: #cdcdcd;
-  border-color: #cdcdcd;
-  pointer-events: none;
-}
-.button.active {
-  background-color: #f1cdb3;
-  pointer-events: none;
-}
-.button:hover, .card:hover .button {
-  background-color: #fddcc4;
-  border-color: #fddcc4;
-}
-.button_slider:active {
-  background-color: #f1cdb3;
-  border-color: #f1cdb3;
+
+.donat__info {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #b2b2b2;
+  font-style: italic;
 }
 
 .footer {
-  background: url("../../../assets/img/noise.png"), radial-gradient(70% 540% at 5% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
+  background: url("../../assets/img/noise.png"), radial-gradient(70% 540% at 5% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
 }
 
 .footer__wrapper {
@@ -420,6 +537,7 @@ a {
 .footer__link {
   display: flex;
   align-items: center;
+  gap: 19px;
   font-family: "Georgia", serif;
   font-size: 20px;
   line-height: 1.15;
@@ -428,13 +546,15 @@ a {
 }
 .footer__link:before {
   font-size: 32px;
-  margin-right: 20px;
 }
 .footer__link.icon_mail:before {
   font-size: 26px;
 }
 .footer__link:hover {
-  color: #fddcc4;
+  filter: brightness(110%);
+}
+.footer__link:active {
+  filter: brightness(120%);
 }
 
 .footer__pic {

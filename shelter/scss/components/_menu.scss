@@ -1,6 +1,6 @@
 .menu {
   display: flex;
-  gap: 35.5px;
+  gap: 36px;
 }
 
 .menu__link {
@@ -8,9 +8,13 @@
   color: $color-grey;
   border-bottom: 3px solid transparent;
 
-  &.active {
+  &.active,
+  &:active {
     color: $color-light-s;
     border-color: $color-prim;
+  }
+
+  &.active {
     pointer-events: none;
   }
 
@@ -22,10 +26,7 @@
 .page-pets .menu__link {
   color: $color-title;
 
-  &.active {
-    color: $color-title;
-  }
-
+  &.active,
   &:hover {
     color: $color-button;
   }

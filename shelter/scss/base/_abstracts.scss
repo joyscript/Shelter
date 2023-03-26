@@ -14,6 +14,8 @@ $color-prim-l: #fddcc4;
 $wrapper-width: 1280px;
 $content-width: 1200px;
 
+$trans: 0.4s;
+
 // Functions -----------------------------
 
 @function perc($width, $container-width: $content-width) {

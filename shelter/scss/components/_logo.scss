@@ -9,10 +9,14 @@
   font-family: 'Georgia', serif;
   @include font(32px, 35px, $color-prim);
   letter-spacing: 0.06em;
-  transition: 0.3s;
+  transition: $trans;
 
   .logo:hover & {
     color: $color-prim-l;
+  }
+
+  .logo:active & {
+    color: $color-prim;
   }
 }
 
@@ -26,11 +30,12 @@
     color: $color-title;
   }
 
+  .logo__subtitle,
   .logo:hover .logo__title {
     color: $color-button;
   }
 
-  .logo__subtitle {
-    color: $color-button;
+  .logo:active .logo__title {
+    color: $color-dark;
   }
 }

@@ -12,12 +12,23 @@
 
 .slider {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 53px;
+  gap: 12px;
+  width: 100%;
 }
 
 .slider__cards {
+  flex-basis: 990px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 90px;
+  justify-content: space-between;
+  gap: 40px;
+
+  @include media-l {
+    justify-content: space-evenly;
+
+    .card:last-child {
+      display: none;
+    }
+  }
 }

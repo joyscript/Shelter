@@ -5,9 +5,20 @@
 .footer__wrapper {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 40px;
-  padding: 40px 40px 0;
+  padding-top: 40px;
+  padding-bottom: 0;
+
+  @include media-l {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 65px perc(60px, 708px);
+    padding-top: 40px;
+  }
+
+  @include media-t {
+    padding-top: 30px;
+  }
 }
 
 .footer__info {
@@ -15,9 +26,12 @@
   flex-direction: column;
   justify-content: space-between;
   max-width: 302px;
-  min-height: 310px;
-  padding-top: 16px;
-  padding-bottom: 60px;
+  min-height: 234px;
+  padding: 16px 0 60px;
+
+  @include media-l {
+    padding: 0;
+  }
 }
 
 .footer__title {
@@ -50,6 +64,5 @@
 }
 
 .footer__pic {
-  flex: 0 0 perc(300px);
   align-self: flex-end;
 }

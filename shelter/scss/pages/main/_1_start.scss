@@ -9,7 +9,13 @@
   justify-content: space-between;
   align-items: center;
   gap: 42px;
-  padding: 0 40px;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  @include media-t {
+    display: block;
+    padding-top: 50px;
+  }
 }
 
 .start__content {
@@ -17,13 +23,34 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 42px;
+  flex-basis: perc(460px);
+  max-width: 460px;
+  min-width: 310px;
+
+  @include media-t {
+    margin: 0 auto 100px;
+  }
 }
 
 .start__title {
   max-width: 320px;
 }
 
+.start__button {
+  @include media-t {
+    align-self: center;
+  }
+}
+
 .start__pic {
-  flex: 0 0 perc(698px);
+  flex-basis: perc(698px);
   padding-top: 80px;
+
+  @include media-t {
+    margin-left: auto;
+    padding-top: 0;
+    max-width: 569px;
+    max-height: 593px;
+    width: perc(260px, 320px);
+  }
 }

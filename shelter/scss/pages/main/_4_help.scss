@@ -8,7 +8,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 55px 120px;
+  gap: 55px perc(120px);
+
+  @include media-l {
+    column-gap: 60px;
+  }
 }
 
 .help__item {
@@ -19,5 +23,13 @@
 
   img {
     width: 60px;
+  }
+
+  @include media-l {
+    flex-basis: 25%;
+  }
+
+  @include media-t {
+    flex-basis: 170px;
   }
 }

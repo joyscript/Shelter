@@ -57,7 +57,7 @@ h4 {
 
 .page-main h1 {
   font-size: 44px;
-  line-height: 1.3;
+  line-height: 57px;
   color: #ffffff;
   letter-spacing: 0;
 }
@@ -117,7 +117,6 @@ h4 {
 
 html {
   scroll-behavior: smooth;
-  overflow-y: overlay;
 }
 
 *,
@@ -149,6 +148,7 @@ ul {
 img {
   display: block;
   max-width: 100%;
+  max-height: 100%;
 }
 
 button {
@@ -170,9 +170,20 @@ a {
 }
 
 [class*=__wrapper] {
-  width: 1280px;
+  max-width: 1280px;
   margin: auto;
   padding: 80px 40px 100px;
+}
+@media (max-width: 768px) {
+  [class*=__wrapper] {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media (max-width: 600px) {
+  [class*=__wrapper] {
+    padding: 42px 10px;
+  }
 }
 
 .pets,
@@ -204,7 +215,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .logo {
@@ -399,9 +411,22 @@ a {
 .footer__wrapper {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 40px;
-  padding: 40px 40px 0;
+  padding-top: 40px;
+  padding-bottom: 0;
+}
+@media (max-width: 1100px) {
+  .footer__wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 65px 8.4745762712%;
+    padding-top: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .footer__wrapper {
+    padding-top: 30px;
+  }
 }
 
 .footer__info {
@@ -409,9 +434,13 @@ a {
   flex-direction: column;
   justify-content: space-between;
   max-width: 302px;
-  min-height: 310px;
-  padding-top: 16px;
-  padding-bottom: 60px;
+  min-height: 234px;
+  padding: 16px 0 60px;
+}
+@media (max-width: 1100px) {
+  .footer__info {
+    padding: 0;
+  }
 }
 
 .footer__title {
@@ -442,6 +471,5 @@ a {
 }
 
 .footer__pic {
-  flex: 0 0 25%;
   align-self: flex-end;
 }/*# sourceMappingURL=style.css.map */

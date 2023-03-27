@@ -3,10 +3,21 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
+
+  @include media-t {
+    flex-direction: column;
+    gap: 60px;
+  }
 }
 
 .donat__pic {
   padding-left: 1px; // PP
+
+  @include media-t {
+    order: 1;
+    padding-left: 0; // PP
+    padding-right: 1px; //PP
+  }
 }
 
 .donat__content {

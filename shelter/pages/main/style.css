@@ -57,7 +57,7 @@ h4 {
 
 .page-main h1 {
   font-size: 44px;
-  line-height: 1.3;
+  line-height: 57px;
   color: #ffffff;
   letter-spacing: 0;
 }
@@ -117,7 +117,6 @@ h4 {
 
 html {
   scroll-behavior: smooth;
-  overflow-y: overlay;
 }
 
 *,
@@ -149,6 +148,7 @@ ul {
 img {
   display: block;
   max-width: 100%;
+  max-height: 100%;
 }
 
 button {
@@ -170,9 +170,20 @@ a {
 }
 
 [class*=__wrapper] {
-  width: 1280px;
+  max-width: 1280px;
   margin: auto;
   padding: 80px 40px 100px;
+}
+@media (max-width: 768px) {
+  [class*=__wrapper] {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media (max-width: 600px) {
+  [class*=__wrapper] {
+    padding: 42px 10px;
+  }
 }
 
 .pets,
@@ -204,7 +215,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .logo {
@@ -286,7 +298,14 @@ a {
   justify-content: space-between;
   align-items: center;
   gap: 42px;
-  padding: 0 40px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+@media (max-width: 768px) {
+  .start__wrapper {
+    display: block;
+    padding-top: 50px;
+  }
 }
 
 .start__content {
@@ -294,15 +313,38 @@ a {
   flex-direction: column;
   align-items: flex-start;
   gap: 42px;
+  flex-basis: 38.3333333333%;
+  max-width: 460px;
+  min-width: 310px;
+}
+@media (max-width: 768px) {
+  .start__content {
+    margin: 0 auto 100px;
+  }
 }
 
 .start__title {
   max-width: 320px;
 }
 
+@media (max-width: 768px) {
+  .start__button {
+    align-self: center;
+  }
+}
+
 .start__pic {
-  flex: 0 0 58.1666666667%;
+  flex-basis: 58.1666666667%;
   padding-top: 80px;
+}
+@media (max-width: 768px) {
+  .start__pic {
+    margin-left: auto;
+    padding-top: 0;
+    max-width: 569px;
+    max-height: 593px;
+    width: 81.25%;
+  }
 }
 
 .button {
@@ -358,13 +400,23 @@ a {
   align-items: center;
   gap: 10%;
 }
+@media (max-width: 768px) {
+  .about__wrapper {
+    flex-wrap: wrap;
+    gap: 80px;
+  }
+}
 
 .about__content {
-  flex-basis: 50%;
+  flex-basis: 430px;
   display: flex;
   flex-direction: column;
   gap: 25px;
-  max-width: 430px;
+}
+@media (max-width: 768px) {
+  .about__content {
+    order: -1;
+  }
 }
 
 .pets__wrapper {
@@ -381,14 +433,25 @@ a {
 
 .slider {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 53px;
+  gap: 12px;
+  width: 100%;
 }
 
 .slider__cards {
+  flex-basis: 990px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 90px;
+  justify-content: space-between;
+  gap: 40px;
+}
+@media (max-width: 1100px) {
+  .slider__cards {
+    justify-content: space-evenly;
+  }
+  .slider__cards .card:last-child {
+    display: none;
+  }
 }
 
 .card {
@@ -448,7 +511,13 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 55px 120px;
+  gap: 55px 10%;
+}
+@media (max-width: 1100px) {
+  .help__list {
+    -moz-column-gap: 60px;
+         column-gap: 60px;
+  }
 }
 
 .help__item {
@@ -460,6 +529,16 @@ a {
 .help__item img {
   width: 60px;
 }
+@media (max-width: 1100px) {
+  .help__item {
+    flex-basis: 25%;
+  }
+}
+@media (max-width: 768px) {
+  .help__item {
+    flex-basis: 170px;
+  }
+}
 
 .donat__wrapper {
   display: flex;
@@ -467,9 +546,22 @@ a {
   align-items: center;
   gap: 30px;
 }
+@media (max-width: 768px) {
+  .donat__wrapper {
+    flex-direction: column;
+    gap: 60px;
+  }
+}
 
 .donat__pic {
   padding-left: 1px;
+}
+@media (max-width: 768px) {
+  .donat__pic {
+    order: 1;
+    padding-left: 0;
+    padding-right: 1px;
+  }
 }
 
 .donat__content {
@@ -515,9 +607,22 @@ a {
 .footer__wrapper {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 40px;
-  padding: 40px 40px 0;
+  padding-top: 40px;
+  padding-bottom: 0;
+}
+@media (max-width: 1100px) {
+  .footer__wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 65px 8.4745762712%;
+    padding-top: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .footer__wrapper {
+    padding-top: 30px;
+  }
 }
 
 .footer__info {
@@ -525,9 +630,13 @@ a {
   flex-direction: column;
   justify-content: space-between;
   max-width: 302px;
-  min-height: 310px;
-  padding-top: 16px;
-  padding-bottom: 60px;
+  min-height: 234px;
+  padding: 16px 0 60px;
+}
+@media (max-width: 1100px) {
+  .footer__info {
+    padding: 0;
+  }
 }
 
 .footer__title {
@@ -558,6 +667,5 @@ a {
 }
 
 .footer__pic {
-  flex: 0 0 25%;
   align-self: flex-end;
 }/*# sourceMappingURL=style.css.map */

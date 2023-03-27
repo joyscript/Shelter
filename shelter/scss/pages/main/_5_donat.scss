@@ -23,10 +23,11 @@
 }
 
 .donat__card {
+  justify-content: flex-start;
   width: 349px;
   height: 43px;
-  padding: 5px;
-  gap: 13px;
+  padding: 5px 5px 5px 13px;
+  gap: 14px;
   @include font(20px, 1.15, $color-title);
   background: $color-prim;
   border-radius: 9px;

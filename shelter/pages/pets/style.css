@@ -117,7 +117,6 @@ h4 {
 
 html {
   scroll-behavior: smooth;
-  overflow-y: overlay;
 }
 
 *,
@@ -130,7 +129,7 @@ html {
 }
 
 body {
-  min-width: 320px;
+  min-width: 1280px;
 }
 
 h1,
@@ -249,7 +248,7 @@ a {
 
 .menu {
   display: flex;
-  gap: 36px;
+  gap: 35.5px;
 }
 
 .menu__link {
@@ -408,9 +407,9 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 302px;
+  max-width: 301px;
   min-height: 310px;
-  padding-top: 16px;
+  padding-top: 17px;
   padding-bottom: 60px;
 }
 

@@ -1,16 +1,36 @@
+.main__wrapper {
+  padding-bottom: 76px;
+}
+
 .main__title {
   max-width: 400px;
   margin: 0 auto 60px;
   text-align: center;
   @include font(35px, 45px);
+
+  @include media-t {
+    margin-bottom: 30px;
+  }
 }
 
 .slider__cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 30px 40px;
   margin-bottom: 60px;
+
+  @include media-l {
+    .card:nth-child(7),
+    .card:nth-child(8) {
+      display: none;
+    }
+  }
+
+  @include media-t {
+    width: perc(580px, 708px);
+    margin: 0 auto 40px;
+  }
 }
 
 .slider__buttons {

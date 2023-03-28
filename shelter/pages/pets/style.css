@@ -287,6 +287,10 @@ a {
   color: #292929;
 }
 
+.main__wrapper {
+  padding-bottom: 76px;
+}
+
 .main__title {
   max-width: 400px;
   margin: 0 auto 60px;
@@ -294,13 +298,30 @@ a {
   font-size: 35px;
   line-height: 45px;
 }
+@media (max-width: 1023.9px) {
+  .main__title {
+    margin-bottom: 30px;
+  }
+}
 
 .slider__cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 30px 40px;
   margin-bottom: 60px;
+}
+@media (max-width: 1279.9px) {
+  .slider__cards .card:nth-child(7),
+  .slider__cards .card:nth-child(8) {
+    display: none;
+  }
+}
+@media (max-width: 1023.9px) {
+  .slider__cards {
+    width: 81.9209039548%;
+    margin: 0 auto 40px;
+  }
 }
 
 .slider__buttons {

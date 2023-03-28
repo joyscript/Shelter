@@ -2,6 +2,10 @@
   max-width: 310px;
   margin: 0 auto 60px;
   text-align: center;
+
+  @include media-s {
+    margin-bottom: 42px;
+  }
 }
 
 .help__list {
@@ -14,6 +18,19 @@
     max-width: 920px;
     column-gap: 60px;
     margin: 0 auto;
+  }
+
+  @include media-m {
+    justify-content: space-between;
+    gap: 30px;
+    width: 90%;
+    max-width: 500px;
+  }
+
+  @include media-s {
+    width: 100%;
+    max-width: 380px;
+    padding: 0 5px;
   }
 }
 
@@ -29,5 +46,20 @@
 
   @include media-t {
     flex-basis: perc(170px, 708px);
+  }
+
+  @include media-m {
+    flex-basis: perc(130px, 290px);
+
+    &:last-child {
+      justify-self: start;
+    }
+  }
+
+  @include media-s {
+    gap: 20px;
+    img {
+      height: 50px;
+    }
   }
 }

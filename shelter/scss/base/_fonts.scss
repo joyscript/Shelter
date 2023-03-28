@@ -63,18 +63,40 @@ h4 {
 .page-main h1 {
   @include font(44px, 57px, $color-light);
   letter-spacing: 0;
+
+  @include media-m {
+    text-align: center;
+  }
+
+  @include media-s {
+    @include font(25px, 32px);
+    letter-spacing: 0.06em;
+  }
 }
 
 h2 {
   @include font(35px, 45px);
+
+  @include media-s {
+    text-align: center;
+    @include font(25px, 32px);
+  }
 }
 
 h3 {
-  @include font(20px, 1.15);
+  @include font(20px, 23px);
 }
 
 h4 {
-  @include font(15px, 1.1);
+  @include font(20px, 23px);
+
+  @include media-s {
+    @include font(15px, 17px);
+  }
+}
+
+h5 {
+  @include font(15px, 17px);
 }
 
 // --------------------------------------------

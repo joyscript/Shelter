@@ -15,4 +15,9 @@
   align-items: center;
   padding-top: 30px;
   padding-bottom: 30px;
+
+  @include media-m {
+    padding-left: 20px;
+    padding-right: 15px;
+  }
 }

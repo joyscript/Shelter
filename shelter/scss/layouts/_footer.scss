@@ -15,6 +15,14 @@
     gap: 65px perc(60px, 708px);
     padding-top: 30px;
   }
+
+  @include media-m {
+    column-gap: 40px;
+  }
+
+  @include media-s {
+    row-gap: 40px;
+  }
 }
 
 .footer__info {
@@ -29,6 +37,15 @@
     min-height: 234px;
     padding: 0;
   }
+
+  @include media-s {
+    gap: 40px;
+    min-height: auto;
+
+    &:first-child {
+      align-items: center;
+    }
+  }
 }
 
 .footer__title {
@@ -39,6 +56,7 @@
   display: flex;
   align-items: center;
   gap: 19px;
+  min-height: 32px;
   font-family: 'Georgia', serif;
   @include font(20px, 1.15, $color-prim);
   letter-spacing: 0.06em;
@@ -67,5 +85,9 @@
 
   @include media-t {
     flex-basis: auto;
+  }
+
+  @include media-m {
+    margin: 0 20px;
   }
 }

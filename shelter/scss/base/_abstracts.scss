@@ -53,19 +53,19 @@ $trans: 0.4s;
 }
 
 @mixin media-l {
-  @media (max-width: 1100px) {
+  @media (max-width: ($wrapper-width - 0.1px)) {
     @content;
   }
 }
 
 @mixin media-t {
-  @media (max-width: 768px) {
+  @media (max-width: 1023.9px) {
     @content;
   }
 }
 
 @mixin media-m {
-  @media (max-width: 600px) {
+  @media (max-width: 767.9px) {
     @content;
   }
 }

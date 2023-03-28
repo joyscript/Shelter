@@ -19,15 +19,15 @@
 }
 
 .start__content {
+  flex-basis: perc(460px);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 42px;
-  flex-basis: perc(460px);
-  max-width: 460px;
-  min-width: 310px;
+  min-width: 370px;
 
   @include media-t {
+    width: perc(460px, 708px);
     margin: 0 auto 100px;
   }
 }
@@ -47,10 +47,9 @@
   padding-top: 80px;
 
   @include media-t {
-    margin-left: auto;
-    padding-top: 0;
     max-width: 569px;
     max-height: 593px;
-    width: perc(260px, 320px);
+    margin-left: auto;
+    padding-top: 0;
   }
 }

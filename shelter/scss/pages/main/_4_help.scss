@@ -10,8 +10,10 @@
   justify-content: center;
   gap: 55px perc(120px);
 
-  @include media-l {
+  @include media-t {
+    max-width: 920px;
     column-gap: 60px;
+    margin: 0 auto;
   }
 }
 
@@ -25,11 +27,7 @@
     width: 60px;
   }
 
-  @include media-l {
-    flex-basis: 25%;
-  }
-
   @include media-t {
-    flex-basis: 170px;
+    flex-basis: perc(170px, 708px);
   }
 }

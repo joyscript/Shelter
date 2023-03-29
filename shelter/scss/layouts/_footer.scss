@@ -17,11 +17,11 @@
   }
 
   @include media-m {
-    column-gap: 40px;
+    column-gap: 60px;
   }
 
   @include media-s {
-    row-gap: 40px;
+    gap: 40px;
   }
 }
 
@@ -50,6 +50,11 @@
 
 .footer__title {
   color: $color-light;
+
+  @include media-s {
+    max-width: 270px;
+    margin: 0 auto;
+  }
 }
 
 .footer__link {

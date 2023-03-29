@@ -356,8 +356,8 @@ a {
     height: 2px;
     background: #f1cdb3;
   }
-  .pets-page .burger span, .pets-page .burger:before, .pets-page .burger:after {
-    background: #292929;
+  .page-pets .burger span, .page-pets .burger:before, .page-pets .burger:after {
+    background: #000000;
   }
 }
 
@@ -879,13 +879,13 @@ a {
 }
 @media (max-width: 767.9px) {
   .footer__wrapper {
-    -moz-column-gap: 40px;
-         column-gap: 40px;
+    -moz-column-gap: 60px;
+         column-gap: 60px;
   }
 }
 @media (max-width: 479.9px) {
   .footer__wrapper {
-    row-gap: 40px;
+    gap: 40px;
   }
 }
 
@@ -915,6 +915,12 @@ a {
 
 .footer__title {
   color: #ffffff;
+}
+@media (max-width: 479.9px) {
+  .footer__title {
+    max-width: 270px;
+    margin: 0 auto;
+  }
 }
 
 .footer__link {

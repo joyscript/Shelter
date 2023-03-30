@@ -1,5 +1,7 @@
 .main__wrapper {
-  padding-bottom: 76px;
+  @include media-t {
+    padding-bottom: 76px;
+  }
 
   @include media-m {
     padding-bottom: 42px;

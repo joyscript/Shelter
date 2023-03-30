@@ -36,6 +36,10 @@
   }
 
   @include media-m {
+    max-width: 560px;
+  }
+
+  @include media-s {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px 80px;
@@ -58,10 +62,12 @@
   }
 
   @include media-m {
-    order: -1;
-
     .card:nth-child(2) {
       display: none;
     }
+  }
+
+  @include media-s {
+    order: -1;
   }
 }

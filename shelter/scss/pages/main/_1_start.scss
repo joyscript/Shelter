@@ -28,6 +28,7 @@
 
   @include media-t {
     width: perc(460px, 708px);
+    max-width: 600px;
     min-width: auto;
     margin: 0 auto 100px;
   }

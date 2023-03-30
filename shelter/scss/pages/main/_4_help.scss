@@ -52,7 +52,7 @@
     flex-basis: perc(130px, 290px);
 
     &:last-child {
-      justify-self: start;
+      justify-self: flex-start;
     }
   }
 

@@ -277,7 +277,7 @@ a {
 
 .menu {
   display: flex;
-  gap: 36px;
+  gap: 35.5px;
 }
 @media (max-width: 767.9px) {
   .menu {

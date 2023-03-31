@@ -3,12 +3,51 @@
   justify-content: center;
   align-items: center;
   gap: perc(120px);
+
+  @include media-t {
+    flex-wrap: wrap;
+    gap: 80px;
+  }
+
+  @include media-m {
+    gap: 41px;
+  }
 }
 
 .about__content {
-  flex-basis: 50%;
+  flex-basis: perc(430px);
   display: flex;
   flex-direction: column;
   gap: 25px;
-  max-width: 430px;
+  min-width: 370px;
+
+  @include media-t {
+    flex-basis: perc(430px, 708px);
+    order: -1;
+  }
+
+  @include media-m {
+    flex-basis: perc(270px, 300px);
+    align-items: center;
+    gap: 22px;
+    max-width: 430px;
+    min-width: auto;
+    text-align: justify;
+  }
+}
+
+.about__title {
+  max-width: 360px;
+
+  @include media-m {
+    margin-bottom: 3px;
+    text-align: center;
+  }
+}
+
+.about__pic {
+  @include media-m {
+    margin: 0 20px;
+    min-height: 354px;
+  }
 }

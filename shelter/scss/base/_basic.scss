@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  min-width: 1280px;
+  min-width: 300px;
 }
 
 h1,
@@ -54,9 +54,22 @@ a {
 // ---------------------------
 
 [class*='__wrapper'] {
-  width: $wrapper-width;
+  max-width: $wrapper-width;
   margin: auto;
   padding: 80px 40px 100px;
+
+  @include media-t {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @include media-m {
+    padding: 60px 20px;
+  }
+
+  @include media-s {
+    padding: 42px 10px;
+  }
 }
 
 .pets,

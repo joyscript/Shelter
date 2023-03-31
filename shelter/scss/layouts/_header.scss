@@ -13,5 +13,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @include media-m {
+    padding-left: 20px;
+    padding-right: 15px;
+  }
 }

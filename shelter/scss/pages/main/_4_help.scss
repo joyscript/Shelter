@@ -2,13 +2,36 @@
   max-width: 310px;
   margin: 0 auto 60px;
   text-align: center;
+
+  @include media-s {
+    margin-bottom: 42px;
+  }
 }
 
 .help__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 55px 120px;
+  gap: 55px perc(120px);
+
+  @include media-t {
+    max-width: 920px;
+    column-gap: 60px;
+    margin: 0 auto;
+  }
+
+  @include media-m {
+    justify-content: space-between;
+    gap: 30px 20px;
+    width: 90%;
+    max-width: 500px;
+  }
+
+  @include media-s {
+    width: 100%;
+    max-width: 380px;
+    padding: 0 5px;
+  }
 }
 
 .help__item {
@@ -19,5 +42,24 @@
 
   img {
     width: 60px;
+  }
+
+  @include media-t {
+    flex-basis: perc(170px, 708px);
+  }
+
+  @include media-m {
+    flex-basis: perc(130px, 290px);
+
+    &:last-child {
+      justify-self: flex-start;
+    }
+  }
+
+  @include media-s {
+    gap: 20px;
+    img {
+      height: 50px;
+    }
   }
 }

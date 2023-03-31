@@ -28,7 +28,9 @@ $trans: 0.4s;
 @mixin font($size, $height: 1, $color: null) {
   font-size: $size;
   line-height: $height;
-  @if $color {color: $color};
+  @if $color {
+    color: $color;
+  }
 }
 
 @mixin img($pos: center) {
@@ -41,5 +43,35 @@ $trans: 0.4s;
     height: 100%;
     object-fit: cover;
     object-position: $pos;
+  }
+}
+
+@mixin media($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin media-l {
+  @media (max-width: ($wrapper-width - 0.1px)) {
+    @content;
+  }
+}
+
+@mixin media-t {
+  @media (max-width: 1023.9px) {
+    @content;
+  }
+}
+
+@mixin media-m {
+  @media (max-width: 767.9px) {
+    @content;
+  }
+}
+
+@mixin media-s {
+  @media (max-width: 479.9px) {
+    @content;
   }
 }

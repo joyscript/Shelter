@@ -2,18 +2,16 @@
 @import '../../scss/base/fonts';
 @import '../../scss/base/basic';
 
-@import '../../scss/layouts/header';
 @import '../../scss/components/logo';
 @import '../../scss/components/menu';
-
-@import '../../scss/pages/main/1_start';
 @import '../../scss/components/buttons';
-
-@import '../../scss/pages/main/2_about';
-
-@import '../../scss/pages/main/3_pets';
 @import '../../scss/components/card';
 
+@import '../../scss/layouts/header';
+
+@import '../../scss/pages/main/1_start';
+@import '../../scss/pages/main/2_about';
+@import '../../scss/pages/main/3_pets';
 @import '../../scss/pages/main/4_help';
 @import '../../scss/pages/main/5_donat';
 

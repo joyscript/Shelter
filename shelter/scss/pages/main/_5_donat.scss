@@ -3,23 +3,70 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
+
+  @include media-t {
+    flex-wrap: wrap;
+    row-gap: 60px;
+  }
+
+  @include media-s {
+    row-gap: 42px;
+  }
 }
 
 .donat__pic {
   padding-left: 1px; // PP
+
+  @include media-t {
+    order: 1;
+    padding-left: 0; // PP
+    padding-right: 1px; //PP
+  }
+
+  @include media-m {
+    margin: 0 20px;
+    padding: 0;
+
+    img {
+      min-height: 135.2px;
+    }
+  }
 }
 
 .donat__content {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 380px;
+  flex-basis: 380px;
+
+  @include media-t {
+    flex-basis: perc(380px, 708px);
+  }
+
+  @include media-s {
+    align-items: center;
+    flex-basis: 100%;
+    max-width: 360px;
+    padding: 0 10px;
+  }
+}
+
+.donat__title {
+  @include media-s {
+    max-width: 260px;
+  }
 }
 
 .donat__subtitle {
   line-height: 17px;
   letter-spacing: 0.06em;
   color: $color-title;
+
+  @include media-s {
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: center;
+  }
 }
 
 .donat__card {
@@ -28,7 +75,7 @@
   height: 43px;
   padding: 5px 5px 5px 13px;
   gap: 14px;
-  @include font(20px, 1.15, $color-title);
+  @include font(20px, 18px, $color-title);
   background: $color-prim;
   border-radius: 9px;
 
@@ -36,9 +83,18 @@
     font-size: 23px;
     color: $color-button;
   }
+
+  @include media-s {
+    width: 282px;
+    @include font(15px, 1.1);
+  }
 }
 
 .donat__info {
   @include font(12px, 1.5, $color-grey-m);
   font-style: italic;
+
+  @include media-s {
+    text-align: justify;
+  }
 }

@@ -159,7 +159,7 @@ html {
 }
 
 body {
-  min-width: 320px;
+  min-width: 300px;
 }
 
 h1,
@@ -709,7 +709,7 @@ a {
 @media (max-width: 767.9px) {
   .help__list {
     justify-content: space-between;
-    gap: 30px;
+    gap: 30px 20px;
     width: 90%;
     max-width: 500px;
   }

@@ -156,6 +156,7 @@ html {
   margin: 0px;
   padding: 0px;
   border: 0px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -220,6 +221,12 @@ a {
   }
 }
 
+.about,
+.help,
+.page-pets .header {
+  background-color: #ffffff;
+}
+
 .pets,
 .donat {
   background-color: #f6f6f6;
@@ -233,6 +240,27 @@ a {
 .page-pets .main {
   flex-grow: 1;
   background-color: #f6f6f6;
+}
+
+.menu-open {
+  overflow: hidden;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(41, 41, 41, 0.6);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.4s;
+}
+.menu-open .overlay {
+  visibility: visible;
+  opacity: 1;
 }
 
 .logo {
@@ -277,11 +305,43 @@ a {
 
 .menu {
   display: flex;
-  gap: 35.5px;
+  gap: 36px;
 }
 @media (max-width: 767.9px) {
   .menu {
-    display: none;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: -330px;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 37px;
+    width: 320px;
+    max-width: 100%;
+    padding: 30px;
+    background: #292929;
+    overflow-y: auto;
+    transition: 0.4s;
+  }
+  .page-pets .menu {
+    background: #ffffff;
+  }
+  .menu:before {
+    content: "";
+    position: absolute;
+    top: 25px;
+    right: 5px;
+    width: 70px;
+    height: 70px;
+    background: radial-gradient(circle, #292929 50%, transparent 80%);
+  }
+  .page-pets .menu:before {
+    background: radial-gradient(circle, #ffffff 50%, transparent 80%);
+  }
+  .menu-open .menu {
+    right: 0;
   }
 }
 
@@ -300,6 +360,15 @@ a {
 .menu__link:hover {
   color: #fafafa;
 }
+@media (max-width: 767.9px) {
+  .menu__link {
+    font-size: 32px;
+    line-height: 51px;
+  }
+  .page-main .menu__link.active {
+    margin: 2px 0 3px;
+  }
+}
 
 .page-pets .menu__link {
   color: #545454;
@@ -314,15 +383,15 @@ a {
 @media (max-width: 767.9px) {
   .burger {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    width: 40px;
-    height: 32px;
-    padding: 5px;
+    width: 50px;
+    height: 42px;
+    padding: 10px;
     background: transparent;
+    transition: 0.4s;
   }
   .burger:before, .burger:after {
     content: "";
@@ -334,6 +403,17 @@ a {
   }
   .page-pets .burger span, .page-pets .burger:before, .page-pets .burger:after {
     background: #000000;
+  }
+  .menu-open .burger {
+    transform: rotate(90deg);
+  }
+}
+@media (hover: hover) {
+  .burger:hover {
+    filter: brightness(110%);
+  }
+  .page-pets .burger:hover {
+    opacity: 0.7;
   }
 }
 
@@ -435,6 +515,7 @@ a {
   top: 0;
   left: 0;
   width: 100%;
+  min-width: 300px;
 }
 .page-pets .header {
   position: static;

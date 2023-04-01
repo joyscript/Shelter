@@ -1,0 +1,146 @@
+$width: 600px;
+
+.modal {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: $trans;
+
+  .modal-open & {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.modal__dialog {
+  position: relative;
+  display: flex;
+  width: 900px;
+  max-width: perc(630px, 768px);
+  background: $color-light-s;
+  border-radius: 9px;
+
+  @include media($width) {
+    width: perc(240px, 320px);
+  }
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: -52px;
+  right: -43px;
+
+  @include media($width) {
+    right: -30px;
+  }
+}
+
+.modal__pic {
+  flex: 0 0 perc(500px, 900px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 9px;
+
+  @include media($width) {
+    display: none;
+  }
+}
+
+.modal__content {
+  padding: 50px 20px 30px 30px;
+  font-family: 'Georgia', serif;
+  line-height: 17px;
+  letter-spacing: 0.06em;
+  color: $color-dark;
+
+  > * {
+    color: inherit;
+  }
+
+  @include media-t {
+    align-self: center;
+    max-width: 340px;
+    padding: 10px 9px 10px 11px;
+  }
+
+  @include media(770px) {
+    align-self: start;
+  }
+
+  @include media($width) {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  @include media-s {
+    padding: 10px 10px 5px 10px;
+  }
+}
+
+.modal__title {
+  margin-bottom: 10px;
+
+  @include media($width) {
+    font-size: 35px;
+    line-height: 45px;
+    text-align: center;
+  }
+}
+
+.modal__subtitle,
+.modal__text {
+  margin-bottom: 40px;
+  @include media-t {
+    margin-bottom: 20px;
+  }
+}
+
+.modal__subtitle {
+  @include media($width) {
+    text-align: center;
+    font-size: 20px;
+    line-height: 23px;
+  }
+}
+
+.modal__text {
+  @include media(820px) {
+    font-size: 13px;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+  }
+
+  @include media($width) {
+    margin-bottom: 24px;
+    text-align: justify;
+  }
+}
+
+.modal__item {
+  position: relative;
+  margin-bottom: 11px;
+  padding-left: 14px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    background: $color-prim;
+  }
+
+  @include media-t {
+    margin-bottom: 6px;
+  }
+}

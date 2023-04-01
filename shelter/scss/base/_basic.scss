@@ -13,7 +13,10 @@ html {
 }
 
 body {
+  width: 100vw;
   min-width: 300px;
+  overflow-x: hidden;
+  overflow-y: overlay;
 }
 
 h1,
@@ -95,7 +98,8 @@ a {
   }
 }
 
-.menu-open {
+.menu-open,
+.modal-open {
   overflow: hidden;
 }
 
@@ -111,7 +115,8 @@ a {
   opacity: 0;
   transition: $trans;
 
-  .menu-open & {
+  .menu-open &,
+  .modal-open & {
     visibility: visible;
     opacity: 1;
   }

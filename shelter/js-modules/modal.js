@@ -1,8 +1,8 @@
 export const handleCardClick = () => {
-  const sliderCards = document.querySelector('.slider__cards');
+  const sliderWindow = document.querySelector('.slider__wrapper');
   const modal = document.querySelector('.modal');
 
-  sliderCards.addEventListener('click', (e) => {
+  sliderWrapper.addEventListener('click', (e) => {
     if (e.target.closest('.card')) {
       document.body.classList.add('modal-open');
     }

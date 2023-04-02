@@ -161,7 +161,7 @@ html {
 
 body {
   width: 100vw;
-  min-width: 300px;
+  min-width: 320px;
   overflow-x: hidden;
   overflow-y: overlay;
 }
@@ -260,7 +260,7 @@ a {
   background: rgba(41, 41, 41, 0.6);
   visibility: hidden;
   opacity: 0;
-  transition: 0.4s;
+  transition: 0.5s;
 }
 .menu-open .overlay, .modal-open .overlay {
   visibility: visible;
@@ -484,6 +484,11 @@ a {
   background: #ffffff;
   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
+@media (max-width: 360px) {
+  .card:hover {
+    box-shadow: 0px 2px 15px 5px rgba(13, 13, 13, 0.04);
+  }
+}
 
 .card__pic {
   width: 100%;
@@ -521,7 +526,7 @@ a {
   top: 0;
   left: 0;
   width: 100vw;
-  min-width: 300px;
+  min-width: 320px;
 }
 .page-pets .header {
   position: static;
@@ -751,11 +756,13 @@ a {
   align-items: center;
   visibility: hidden;
   opacity: 0;
+  transform: scale(0.9);
   transition: 0.4s;
 }
 .modal-open .modal {
   visibility: visible;
   opacity: 1;
+  transform: scale(1);
 }
 
 .modal__dialog {

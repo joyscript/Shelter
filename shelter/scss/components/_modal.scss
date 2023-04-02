@@ -12,11 +12,13 @@ $width: 600px;
   align-items: center;
   visibility: hidden;
   opacity: 0;
-  transition: $trans;
+  transform: scale(0.9);
+  transition: 0.4s;
 
   .modal-open & {
     visibility: visible;
     opacity: 1;
+    transform: scale(1);
   }
 }
 

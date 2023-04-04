@@ -646,6 +646,7 @@ a {
   overflow: hidden;
   cursor: pointer;
   transition: 0.4s;
+  outline: 1px solid blue;
 }
 .card:hover {
   background: #ffffff;

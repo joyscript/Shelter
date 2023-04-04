@@ -1,26 +1,9 @@
-import { getData } from './common.js';
+import { getData, generateCard } from './common.js';
 
 const slider = document.querySelector('.slider');
 const prevBtn = slider.querySelector('.icon_arrow-prev');
 const nextBtn = slider.querySelector('.icon_arrow-next');
 const sliderLine = slider.querySelector('.slider__line');
-
-const generateCard = (pet) => {
-  const card = document.createElement('div');
-  card.className = 'card';
-
-  card.innerHTML = `
-      <div class="card__pic">
-        <img src="${pet.img}" alt="Pet ${pet.name}" />
-      </div>
-      <div class="card__content">
-        <h3 class="card__title">${pet.name}</h3>
-        <button class="button">Learn more</button>
-      </div>
-    `;
-
-  return card;
-};
 
 const handleData = (pets) => {
   let cards = { left: [], active: [], right: [] };

@@ -479,6 +479,7 @@ a {
   overflow: hidden;
   cursor: pointer;
   transition: 0.4s;
+  outline: 1px solid blue;
 }
 .card:hover {
   background: #ffffff;
@@ -585,12 +586,6 @@ a {
   gap: 30px 40px;
   margin-bottom: 60px;
 }
-@media (max-width: 1279.9px) {
-  .slider__cards .card:nth-child(7),
-  .slider__cards .card:nth-child(8) {
-    display: none;
-  }
-}
 @media (max-width: 1023.9px) {
   .slider__cards {
     width: 81.9209039548%;
@@ -601,11 +596,6 @@ a {
   .slider__cards {
     width: 270px;
     margin-bottom: 42px;
-  }
-  .slider__cards .card:nth-child(4),
-  .slider__cards .card:nth-child(5),
-  .slider__cards .card:nth-child(6) {
-    display: none;
   }
 }
 

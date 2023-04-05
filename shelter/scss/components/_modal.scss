@@ -2,7 +2,7 @@ $width: 600px;
 
 .modal {
   position: fixed;
-  z-index: 2;
+  z-index: 10;
   top: 0;
   left: 0;
   right: 0;
@@ -13,7 +13,7 @@ $width: 600px;
   visibility: hidden;
   opacity: 0;
   transform: scale(0.9);
-  transition: 0.4s;
+  transition: 0.5s;
 
   .modal-open & {
     visibility: visible;
@@ -51,6 +51,10 @@ $width: 600px;
   align-items: center;
   overflow: hidden;
   border-radius: 9px;
+
+  img {
+    width: 100%;
+  }
 
   @include media($width) {
     display: none;

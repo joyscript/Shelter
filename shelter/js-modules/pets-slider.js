@@ -1,4 +1,4 @@
-import { generateCard } from './common.js';
+import { generateCard } from './card.js';
 
 const slider = document.querySelector('.slider');
 const sliderCards = slider.querySelector('.slider__cards');

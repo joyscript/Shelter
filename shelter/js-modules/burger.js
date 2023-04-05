@@ -10,11 +10,12 @@ export const handleBurgerClick = () => {
   overlay.addEventListener('click', closeMenu);
 
   menu.addEventListener('click', (e) => {
-    if (document.body.classList.contains('menu-open') && e.target.matches('.menu__link') && e.target.getAttribute('href').startsWith('#')) {
-      e.preventDefault();
-      const id = e.target.getAttribute('href').slice(1);
-      document.getElementById(id).scrollIntoView();
-      closeMenu();
-    }
+    if (window.innerWidth >= 768 || !e.target.matches('.menu__link')) return;
+    e.preventDefault();
+    const href = e.target.getAttribute('href');
+
+    if (href && href.startsWith('#')) document.getElementById(href.slice(1)).scrollIntoView();
+    if (href && href.startsWith('.')) setTimeout(() => (window.location = href), 300);
+    closeMenu();
   });
 };

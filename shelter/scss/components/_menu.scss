@@ -54,12 +54,14 @@
     border-color: $color-prim;
   }
 
-  &.active {
-    pointer-events: none;
-  }
-
   &:hover {
     color: $color-light-s;
+  }
+
+  @media (min-width: 768px) {
+    &.active {
+      pointer-events: none;
+    }
   }
 
   @include media-m {

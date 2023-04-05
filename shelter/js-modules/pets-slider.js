@@ -1,12 +1,12 @@
 import { getData, generateCard } from './common.js';
 
 const slider = document.querySelector('.slider');
-const sliderCards = document.querySelector('.slider__cards');
-const prevBtn = slider.querySelector('.button_slider.prev');
-const nextBtn = slider.querySelector('.button_slider.next');
-const firstBtn = slider.querySelector('.button_slider.first');
-const lastBtn = slider.querySelector('.button_slider.last');
-const pageNumBtn = slider.querySelector('.button_slider.active');
+const sliderCards = slider.querySelector('.slider__cards');
+const prevBtn = slider.querySelector('.button.prev');
+const nextBtn = slider.querySelector('.button.next');
+const firstBtn = slider.querySelector('.button.first');
+const lastBtn = slider.querySelector('.button.last');
+const pageNumBtn = slider.querySelector('.button.active');
 
 const pointLarge = 1280;
 const pointSmall = 768;
@@ -15,7 +15,7 @@ const make24Array = () => {
   let arr = [0, 1, 2, 3, 4, 5, 6, 7];
   let res = [];
 
-  const getNums = (count, arr) => {
+  const getNums = (count) => {
     for (let i = 0; i < count; i++) {
       let ind = Math.floor(Math.random() * arr.length);
       res.push(arr[ind]);
@@ -23,15 +23,15 @@ const make24Array = () => {
     }
   };
 
-  getNums(8, arr);
-  let temp = res.slice(0, 6);
-  getNums(4, temp);
-  temp.push(...res.slice(6, 8));
-  getNums(4, temp);
-  temp.push(...res.slice(8, 12));
-  getNums(2, temp);
-  temp.push(...res.slice(12, 16));
-  getNums(6, temp);
+  getNums(8);
+  arr.push(...res.slice(0, 6));
+  getNums(4);
+  arr.push(...res.slice(6, 8));
+  getNums(4);
+  arr.push(...res.slice(8, 12));
+  getNums(2);
+  arr.push(...res.slice(12, 16));
+  getNums(6);
 
   return res;
 };
@@ -80,7 +80,7 @@ const handleData = (pets) => {
   const logInfo = () => {
     console.log('-'.repeat(120));
     console.log(`Ширина экрана: ${window.innerWidth}px. `);
-    console.log(`${lastPage} страниц:`, pagesArray);
+    console.log(`${lastPage} страниц: ${JSON.stringify(pagesArray)}`);
   };
 
   const changeBtns = () => {
@@ -99,7 +99,7 @@ const handleData = (pets) => {
     pageNumBtn.textContent = curPage;
     changeBtns();
 
-    console.log(`Страница ${curPage}. Идентификаторы: [${curIndexes}], имена: [${curNames.join(', ')}]`);
+    console.log(`Страница ${curPage}: [${curIndexes}], имена: [${curNames.join(', ')}]`);
   };
 
   const checkPage = () => {
@@ -110,7 +110,7 @@ const handleData = (pets) => {
     if (prevPage > lastPage) curPage = lastPage;
   };
 
-  const changePagination = () => {
+  const changeSliderOnResize = () => {
     if (curCount !== getCardsCountPerPage()) {
       checkPage();
       pagesArray = splitArrayIntoPages(indArr, curCount);
@@ -126,7 +126,7 @@ const handleData = (pets) => {
   prevBtn.addEventListener('click', () => makeSlide(--curPage));
   firstBtn.addEventListener('click', () => makeSlide((curPage = 1)));
   lastBtn.addEventListener('click', () => makeSlide((curPage = lastPage)));
-  window.addEventListener('resize', changePagination);
+  window.addEventListener('resize', changeSliderOnResize);
 };
 
 export const petsSliderHandler = () => getData('../../data/pets.json').then((data) => handleData(data));

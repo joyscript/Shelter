@@ -16,9 +16,7 @@ const generateCard = (pet) => {
 
   card.addEventListener('click', () => {
     document.body.append(generateModal(pet));
-    setTimeout(() => {
-      document.body.classList.add('modal-open');
-    }, 0);
+    setTimeout(() => document.body.classList.add('modal-open'), 0);
   });
 
   return card;

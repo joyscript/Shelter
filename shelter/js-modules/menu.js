@@ -10,12 +10,10 @@ export const handleMenu = () => {
   overlay.addEventListener('click', closeMenu);
 
   menu.addEventListener('click', (e) => {
-    if (window.innerWidth >= 768 || !e.target.matches('.menu__link')) return;
+    if (window.innerWidth >= 768 || !e.target.matches('.menu__link') || e.target.getAttribute('href').startsWith('.')) return;
     e.preventDefault();
-    const href = e.target.getAttribute('href');
-
-    if (href && href.startsWith('#')) document.getElementById(href.slice(1)).scrollIntoView();
-    if (href && href.startsWith('.')) setTimeout(() => (window.location = href), 300);
+    const id = e.target.getAttribute('href').slice(1);
+    if (id) document.getElementById(id).scrollIntoView();
     closeMenu();
   });
 };

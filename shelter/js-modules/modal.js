@@ -23,9 +23,7 @@ const generateModal = (pet) => {
   modal.addEventListener('click', (e) => {
     if (e.target.matches('.modal__close-btn') || e.target === modal) {
       document.body.classList.remove('modal-open');
-      setTimeout(() => {
-        modal.remove();
-      }, 500);
+      setTimeout(() => modal.remove(), 500);
     }
   });
 

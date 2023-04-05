@@ -1,11 +1,11 @@
-import { getData, generateCard } from './common.js';
+import { generateCard } from './common.js';
 
-const slider = document.querySelector('.slider');
-const prevBtn = slider.querySelector('.icon_arrow-prev');
-const nextBtn = slider.querySelector('.icon_arrow-next');
-const sliderLine = slider.querySelector('.slider__line');
+const makeSlider = (pets) => {
+  const slider = document.querySelector('.slider');
+  const prevBtn = slider.querySelector('.icon_arrow-prev');
+  const nextBtn = slider.querySelector('.icon_arrow-next');
+  const sliderLine = slider.querySelector('.slider__line');
 
-const handleData = (pets) => {
   let cards = { left: [], active: [], right: [] };
 
   const makeSlide = (position) => {
@@ -51,4 +51,4 @@ const handleData = (pets) => {
   slider.addEventListener('animationend', changeSlide);
 };
 
-export const sliderHandler = () => getData('../../data/pets.json').then((data) => handleData(data));
+export { makeSlider };

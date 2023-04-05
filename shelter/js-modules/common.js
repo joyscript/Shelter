@@ -8,14 +8,6 @@ const getData = async (url) => {
   }
 };
 
-const shuffleArr = (array) => {
-  for (let i = array.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-};
-
 const generateCard = (pet) => {
   const card = document.createElement('div');
   card.className = 'card';
@@ -33,4 +25,4 @@ const generateCard = (pet) => {
   return card;
 };
 
-export { getData, shuffleArr, generateCard };
+export { getData, generateCard };

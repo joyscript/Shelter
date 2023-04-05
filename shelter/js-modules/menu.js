@@ -1,4 +1,4 @@
-export const handleBurgerClick = () => {
+export const handleMenu = () => {
   const menu = document.querySelector('.menu');
   const burger = document.querySelector('.burger');
   const overlay = document.querySelector('.overlay');

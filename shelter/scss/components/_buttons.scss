@@ -28,6 +28,10 @@
     font-size: 12px;
   }
 
+  &_slider.active {
+    font-family: 'Times New Roman', Times, serif;
+  }
+
   &.icon_arrow-prev:before,
   &.icon_arrow-next:before {
     padding-left: 1px;
@@ -40,10 +44,12 @@
     pointer-events: none;
   }
 
-  &:hover,
-  .card:hover & {
-    background-color: $color-prim-l;
-    border-color: $color-prim-l;
+  @media (hover: hover) {
+    &:hover,
+    .card:hover & {
+      background-color: $color-prim-l;
+      border-color: $color-prim-l;
+    }
   }
 
   &.active,

@@ -1,4 +1,4 @@
-import { getData, generateCard } from './common.js';
+import { generateCard } from './common.js';
 
 const slider = document.querySelector('.slider');
 const sliderCards = slider.querySelector('.slider__cards');
@@ -67,7 +67,7 @@ const getLastPage = (count) => 48 / count;
 
 // ------------------------------------------------
 
-const handleData = (pets) => {
+const makePetsSlider = (pets) => {
   const indArr = [...make24Array(), ...make24Array()];
   let curCount = getCardsCountPerPage();
   let pagesArray = splitArrayIntoPages(indArr, curCount);
@@ -129,4 +129,4 @@ const handleData = (pets) => {
   window.addEventListener('resize', changeSliderOnResize);
 };
 
-export const petsSliderHandler = () => getData('../../data/pets.json').then((data) => handleData(data));
+export { makePetsSlider };

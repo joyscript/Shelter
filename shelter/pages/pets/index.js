@@ -1,5 +1,11 @@
-import {handleBurgerClick} from '../../js-modules/burger.js'
-import { petsSliderHandler } from '../../js-modules/pets-slider.js';
+import { getData } from '../../js-modules/common.js';
+import { handleMenu } from '../../js-modules/menu.js';
+import { makePetsSlider } from '../../js-modules/pets-slider.js';
+import { makeModal } from '../../js-modules/modal.js';
 
-handleBurgerClick();
-petsSliderHandler();
+handleMenu();
+
+getData('../../data/pets.json').then((pets) => {
+  makePetsSlider(pets);
+  makeModal(pets);
+});

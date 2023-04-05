@@ -1,7 +1,11 @@
-import { handleBurgerClick } from '../../js-modules/burger.js';
-// import { handleCardClick } from '../../js-modules/modal.js';
-import { sliderHandler } from '../../js-modules/slider.js';
+import { getData } from '../../js-modules/common.js';
+import { handleMenu } from '../../js-modules/menu.js';
+import { makeSlider } from '../../js-modules/slider.js';
+import { makeModal } from '../../js-modules/modal.js';
 
-handleBurgerClick();
-// handleCardClick();
-sliderHandler();
+handleMenu();
+
+getData('../../data/pets.json').then((pets) => {
+  makeSlider(pets);
+  makeModal(pets);
+});

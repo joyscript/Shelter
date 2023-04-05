@@ -451,6 +451,9 @@ a {
 .button_modal {
   font-size: 12px;
 }
+.button_slider.active {
+  font-family: "Times New Roman", Times, serif;
+}
 .button.icon_arrow-prev:before, .button.icon_arrow-next:before {
   padding-left: 1px;
   font-size: 6px;
@@ -460,9 +463,11 @@ a {
   border-color: #cdcdcd;
   pointer-events: none;
 }
-.button:hover, .card:hover .button {
-  background-color: #fddcc4;
-  border-color: #fddcc4;
+@media (hover: hover) {
+  .button:hover, .card:hover .button {
+    background-color: #fddcc4;
+    border-color: #fddcc4;
+  }
 }
 .button.active, .button:active, .card:active .button {
   background-color: #f1cdb3;

@@ -610,6 +610,15 @@ a {
   .slider__slide {
     gap: 40px;
   }
+  .slider__slide .card:nth-child(3) {
+    display: none;
+  }
+}
+@media (max-width: 767.9px) {
+  .slider__slide .card:nth-child(2),
+  .slider__slide .card:nth-child(3) {
+    display: none;
+  }
 }
 @media (max-width: 360px) {
   .slider__slide {

@@ -160,10 +160,8 @@ html {
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   min-width: 320px;
-  overflow-x: hidden;
-  overflow-y: overlay;
 }
 
 h1,
@@ -612,14 +610,6 @@ a {
   .slider__slide {
     gap: 40px;
   }
-  .slider__slide .card:nth-child(3) {
-    display: none;
-  }
-}
-@media (max-width: 767.9px) {
-  .slider__slide .card:nth-child(2) {
-    display: none;
-  }
 }
 @media (max-width: 360px) {
   .slider__slide {
@@ -700,7 +690,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   min-width: 320px;
 }
 .page-pets .header {
@@ -722,6 +712,7 @@ a {
 }
 
 .start {
+  display: none;
   padding-top: 100px;
   color: #cdcdcd;
   background: url("../../assets/img/noise.png"), radial-gradient(75% 150% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
@@ -815,6 +806,7 @@ a {
   justify-content: center;
   align-items: center;
   gap: 10%;
+  display: none;
 }
 @media (max-width: 1023.9px) {
   .about__wrapper {

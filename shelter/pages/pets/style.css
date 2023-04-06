@@ -160,10 +160,8 @@ html {
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   min-width: 320px;
-  overflow-x: hidden;
-  overflow-y: overlay;
 }
 
 h1,
@@ -533,7 +531,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   min-width: 320px;
 }
 .page-pets .header {

@@ -129,16 +129,6 @@
 
   @include media-t {
     gap: 40px;
-
-    .card:nth-child(3) {
-      display: none;
-    }
-  }
-
-  @include media-m {
-    .card:nth-child(2) {
-      display: none;
-    }
   }
 
   @include media(360px) {

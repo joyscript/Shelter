@@ -6,7 +6,7 @@ const makeSlider = (pets) => {
   const nextBtn = slider.querySelector('.icon_arrow-next');
   const sliderLine = slider.querySelector('.slider__line');
 
-  const pointLarge = 1024;
+  const pointLarge = 1150;
   const pointSmall = 768;
 
   const getCardsCountPerPage = () => {

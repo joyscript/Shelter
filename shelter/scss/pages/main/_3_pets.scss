@@ -4,13 +4,8 @@
   align-items: center;
   gap: 25px;
 
-  @media (min-width: 1024px) {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
   @include media-m {
-    gap: 42px;
+    gap: 22px;
   }
 }
 

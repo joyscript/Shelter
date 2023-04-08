@@ -1,7 +1,7 @@
 import { generateCard } from './card.js';
 
 const slider = document.querySelector('.slider');
-const sliderCards = slider.querySelector('.slider__cards');
+const container = slider.querySelector('.slider__container');
 const prevBtn = slider.querySelector('.button.prev');
 const nextBtn = slider.querySelector('.button.next');
 const firstBtn = slider.querySelector('.button.first');
@@ -15,7 +15,7 @@ const make24Array = () => {
   let arr = [0, 1, 2, 3, 4, 5, 6, 7];
   let res = [];
 
-  const getNums = (count) => {
+  const getRandNums = (count, arr) => {
     for (let i = 0; i < count; i++) {
       let ind = Math.floor(Math.random() * arr.length);
       res.push(arr[ind]);
@@ -23,21 +23,16 @@ const make24Array = () => {
     }
   };
 
-  getNums(8);
-  arr.push(...res.slice(0, 6));
-  getNums(4);
-  arr.push(...res.slice(6, 8));
-  getNums(4);
-  arr.push(...res.slice(8, 12));
-  getNums(2);
-  arr.push(...res.slice(12, 16));
-  getNums(6);
+  getRandNums(8, arr);
+  getRandNums(4, (arr = arr.concat(...res.slice(0, 6))));
+  getRandNums(4, (arr = arr.concat(...res.slice(6, 8))));
+  getRandNums(2, (arr = arr.concat(...res.slice(8, 12))));
+  getRandNums(6, (arr = arr.concat(...res.slice(12, 16))));
 
   return res;
 };
 
 const splitArrayIntoPages = (arr, count) => {
-  if (!count) return;
   let temp = [...arr];
   let pages = [];
   while (temp.length) {
@@ -74,39 +69,62 @@ const makePetsSlider = (pets) => {
   let lastPage = getLastPage(curCount);
   let curPage = 1;
 
-  console.log(`Исходный массив: ${indArr}`);
-  console.log(`Неповторяемость карточек при количестве 8, 6, 3 соответственно: ${checkArr(indArr).join(', ')}`);
-
-  const logInfo = () => {
-    console.log('-'.repeat(120));
-    console.log(`Ширина экрана: ${window.innerWidth}px. `);
-    console.log(`${lastPage} страниц: ${JSON.stringify(pagesArray)}`);
+  const logGeneralInfo = () => {
+    console.log('Исходный массив:', JSON.stringify(indArr));
+    console.log('6 страниц:', JSON.stringify(splitArrayIntoPages(indArr, 8)));
+    console.log('8 страниц:', JSON.stringify(splitArrayIntoPages(indArr, 6)));
+    console.log('16 страниц:', JSON.stringify(splitArrayIntoPages(indArr, 3)));
+    console.log('Неповторяемость карточек при количестве на странице 8, 6, 3:', checkArr(indArr).join(', '));
   };
 
-  const changeBtns = () => {
-    [prevBtn, firstBtn].forEach((btn) => (btn.disabled = curPage === 1));
-    [nextBtn, lastBtn].forEach((btn) => (btn.disabled = curPage === lastPage));
+  const logCurInfo = () => {
+    console.log('-'.repeat(90));
+    console.log(`Ширина экрана: ${window.innerWidth}px. ${lastPage} страниц по ${curCount} карточ${curCount === 3 ? 'ки' : 'ек'}.`);
   };
 
-  const makeSlide = () => {
-    sliderCards.innerHTML = '';
+  const makePage = () => {
+    let page = document.createElement('div');
+    page.classList.add('slider__page');
 
     let curIndexes = pagesArray[curPage - 1];
     let curPets = curIndexes.map((ind) => pets[ind]);
     let curNames = curPets.map((pet) => pet.name);
 
-    curPets.forEach((pet) => sliderCards.append(generateCard(pet)));
-    pageNumBtn.textContent = curPage;
-    changeBtns();
+    curPets.forEach((pet) => page.append(generateCard(pet)));
 
     console.log(`Страница ${curPage}: [${curIndexes}], имена: [${curNames.join(', ')}]`);
+
+    return page;
+  };
+
+  const changeBtns = () => {
+    pageNumBtn.textContent = curPage;
+    [prevBtn, firstBtn].forEach((btn) => (btn.disabled = curPage === 1));
+    [nextBtn, lastBtn].forEach((btn) => (btn.disabled = curPage === lastPage));
+  };
+
+  const startAnimation = (page) => {
+    page.classList.add('next');
+    page.previousElementSibling.classList.add('prev');
+
+    const endAnimation = () => {
+      page.previousElementSibling.remove();
+      page.classList.remove('next');
+    };
+    page.addEventListener('animationend', endAnimation, { once: true });
+  };
+
+  const changePage = () => {
+    let page = makePage();
+    container.append(page);
+    page.previousElementSibling && startAnimation(page);
+    changeBtns();
   };
 
   const checkPage = () => {
-    let [prevPage, prevLastPage] = [curPage, lastPage];
+    let prevPage = curPage;
     curCount = getCardsCountPerPage();
     lastPage = getLastPage(curCount);
-    // if (prevPage > lastPage) curPage = Math.round((prevPage / prevLastPage) * lastPage);
     if (prevPage > lastPage) curPage = lastPage;
   };
 
@@ -114,18 +132,20 @@ const makePetsSlider = (pets) => {
     if (curCount !== getCardsCountPerPage()) {
       checkPage();
       pagesArray = splitArrayIntoPages(indArr, curCount);
-      logInfo();
-      makeSlide();
+      logCurInfo();
+      container.firstElementChild.remove();
+      changePage();
     }
   };
 
-  logInfo();
-  makeSlide();
+  logGeneralInfo();
+  logCurInfo();
+  changePage();
 
-  nextBtn.addEventListener('click', () => makeSlide(++curPage));
-  prevBtn.addEventListener('click', () => makeSlide(--curPage));
-  firstBtn.addEventListener('click', () => makeSlide((curPage = 1)));
-  lastBtn.addEventListener('click', () => makeSlide((curPage = lastPage)));
+  nextBtn.addEventListener('click', () => changePage(++curPage));
+  prevBtn.addEventListener('click', () => changePage(--curPage));
+  firstBtn.addEventListener('click', () => changePage((curPage = 1)));
+  lastBtn.addEventListener('click', () => changePage((curPage = lastPage)));
   window.addEventListener('resize', changeSliderOnResize);
 };
 

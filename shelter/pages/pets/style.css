@@ -444,7 +444,11 @@ a {
   width: 52px;
   padding: 0;
   font-size: 20px;
+  line-height: 1;
   border-radius: 50%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .button_modal {
   font-size: 12px;
@@ -485,7 +489,6 @@ a {
   cursor: pointer;
   transition: 0.4s;
   box-shadow: 0px 2px 15px 0 rgba(13, 13, 13, 0.02);
-  box-shadow: 0px 2px 15px 5px rgba(13, 13, 13, 0.08);
 }
 .card:hover {
   background: #ffffff;
@@ -585,23 +588,31 @@ a {
   }
 }
 
-.slider__cards {
+.slider__container {
+  position: relative;
+  width: 100%;
+  min-height: 900px;
+}
+
+.slider__page {
   display: grid;
   grid-template-columns: repeat(4, 270px);
   grid-template-rows: repeat(2, minmax(435px, auto));
   justify-content: space-between;
   gap: 30px 20px;
   margin: 0 auto 60px;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in-out;
 }
 @media (max-width: 1279.9px) {
-  .slider__cards {
+  .slider__page {
     grid-template-columns: repeat(3, 270px);
     grid-template-rows: repeat(2, minmax(435px, auto));
     justify-content: space-evenly;
   }
 }
 @media (max-width: 1023.9px) {
-  .slider__cards {
+  .slider__page {
     grid-template-columns: repeat(2, 270px);
     grid-template-rows: repeat(3, minmax(435px, auto));
     -moz-column-gap: 40px;
@@ -611,11 +622,24 @@ a {
   }
 }
 @media (max-width: 767.9px) {
-  .slider__cards {
+  .slider__page {
     grid-template-columns: 270px;
     width: 270px;
     margin-bottom: 42px;
   }
+}
+.slider__page.prev {
+  animation-name: fade-out;
+}
+.slider__page.prev .card {
+  animation: scale-card 0.7s;
+}
+.slider__page.next {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  animation-name: fade-in;
 }
 
 .slider__buttons {
@@ -625,6 +649,30 @@ a {
   margin: 0 auto;
 }
 
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes scale-card {
+  from {
+    transform: none;
+  }
+  to {
+    transform: scale(0.8);
+  }
+}
 .footer {
   background: url("../../assets/img/noise.png"), radial-gradient(70% 540% at 5% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
 }

@@ -444,7 +444,11 @@ a {
   width: 52px;
   padding: 0;
   font-size: 20px;
+  line-height: 1;
   border-radius: 50%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .button_modal {
   font-size: 12px;
@@ -657,7 +661,6 @@ a {
   cursor: pointer;
   transition: 0.4s;
   box-shadow: 0px 2px 15px 0 rgba(13, 13, 13, 0.02);
-  box-shadow: 0px 2px 15px 5px rgba(13, 13, 13, 0.08);
 }
 .card:hover {
   background: #ffffff;

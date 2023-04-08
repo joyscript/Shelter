@@ -21,7 +21,9 @@
     width: 52px;
     padding: 0;
     font-size: 20px;
+    line-height: 1;
     border-radius: 50%;
+    user-select: none;
   }
 
   &_modal {

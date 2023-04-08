@@ -25,13 +25,25 @@
   }
 }
 
-.slider__cards {
+// --------------------------------------------
+
+$duration: 0.7s;
+
+.slider__container {
+  position: relative;
+  width: 100%;
+  min-height: 900px;
+}
+
+.slider__page {
   display: grid;
   grid-template-columns: repeat(4, 270px);
   grid-template-rows: repeat(2, minmax(435px, auto));
   justify-content: space-between;
   gap: 30px 20px;
   margin: 0 auto 60px;
+  animation-duration: $duration;
+  animation-timing-function: ease-in-out;
 
   @include media-l {
     grid-template-columns: repeat(3, 270px);
@@ -52,6 +64,22 @@
     width: 270px;
     margin-bottom: 42px;
   }
+
+  &.prev {
+    animation-name: fade-out;
+
+    .card {
+      animation: scale-card $duration;
+    }
+  }
+
+  &.next {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    animation-name: fade-in;
+  }
 }
 
 .slider__buttons {
@@ -59,4 +87,31 @@
   justify-content: space-between;
   max-width: 340px;
   margin: 0 auto;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-card {
+  from {
+    transform: none;
+  }
+  to {
+    transform: scale(0.8);
+  }
 }

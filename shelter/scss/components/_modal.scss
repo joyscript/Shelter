@@ -5,20 +5,25 @@ $width: 600px;
   z-index: 10;
   top: 0;
   left: 0;
-  right: 0;
   bottom: 0;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   visibility: hidden;
   opacity: 0;
   transform: scale(0.9);
-  transition: 0.5s;
+  transition: visibility 0.5s, opacity 0.5s, transform 0.5s;
 
   .modal-open & {
     visibility: visible;
     opacity: 1;
     transform: scale(1);
+    overflow-y: auto;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 
@@ -38,7 +43,7 @@ $width: 600px;
 .modal__close-btn {
   position: absolute;
   top: -52px;
-  right: -43px;
+  right: -42px;
 
   @include media($width) {
     right: -30px;
@@ -48,12 +53,16 @@ $width: 600px;
 .modal__pic {
   flex: 0 0 perc(500px, 900px);
   display: flex;
+  justify-content: center;
   align-items: center;
+  padding-top: perc(500px, 900px);
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 9px;
   overflow: hidden;
-  border-radius: 9px;
+  @include img();
 
-  img {
-    width: 100%;
+  @include media-m {
+    flex-basis: 50%;
   }
 
   @include media($width) {
@@ -122,7 +131,7 @@ $width: 600px;
   @include media(820px) {
     font-size: 13px;
     line-height: 14px;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.058em;
   }
 
   @include media($width) {
@@ -144,6 +153,7 @@ $width: 600px;
     width: 4px;
     height: 4px;
     background: $color-prim;
+    border-radius: 50%;
   }
 
   @include media-t {

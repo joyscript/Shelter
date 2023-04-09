@@ -1,4 +1,4 @@
-import { generateModal } from './modal.js';
+import { openModal } from './modal.js';
 
 const generateCard = (pet) => {
   const card = document.createElement('div');
@@ -14,10 +14,7 @@ const generateCard = (pet) => {
       </div>
     `;
 
-  card.addEventListener('click', () => {
-    document.body.append(generateModal(pet));
-    setTimeout(() => document.body.classList.add('modal-open'), 0);
-  });
+  card.addEventListener('click', () => openModal(pet));
 
   return card;
 };

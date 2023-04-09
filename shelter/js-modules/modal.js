@@ -21,13 +21,27 @@ const generateModal = (pet) => {
   `;
 
   modal.addEventListener('click', (e) => {
-    if (e.target.matches('.modal__close-btn') || e.target === modal) {
-      document.body.classList.remove('modal-open');
-      setTimeout(() => modal.remove(), 500);
-    }
+    if (e.target.matches('.modal__close-btn') || e.target === modal) closeModal(modal);
   });
 
   return modal;
 };
 
-export { generateModal };
+const checkScrollBar = () => {
+  const scrollBarWidth = window.innerWidth - document.body.clientWidth;
+  if (scrollBarWidth) document.body.style.paddingRight = scrollBarWidth + 'px';
+};
+
+const openModal = (pet) => {
+  document.body.append(generateModal(pet));
+  setTimeout(() => document.body.classList.add(`modal-open`), 0);
+  checkScrollBar();
+};
+
+const closeModal = (modal) => {
+  document.body.style = '';
+  document.body.classList.remove(`modal-open`);
+  setTimeout(() => modal.remove(), 500);
+};
+
+export { openModal };

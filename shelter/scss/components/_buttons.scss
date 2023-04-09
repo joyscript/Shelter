@@ -55,8 +55,7 @@
   }
 
   &.active,
-  &:active,
-  .card:active & {
+  &:active {
     background-color: $color-prim;
     border-color: $color-prim;
   }

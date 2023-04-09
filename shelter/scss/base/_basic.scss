@@ -119,3 +119,13 @@ a {
     opacity: 1;
   }
 }
+
+body,
+.menu {
+  @include media-m {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    scrollbar-width: none;
+  }
+}

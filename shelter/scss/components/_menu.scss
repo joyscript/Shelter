@@ -3,7 +3,42 @@
   gap: 36px;
 
   @include media-m {
-    display: none;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: -330px;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 37px;
+    width: 320px;
+    max-width: 100%;
+    padding: 30px;
+    background: $color-button;
+    transition: right 0.5s;
+
+    .page-pets & {
+      background: $color-light;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 25px;
+      right: 5px;
+      width: 70px;
+      height: 70px;
+      background: radial-gradient(circle, $color-button 50%, transparent 80%);
+
+      .page-pets & {
+        background: radial-gradient(circle, $color-light 50%, transparent 80%);
+      }
+    }
+
+    .menu-open & {
+      right: 0;
+    }
   }
 }
 
@@ -11,6 +46,7 @@
   line-height: 23px;
   color: $color-grey;
   border-bottom: 3px solid transparent;
+  transition: color $trans, border-color $trans;
 
   &.active,
   &:active {
@@ -18,12 +54,22 @@
     border-color: $color-prim;
   }
 
-  &.active {
-    pointer-events: none;
-  }
-
   &:hover {
     color: $color-light-s;
+  }
+
+  @media (min-width: 768px) {
+    &.active {
+      pointer-events: none;
+    }
+  }
+
+  @include media-m {
+    @include font(32px, 51px);
+
+    .page-main &.active {
+      margin: 2px 0 3px;
+    }
   }
 }
 
@@ -43,15 +89,15 @@
 
   @include media-m {
     position: relative;
-    z-index: 2;
+    z-index: 20;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    width: 40px;
-    height: 32px;
-    padding: 5px;
+    width: 50px;
+    height: 42px;
+    padding: 10px;
     background: transparent;
+    transition: $trans;
 
     &:before,
     &:after {
@@ -67,6 +113,20 @@
 
       .page-pets & {
         background: $color-dark;
+      }
+    }
+
+    .menu-open & {
+      transform: rotate(90deg);
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      filter: brightness(110%);
+
+      .page-pets & {
+        opacity: 0.7;
       }
     }
   }

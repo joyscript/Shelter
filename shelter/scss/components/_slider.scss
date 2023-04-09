@@ -1,0 +1,170 @@
+$width: 1149px;
+
+.slider {
+  position: relative;
+  width: 100%;
+  padding: 0 60px;
+
+  @include media($width) {
+    max-width: 900px;
+    padding: 0 44px;
+  }
+
+  @include media-m {
+    max-width: 560px;
+    padding: 0;
+  }
+}
+
+.slider__window {
+  position: relative;
+  overflow: hidden;
+
+  @include media($width) {
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  @include media-m {
+    max-width: 300px;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    width: calc((100% - 270px * 3) / 6);
+    background: transparent;
+
+    @include media($width) {
+      width: calc((100% - 270px * 2) / 4);
+    }
+
+    @include media-m {
+      width: 15px;
+    }
+  }
+
+  &:before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+}
+
+.slider__line {
+  position: relative;
+  width: 300%;
+  left: -100%;
+  display: flex;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+
+  .move-left & {
+    animation-name: to-left;
+  }
+
+  .move-right & {
+    animation-name: to-right;
+  }
+
+  @include media($width) {
+    animation-duration: 0.7s;
+  }
+
+  @include media-m {
+    animation-duration: 0.4s;
+  }
+}
+
+.move-left,
+.move-right {
+  cursor: pointer;
+  user-select: none;
+
+  .button {
+    pointer-events: none;
+  }
+
+  .slider__window:before,
+  .slider__window:after {
+    background: $color-light-l;
+  }
+}
+
+.move-left .icon_arrow-prev,
+.move-right .icon_arrow-next {
+  background-color: $color-prim-l;
+  border-color: $color-prim-l;
+}
+
+.slider__slide {
+  display: flex;
+  justify-content: space-around;
+  flex-basis: calc(100% / 3);
+  padding: 35px 0;
+
+  @include media($width) {
+    .card:nth-child(3) {
+      display: none;
+    }
+  }
+
+  @include media-m {
+    padding: 20px 0;
+    .card:nth-child(2),
+    .card:nth-child(3) {
+      display: none;
+    }
+  }
+}
+
+.slider__buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 184px;
+
+  @include media-s {
+    margin: 0 auto 20px;
+  }
+
+  .button {
+    position: absolute;
+    z-index: 2;
+    top: calc(50% - 26px);
+
+    &:first-child {
+      left: 0;
+    }
+    &:last-child {
+      right: 0;
+    }
+
+    @include media-s {
+      position: static;
+    }
+  }
+}
+
+@keyframes to-left {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes to-right {
+  from {
+    left: -100%;
+  }
+  to {
+    left: -200%;
+  }
+}

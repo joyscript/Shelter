@@ -9,9 +9,11 @@ html {
   margin: 0px;
   padding: 0px;
   border: 0px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
+  width: 100%;
   min-width: 300px;
 }
 
@@ -72,6 +74,12 @@ a {
   }
 }
 
+.about,
+.help,
+.page-pets .header {
+  background-color: $color-light;
+}
+
 .pets,
 .donat {
   background-color: $color-light-l;
@@ -85,5 +93,39 @@ a {
   .main {
     flex-grow: 1;
     background-color: $color-light-l;
+  }
+}
+
+.menu-open,
+.modal-open {
+  overflow: hidden;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(41, 41, 41, 0.6);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+
+  .menu-open &,
+  .modal-open & {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+body,
+.menu {
+  @include media-m {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    scrollbar-width: none;
   }
 }

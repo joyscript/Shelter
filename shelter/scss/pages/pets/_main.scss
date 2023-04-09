@@ -25,41 +25,93 @@
   }
 }
 
-.slider__cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 30px 40px;
-  margin-bottom: 60px;
+// --------------------------------------------
+
+$duration: 0.7s;
+
+.slider__container {
+  position: relative;
+  width: 100%;
+  min-height: 900px;
+}
+
+.slider__page {
+  display: grid;
+  grid-template-columns: repeat(4, 270px);
+  grid-template-rows: repeat(2, minmax(435px, auto));
+  justify-content: space-between;
+  gap: 30px 20px;
+  margin: 0 auto 60px;
+  animation-duration: $duration;
+  animation-timing-function: ease-in-out;
 
   @include media-l {
-    .card:nth-child(7),
-    .card:nth-child(8) {
-      display: none;
-    }
+    grid-template-columns: repeat(3, 270px);
+    grid-template-rows: repeat(2, minmax(435px, auto));
+    justify-content: space-evenly;
   }
 
   @include media-t {
+    grid-template-columns: repeat(2, 270px);
+    grid-template-rows: repeat(3, minmax(435px, auto));
+    column-gap: 40px;
     width: perc(580px, 708px);
-    margin: 0 auto 40px;
+    margin-bottom: 40px;
   }
 
   @include media-m {
+    grid-template-columns: 270px;
     width: 270px;
     margin-bottom: 42px;
+  }
 
-    .card:nth-child(4),
-    .card:nth-child(5),
-    .card:nth-child(6) {
-      display: none;
+  &.prev {
+    animation-name: fade-out;
+
+    .card {
+      animation: scale-card $duration;
     }
+  }
+
+  &.next {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    animation-name: fade-in;
   }
 }
 
 .slider__buttons {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
   max-width: 340px;
   margin: 0 auto;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-card {
+  from {
+    transform: none;
+  }
+  to {
+    transform: scale(0.8);
+  }
 }

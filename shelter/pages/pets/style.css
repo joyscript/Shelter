@@ -450,7 +450,7 @@ a {
 .button_colored {
   background-color: #f1cdb3;
 }
-.button_slider, .button_modal {
+.button_slider, .button.icon_close {
   flex-shrink: 0;
   width: 52px;
   padding: 0;
@@ -461,7 +461,7 @@ a {
      -moz-user-select: none;
           user-select: none;
 }
-.button_modal {
+.button.icon_close {
   font-size: 12px;
 }
 .button_slider.active {
@@ -995,4 +995,11 @@ a {
   .modal__item {
     margin-bottom: 6px;
   }
+}
+
+.modal__message {
+  padding: 70px 50px;
+  font-size: 32px;
+  text-align: center;
+  line-height: 1.7;
 }/*# sourceMappingURL=style.css.map */

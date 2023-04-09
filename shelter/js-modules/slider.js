@@ -59,7 +59,7 @@ const makeSlider = (pets) => {
       [[...curArr[1]], [...curArr[2]]] = [[...curArr[0]], [...curArr[1]]];
       sliderLine.prepend(makeSlide(0));
       sliderLine.lastElementChild.remove();
-      console.log(`left: [${curArr[1]}]`);
+      console.log(`left:  [${curArr[1]}]`);
     } else {
       forbidden[1] = curArr[0][0];
       [[...curArr[0]], [...curArr[1]]] = [[...curArr[1]], [...curArr[2]]];
@@ -79,11 +79,11 @@ const makeSlider = (pets) => {
         addRandomCardsToSlide(slide, pos, curCount - prevCount);
       });
     }
-    console.log(`active: [${curArr[1].slice(0, curCount)}]`);
+    console.log(`curr:  [${curArr[1].slice(0, curCount)}]`);
   };
 
   for (let i = 0; i < 3; i++) sliderLine.append(makeSlide(i));
-  console.log(`active: [${curArr[1]}]`);
+  console.log(`curr:  [${curArr[1]}]`);
 
   prevBtn.addEventListener('click', () => slider.classList.add('move-left'));
   nextBtn.addEventListener('click', () => slider.classList.add('move-right'));

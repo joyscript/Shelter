@@ -34,8 +34,8 @@ const checkScrollBar = () => {
 
 const openModal = (pet) => {
   document.body.append(generateModal(pet));
-  setTimeout(() => document.body.classList.add(`modal-open`), 0);
   checkScrollBar();
+  document.body.classList.add(`modal-open`);
 };
 
 const closeModal = (modal) => {

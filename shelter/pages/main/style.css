@@ -1256,6 +1256,7 @@ a {
   max-width: 82.03125%;
   background: #fafafa;
   border-radius: 9px;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 @media (max-width: 600px) {
   .modal__dialog {

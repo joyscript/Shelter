@@ -347,6 +347,7 @@ a {
     padding: 30px;
     background: #292929;
     transition: right 0.5s;
+    overflow: auto;
   }
   .page-pets .menu {
     background: #ffffff;
@@ -380,6 +381,9 @@ a {
 }
 .menu__link:hover {
   color: #fafafa;
+}
+.menu__link.active {
+  cursor: default;
 }
 @media (min-width: 768px) {
   .menu__link.active {

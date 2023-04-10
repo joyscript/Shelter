@@ -17,6 +17,7 @@
     padding: 30px;
     background: $color-button;
     transition: right 0.5s;
+    overflow: auto;
 
     .page-pets & {
       background: $color-light;
@@ -58,8 +59,9 @@
     color: $color-light-s;
   }
 
-  @media (min-width: 768px) {
-    &.active {
+  &.active {
+    cursor: default;
+    @media (min-width: 768px) {
       pointer-events: none;
     }
   }

@@ -347,6 +347,7 @@ a {
     padding: 30px;
     background: #292929;
     transition: right 0.5s;
+    overflow: auto;
   }
   .page-pets .menu {
     background: #ffffff;
@@ -380,6 +381,9 @@ a {
 }
 .menu__link:hover {
   color: #fafafa;
+}
+.menu__link.active {
+  cursor: default;
 }
 @media (min-width: 768px) {
   .menu__link.active {
@@ -565,7 +569,7 @@ a {
   width: 300%;
   left: -100%;
   display: flex;
-  animation-duration: 1s;
+  animation-duration: 0.8s;
   animation-timing-function: ease;
 }
 .move-left .slider__line {
@@ -576,7 +580,7 @@ a {
 }
 @media (max-width: 1149px) {
   .slider__line {
-    animation-duration: 0.7s;
+    animation-duration: 0.6s;
   }
 }
 @media (max-width: 767.98px) {

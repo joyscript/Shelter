@@ -1,15 +1,18 @@
 import { generateModal, openModal } from './modal.js';
 
 const showMessage = () => {
-  const message = `
-    <p class="modal__message">Для удобства проверки зайдите в консоль.<br>
-    Там показывается информация об исходном массиве и текущей странице.
-    </p>
+  const key = 'user-shelter-joyscript';
+
+  if (!localStorage[key]) {
+    const message = `
+    <div class="modal__pic modal__pic_mes"><img src="../../assets/img/hello.gif" alt="Hello" /></div>
+    <div class="modal__message">Для удобства проверки зайдите в&nbsp;консоль. Там&nbsp;показывается полезная&nbsp;информация.</div>
   `;
 
-  const key = 'user-shelter-joyscript';
-  if (!localStorage[key]) openModal(generateModal(message));
-  localStorage.setItem(key, 'hello!');
+    openModal(generateModal(message));
+    document.querySelector('.modal__close-btn').style.color = '#707070';
+    localStorage.setItem(key, 'hello!');
+  }
 };
 
 export { showMessage };

@@ -912,6 +912,10 @@ a {
     display: none;
   }
 }
+.modal__pic_mes {
+  flex-basis: 40%;
+  padding-top: 40%;
+}
 
 .modal__content {
   padding: 50px 20px 30px 30px;
@@ -1013,8 +1017,27 @@ a {
 }
 
 .modal__message {
-  padding: 70px 50px;
-  font-size: 32px;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  font-size: 34px;
   text-align: center;
   line-height: 1.7;
+}
+@media (max-width: 1023.98px) {
+  .modal__message {
+    padding: 30px 20px;
+    font-size: 26px;
+  }
+}
+@media (max-width: 767.98px) {
+  .modal__message {
+    font-size: 22px;
+  }
+}
+@media (max-width: 479.98px) {
+  .modal__message {
+    padding: 20px 10px;
+    font-size: 20px;
+  }
 }/*# sourceMappingURL=style.css.map */

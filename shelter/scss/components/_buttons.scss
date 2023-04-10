@@ -47,8 +47,7 @@
   }
 
   @media (hover: hover) {
-    &:hover,
-    .card:hover & {
+    &:hover {
       background-color: $color-prim-l;
       border-color: $color-prim-l;
     }

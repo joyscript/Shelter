@@ -243,9 +243,14 @@ a {
   background-color: #f6f6f6;
 }
 
-.menu-open,
 .modal-open {
   overflow: hidden;
+}
+
+@media (max-width: 767.98px) {
+  .menu-open {
+    overflow: hidden;
+  }
 }
 
 .overlay {
@@ -260,9 +265,15 @@ a {
   opacity: 0;
   transition: 0.5s;
 }
-.menu-open .overlay, .modal-open .overlay {
+.modal-open .overlay {
   visibility: visible;
   opacity: 1;
+}
+@media (max-width: 767.98px) {
+  .menu-open .overlay {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -477,7 +488,7 @@ a {
   pointer-events: none;
 }
 @media (hover: hover) {
-  .button:hover, .card:hover .button {
+  .button:hover {
     background-color: #fddcc4;
     border-color: #fddcc4;
   }
@@ -669,18 +680,22 @@ a {
   background: #fafafa;
   border-radius: 9px;
   overflow: hidden;
-  cursor: pointer;
   transition: 0.4s;
-  box-shadow: 0px 2px 15px 2px rgba(13, 13, 13, 0.02);
+  box-shadow: 0px 2px 15px 1px rgba(13, 13, 13, 0.02);
 }
 @media (hover: hover) {
-  .card:hover {
+  body:not(.modal-open) .card:hover {
+    cursor: pointer;
     background: #ffffff;
     box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
   }
+  body:not(.modal-open) .card:hover .button {
+    background-color: #fddcc4;
+    border-color: #fddcc4;
+  }
 }
 @media (hover: hover) and (max-width: 1023.98px) {
-  .card:hover {
+  body:not(.modal-open) .card:hover {
     box-shadow: 0px 2px 15px 5px rgba(13, 13, 13, 0.04);
   }
 }

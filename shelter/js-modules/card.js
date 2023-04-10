@@ -10,7 +10,7 @@ const generateCard = (pet) => {
     </div>
     <div class="card__content">
       <h3 class="card__title">${pet.name}</h3>
-      <button class="button">Learn more</button>
+      <button class="button" tabindex="-1">Learn more</button>
     </div>
   `;
 

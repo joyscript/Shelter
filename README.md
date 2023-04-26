@@ -18,3 +18,11 @@
 ---
 
 ### Технические требования:
+https://github.com/joyscript/Shelter/blob/main/requirements/shelter.md
+
+#### Фиксированная верстка:
+https://github.com/joyscript/Shelter/blob/main/requirements/shelter-part1.md
+#### Адаптивная верстка:
+https://github.com/joyscript/Shelter/blob/main/requirements/shelter-part2.md
+#### Функционал:
+https://github.com/joyscript/Shelter/blob/main/requirements/shelter-part3.md
